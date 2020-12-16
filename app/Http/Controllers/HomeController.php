@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ads;
+use App\Ukm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,7 +40,9 @@ class HomeController extends Controller
 
     public function admin(){
         $ads = Ads::all();
+        $merch = Ukm::all();
         return view('admin.index')
-            ->with('ads', $ads);
+            ->with('ads', $ads)
+            ->with('merch', $merch);
     }
 }

@@ -15,7 +15,7 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('category', ['verification', 'block user'])->nullable();
+            $table->enum('category', ['verification', 'block user', 'change ads', 'delete ads', 'acc ads'])->nullable();
             $table->integer('user_id')->nullable();
             $table->string('title');
             $table->text('description')->nullable();
