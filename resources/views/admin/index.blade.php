@@ -83,18 +83,16 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/iklanH1.jpg" width="100%" height="120px">
-                        <center><p>Iklan 1</p></center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH2.jpg" width="100%" height="120px">
-                        <center><p>Iklan 2</p></center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH3.jpg" width="100%" height="120px">
-                        <center><p>Iklan 3</p></center>
-                    </div>
+                    @foreach($ads->where('category', 'slideshow user') as $index=>$usr)
+                        <div class="col-4">
+                            @if(empty($usr->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                            @else
+                            <img src="{{ asset(Storage::url($usr->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                            @endif
+                            <center><p>Iklan {{ $index+1 }}</p></center>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -106,18 +104,16 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/iklanH1.jpg" width="100%" height="120px">
-                        <center><p>Iklan 1</p></center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH2.jpg" width="100%" height="120px">
-                        <center><p>Iklan 2</p></center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH3.jpg" width="100%" height="120px">
-                        <center><p>Iklan 3</p></center>
-                    </div>
+                    @foreach($ads->where('category', 'slideshow merchant') as $index=>$usrb)
+                        <div class="col-4">
+                            @if(empty($usrb->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                            @else
+                                <img src="{{ asset(Storage::url($usrb->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                            @endif
+                            <center><p>Iklan {{ $index+1 }}</p></center>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -129,18 +125,16 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/iklanH1.jpg" width="100%" height="120px">
-                        <center><p>Iklan 1</p></center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH2.jpg" width="100%" height="120px">
-                        <center><p>Iklan 2</p></center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH3.jpg" width="100%" height="120px">
-                        <center><p>Iklan 3</p></center>
-                    </div>
+                    @foreach($ads->where('category', 'ads member') as $index=>$usrc)
+                        <div class="col-4">
+                            @if(empty($usrc->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                            @else
+                                <img src="{{ asset(Storage::url($usrc->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                            @endif
+                            <center><p>Iklan {{ $index+1 }}</p></center>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -152,18 +146,16 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/iklanH1.jpg" width="100%" height="120px">
-                        <center><p>Iklan 1</p></center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH2.jpg" width="100%" height="120px">
-                        <center><p>Iklan 2</p></center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH3.jpg" width="100%" height="120px">
-                        <center><p>Iklan 3</p></center>
-                    </div>
+                    @foreach($ads->where('category', 'ads home user') as $index=>$usrd)
+                        <div class="col-4">
+                            @if(empty($usrd->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                            @else
+                                <img src="{{ asset(Storage::url($usrd->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                            @endif
+                            <center><p>Iklan {{ $index+1 }}</p></center>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -188,22 +180,22 @@
                 <th>Nama Toko</th>
                 <th>ID Toko</th>
                 <th>Nama Pemilik Toko</th>
+                <th>Status</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            <?php
-
-
-            for($i = 1;$i <= 20;$i++){?>
+           @foreach($merch as $index=>$ukm)
             <tr>
-                <td><?php echo($i); ?> </td>
-                <td>Toko Busana Aqila</td>
-                <td>000011</td>
-                <td>Aqila</td>
-                <td> Detail | Hapus Toko</td>
+                <td>{{ $index+1 }}</td>
+                <td>{{ $ukm->merchant_name }}</td>
+                <td>{{ $ukm->id }}</td>
+                <td>{{ $ukm->user->name }}</td>
+                <td>{!!  $ukm->active==1?'<span class="badge-success">Aktif</span>':'<span class="badge-danger">tidak aktif</span>' !!}</td>
+                <td> Detail | <a href="" class="btn btn-danger">Nonaktifkan</a></td>
             </tr>
-            <?php } ?>
+               @endforeach
+
             </tbody>
         </table>
     </div>
@@ -224,20 +216,37 @@
                     @foreach($ads->where('category', 'slideshow user') as $usr)
                         <div class="col-4">
                             @if(empty($usr->image))
-                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @else
-                                <img src="{{ asset(Storage::url($usr->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset(Storage::url($usr->image)) }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @endif
                             <center>
-                                <form action="#">
+                                <form action="{{ route('ads.update', $usr->id) }}" method="post"
+                                      enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PATCH')
                                     <div class="form-group">
-                                        <input type="file" class="form-control" id="ssUser1">
+                                        <input type="file" name="image" class="form-control">
                                     </div>
-                                </form>
-                                <a href="/Profilemerchants">
-                                    <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
+                                    <button type="submit" class="btn bg-primary btn-block "><font
+                                            color="white">Ganti</font>
                                     </button>
-                                </a>
+                                    <a onclick="del{{ $usr->id }}()" class="btn bg-danger btn-block "><font
+                                            color="white">Delete</font>
+                                    </a>
+                                </form>
+                                <script !src="">
+                                    function del{{ $usr->id }}() {
+                                        $("#del{{ $usr->id }}").click();
+                                    }
+                                </script>
+                                <form action="{{ route('ads.destroy', $usr->id) }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" id="del{{ $usr->id }}" style="display: none"></button>
+                                </form>
                             </center>
                         </div>
                     @endforeach
@@ -253,48 +262,43 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/iklanH1.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser1">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH2.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser2">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH3.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser3">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
+                    @foreach($ads->where('category', 'slideshow merchant') as $usrb)
+                        <div class="col-4">
+                            @if(empty($usrb->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px"
+                                     style="object-fit: cover">
+                            @else
+                                <img src="{{ asset(Storage::url($usrb->image)) }}" width="100%" height="200px"
+                                     style="object-fit: cover">
+                            @endif
+                            <center>
+                                <form action="{{ route('ads.update', $usrb->id) }}" method="post"
+                                      enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PATCH')
+                                    <div class="form-group">
+                                        <input type="file" name="image" class="form-control" id="ssUser1">
+                                    </div>
+                                    <button type="submit" class="btn bg-primary btn-block "><font
+                                            color="white">Ganti</font>
+                                    </button>
+                                    <a onclick="del{{ $usrb->id }}()" class="btn bg-danger btn-block "><font
+                                            color="white">Delete</font>
+                                    </a>
+                                </form>
+                                <script !src="">
+                                    function del{{ $usrb->id }}() {
+                                        $("#del{{ $usrb->id }}").click();
+                                    }
+                                </script>
+                                <form action="{{ route('ads.destroy', $usrb->id) }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" id="del{{ $usrb->id }}" style="display: none"></button>
+                                </form>
+                            </center>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -307,48 +311,43 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/iklanH1.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser1">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH2.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser2">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH3.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser3">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
+                    @foreach($ads->where('category', 'ads member') as $usrc)
+                        <div class="col-4">
+                            @if(empty($usrc->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px"
+                                     style="object-fit: cover">
+                            @else
+                                <img src="{{ asset(Storage::url($usrc->image)) }}" width="100%" height="200px"
+                                     style="object-fit: cover">
+                            @endif
+                            <center>
+                                <form action="{{ route('ads.update', $usrc->id) }}" method="post"
+                                      enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PATCH')
+                                    <div class="form-group">
+                                        <input type="file" name="image" class="form-control" id="ssUser1">
+                                    </div>
+                                    <button type="submit" class="btn bg-primary btn-block "><font
+                                            color="white">Ganti</font>
+                                    </button>
+                                    <a onclick="del{{ $usrc->id }}()" class="btn bg-danger btn-block "><font
+                                            color="white">Delete</font>
+                                    </a>
+                                </form>
+                                <script !src="">
+                                    function del{{ $usrc->id }}() {
+                                        $("#del{{ $usrc->id }}").click();
+                                    }
+                                </script>
+                                <form action="{{ route('ads.destroy', $usrc->id) }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" id="del{{ $usrc->id }}" style="display: none"></button>
+                                </form>
+                            </center>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -360,48 +359,43 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/iklanH1.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser1">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH2.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser2">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/iklanH3.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser3">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
+                    @foreach($ads->where('category', 'ads home user') as $usrd)
+                        <div class="col-4">
+                            @if(empty($usrd->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px"
+                                     style="object-fit: cover">
+                            @else
+                                <img src="{{ asset(Storage::url($usrd->image)) }}" width="100%" height="200px"
+                                     style="object-fit: cover">
+                            @endif
+                            <center>
+                                <form action="{{ route('ads.update', $usrd->id) }}" method="post"
+                                      enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="form-group">
+                                        <input type="file" name="image" class="form-control" id="ssUser1">
+                                    </div>
+                                    <button type="submit" class="btn bg-primary btn-block "><font
+                                            color="white">Ganti</font>
+                                    </button>
+                                    <a onclick="del{{ $usrd->id }}()" class="btn bg-danger btn-block "><font
+                                            color="white">Delete</font>
+                                    </a>
+                                </form>
+                                <script !src="">
+                                    function del{{ $usrd->id }}() {
+                                        $("#del{{ $usrd->id }}").click();
+                                    }
+                                </script>
+                                <form action="{{ route('ads.destroy', $usrd->id) }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" id="del{{ $usrd->id }}" style="display: none"></button>
+                                </form>
+                            </center>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
