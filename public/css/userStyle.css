@@ -1,0 +1,1506 @@
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #ffffff;
+}
+.boxpop {
+    width: 400px;
+    height: 400px;
+    margin: 0;
+}
+
+/* header Base*/
+
+.boxHeader {
+    width: 100%;
+    height: 70px;
+    background: #10375d;
+    padding-top: 15px;
+}
+#footer {
+    margin-top: 100px;
+    color: rgb(0, 0, 0);
+}
+/*/ header Base*/
+
+/* landing Pages */
+
+.boxLanding {
+    background-image: url("/assets/images/bgHeader.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 500px;
+
+    padding-top: 15px;
+}
+.textLanding1 {
+    margin-top: 100px;
+    margin-bottom: -30px;
+    font-size: 50px;
+}
+.textLanding2 {
+    font-size: 130px;
+}
+
+.start {
+    text-align: center;
+    margin-top: -10px;
+}
+.imgNavLand {
+    width: 90px;
+    height: 80px;
+}
+.txtLdNav {
+    color: black;
+}
+/* / landing pages */
+
+/* regist */
+
+.boxRegist {
+    width: 93%;
+    height: 600px;
+    margin: 50px 50px 50px 50px;
+    background-color: white;
+    position: relative;
+    vertical-align: middle;
+    border-radius: 5px;
+    box-shadow: 7px 7px 10px;
+}
+
+/* /regist */
+
+/* admin */
+.bgNavAdmin {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(53, 53, 53);
+    position: relative;
+}
+.bgBodyAdmin {
+    width: 100%;
+    height: 600px;
+    padding-top: 20px;
+    background-color: #10375d;
+}
+.imgAdmin {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+/* /admin */
+
+/* bantuan */
+.boxBannerBantuan {
+    width: 100%;
+    height: 200px;
+    background-color: #10375d;
+    padding-top: 30px;
+}
+
+/* /bantuan */
+
+/* profile merch */
+.boxHeaderProfileMerc2 {
+    background-color: #10375d;
+    width: 100%;
+    height: 300px;
+}
+.imgHeaderProfileMerc2 {
+    width: 100%;
+    height: 300px;
+    opacity: 20%;
+}
+.ProfileHeader2 {
+    width: 90%;
+
+    margin-top: 0px;
+    position: absolute;
+}
+.imgProfileMerc2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    margin-top: -300px;
+    position: absolute;
+}
+.txtProfileMerch11 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: Tahoma;
+    margin-top: -290px;
+    position: absolute;
+}
+.txtProfileMerch22 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: Tahoma;
+    margin-top: -180px;
+    position: absolute;
+}
+/* profile merch */
+
+/* profile merch user */
+
+.boxHeaderProfileMerc {
+    background-color: #10375d;
+    width: 100%;
+    height: 650px;
+}
+
+.imgHeaderProfileMerc {
+    width: 100%;
+    height: 650px;
+    opacity: 20%;
+}
+.ProfileHeader {
+    width: 90%;
+
+    margin-top: -50px;
+    position: absolute;
+}
+.imgProfileMerc {
+    width: 250px;
+    height: 250px;
+    border-radius: 50px;
+    margin-top: -300px;
+    position: absolute;
+}
+.txtProfileMerch1 {
+    color: rgb(255, 255, 255);
+    font-size: 70px;
+    font-family: Tahoma;
+    margin-top: -290px;
+    position: absolute;
+}
+.txtProfileMerch2 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: Tahoma;
+    margin-top: -150px;
+    position: absolute;
+}
+.boxMainProfileMerc {
+    width: 100%;
+    height: 1000px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    margin-top: -80px;
+    position: relative;
+}
+.boxMainProfileMercAlert{
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    margin-top: -80px;
+    position: relative;
+}
+.boxIklanToko {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(142, 81, 2);
+}
+
+/* / profile merc */
+/* homepages */
+
+.boxHeaderHome {
+    background-color: #10375d;
+    width: 100%;
+    height: 650px;
+}
+.imgSlide {
+    width: 100%;
+    height: 700px;
+    padding-top: 70px;
+}
+.textSlider {
+    margin-top: -120px;
+    position: absolute;
+}
+.txtSlide1 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    font-family: Tahoma;
+    margin-top: -300px;
+}
+.txtSlide2 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: Tahoma;
+    margin-top: -50px;
+}
+.boxmainhome {
+    width: 100%;
+    height: 1000px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    margin-top: -80px;
+    position: relative;
+    margin-bottom: 100px;
+}
+.boxIklan {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(142, 81, 2);
+}
+
+#ImgPopUser {
+    width: 100%;
+    height: 450px;
+}
+#imgTokoMain {
+    width: 100%;
+    height: 150px;
+}
+.ImgSlideUser {
+    width: 100%;
+    height: 324px;
+}
+/* / homepages */
+
+/* kategori */
+.boxKategoriMakanan {
+    background-image: url("/assets/images/bgktmakanan.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriMinuman {
+    background-image: url("/assets/images/bgktminuman.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriStore {
+    background-image: url("/assets/images/bgktstore.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriWisata {
+    background-image: url("/assets/images/bgktwisata.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriBarang {
+    background-image: url("/assets/images/bgktbarang.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriJasa {
+    background-image: url("/assets/images/bgktjasa.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriProperti {
+    background-image: url("/assets/images/bgktProperti.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriHasilBumi {
+    background-image: url("/assets/images/bgkthasilbumi.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.textKategori {
+    text-align: center;
+    color: white;
+    font-size: 150px;
+    font-family: Tahoma;
+    padding-top: 100px;
+}
+
+.boxmainkt {
+    width: 100%;
+    height: 1000px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    margin-top: -80px;
+}
+.imgKT {
+    width: 50px;
+    height: 50px;
+}
+.txtKT {
+    margin-bottom: 30px;
+    font-family: Tahoma;
+    color: black;
+}
+.txtSKT {
+    font-family: Tahoma;
+    color: black;
+    font-size: 20px;
+}
+.txtTokoKT{
+    font-size: 15px;
+}
+#imgTokoKT{
+    width: 100%;
+    height: 130px;
+}
+/* /kategori */
+
+@media only screen and (max-width: 800px) {
+    /* landing pages */
+    .body {
+        width: 100%;
+        height: 100%;
+    }
+    .boxLanding {
+        background-size: 100% 500px;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+    .textLanding1 {
+        font-size: 50px;
+        padding-bottom: 15px;
+    }
+    .textLanding2 {
+        font-size: 100px;
+    }
+    .ljt {
+        font-size: 40px;
+    }
+    footer {
+        margin-top: 220px;
+        font-size: 20px;
+    }
+    .imgNavLand {
+        width: 110px;
+        height: 100px;
+    }
+    .txtNavLand {
+        font-size: 20px;
+        margin-top: 60px;
+    }
+    /*  / landing pages */
+
+    /* base layout */
+    .boxHeader {
+        width: 100%;
+        background: #10375d;
+        position: absolute;
+        padding-top: 20px;
+    }
+    .HdText {
+        font-size: 20px;
+    }
+    #footer {
+        margin-top: 100px;
+        font-size: 15px;
+    }
+    /* / base layout */
+
+    /* homepages */
+
+    .boxHeaderHome {
+        background-color: #10375d;
+        width: 100%;
+        height: 650px;
+    }
+    .imgSlide {
+        width: 100%;
+        height: 600px;
+        padding-top: 70px;
+    }
+    .textSlider {
+        margin-top: -120px;
+        position: absolute;
+    }
+    .txtSlide1 {
+        color: rgb(255, 255, 255);
+        font-size: 80px;
+        font-family: Tahoma;
+        margin-top: -250px;
+    }
+    .txtSlide2 {
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        font-family: Tahoma;
+        margin-top: -30px;
+    }
+    .boxmainhome {
+        width: 100%;
+        height: 1000px;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        padding-top: 50px;
+        margin-top: -190px;
+        position: relative;
+        margin-bottom: 100px;
+    }
+    .boxIklan {
+        width: 100%;
+        height: 80px;
+        background-color: rgb(142, 81, 2);
+        padding-left: -10px;
+    }
+    .h1PopUser {
+        font-size: 20px;
+    }
+    .PPopUser {
+        font-size: 10px;
+    }
+    #ImgPopUser {
+        width: 200%;
+        height: 200px;
+    }
+    #imgTokoMain {
+        width: 100%;
+        height: 100px;
+    }
+    .ImgSlideUser {
+        width: 100%;
+        height: 182px;
+    }
+    /* / homepages */
+
+    /* profile merch user */
+
+    .boxHeaderProfileMerc {
+        background-color: #10375d;
+        width: 100%;
+        height: 500px;
+    }
+
+    .imgHeaderProfileMerc {
+        width: 100%;
+        height: 500px;
+        opacity: 20%;
+    }
+    .ProfileHeader {
+        width: 90%;
+
+        margin-top: 35px;
+        position: absolute;
+    }
+    .imgProfileMerc {
+        width: 150px;
+        height: 150px;
+        border-radius: 50px;
+        margin-top: -300px;
+        position: absolute;
+    }
+    .txtProfileMerch1 {
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        font-family: Tahoma;
+        margin-top: -290px;
+        position: absolute;
+    }
+    .txtProfileMerch2 {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-family: Tahoma;
+        margin-top: -200px;
+        position: absolute;
+    }
+    .boxMainProfileMerc {
+        width: 100%;
+        height: 1000px;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        padding-top: 50px;
+        margin-top: -80px;
+        position: relative;
+    }
+    .txtTokoMerc {
+        font-size: 20px;
+    }
+    #imgTokoMerch {
+        width: 100%;
+        height: 90px;
+    }
+    .boxIklanToko {
+        width: 100%;
+        height: 150px;
+        background-color: rgb(142, 81, 2);
+    }
+    .txtChatMerch {
+        font-size: 20px;
+    }
+    .txtLokMerch {
+        font-size: 20px;
+    }
+
+    /* / profile merc */
+    /* kategori */
+.boxKategoriMakanan {
+    background-image: url("/assets/images/bgktmakanan.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriMinuman {
+    background-image: url("/assets/images/bgktminuman.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriStore {
+    background-image: url("/assets/images/bgktstore.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriWisata {
+    background-image: url("/assets/images/bgktwisata.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriBarang {
+    background-image: url("/assets/images/bgktbarang.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriJasa {
+    background-image: url("/assets/images/bgktjasa.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriProperti {
+    background-image: url("/assets/images/bgktProperti.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.boxKategoriHasilBumi {
+    background-image: url("/assets/images/bgkthasilbumi.jpg");
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+}
+.textKategori {
+    text-align: center;
+    color: white;
+    font-size: 100px;
+    font-family: Tahoma;
+    padding-top: 200px;
+}
+
+.boxmainkt {
+    width: 100%;
+    height: 1000px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    margin-top: -80px;
+}
+.imgKT {
+    width: 50px;
+    height: 50px;
+}
+.txtKT {
+    margin-bottom: 30px;
+    font-family: Tahoma;
+    color: black;
+}
+.txtSKT {
+    font-family: Tahoma;
+    color: black;
+    font-size: 15px;
+}
+.txtTokoKT{
+    font-size: 15px;
+}
+#imgTokoKT{
+    width: 100%;
+    height: 80px;
+}
+
+.srtKT{
+    font-size: 15px;
+}
+.srtKTU{
+    font-size: 23px;
+}
+.srtKTSU{
+    font-size: 20px;
+}
+/* /kategori */
+
+/* regist */
+
+.boxRegist {
+    width: 87%;
+    height: 600px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 7px 7px 10px;
+}
+
+/* /regist */
+
+/* Profile merch */
+.boxMainProfileMercAlert{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    margin-top: -80px;
+    position: relative;
+}
+.dsMerch{
+    font-size: 25px;
+}
+.imgHeaderProfileMerc2 {
+    width: 100%;
+    height: 300px;
+    opacity: 20%;
+}
+.ProfileHeader2 {
+    width: 90%;
+
+    margin-top: 80px;
+    position: absolute;
+}
+.imgProfileMerc2 {
+    width: 130px;
+    height: 130px;
+    border-radius: 50px;
+    margin-top: -295px;
+    position: absolute;
+}
+.txtProfileMerch11 {
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    font-family: Tahoma;
+    margin-top: -290px;
+    position: absolute;
+}
+.txtProfileMerch22 {
+    color: rgb(255, 255, 255);
+    font-size: 27px;
+    font-family: Tahoma;
+    margin-top: -215px;
+    position: absolute;
+}
+#thProfileMerch{
+    font-size: 13px;
+}
+/*  / profile Merch */
+}
+
+@media only screen and (max-width: 460px) {
+    /* landing pages */
+    .body {
+        width: 100%;
+        height: 100%;
+    }
+    .boxLanding {
+        background-size: 100% 400px;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+    .textLanding1 {
+        font-size: 30px;
+        padding-bottom: 15px;
+    }
+    .textLanding2 {
+        font-size: 50px;
+    }
+    .ljt {
+        font-size: 20px;
+    }
+    footer {
+        margin-top: 120px;
+        font-size: 10px;
+    }
+    .imgNavLand {
+        width: 70px;
+        height: 60px;
+    }
+    .txtNavLand {
+        font-size: 10px;
+        margin-top: 80px;
+    }
+    /*  / landing pages */
+
+    /* base layout */
+    .boxHeader {
+        width: 100%;
+        background: #10375d;
+        position: absolute;
+        padding-top: 15px;
+    }
+    .HdText {
+        font-size: 15px;
+        padding-top: -20px;
+    }
+    #footer {
+        margin-top: 50px;
+        font-size: 10px;
+    }
+    .txtTokoMain {
+        font-size: 12px;
+    }
+
+    /* / base layout */
+
+    /* homepages */
+
+    .boxHeaderHome {
+        background-color: #10375d;
+        width: 100%;
+        height: 650px;
+        padding-top: 50px;
+    }
+    .imgSlide {
+        width: 100%;
+        height: 330px;
+        padding-top: 60px;
+    }
+    .textSlider {
+        margin-top: 100px;
+        position: absolute;
+    }
+    .txtSlide1 {
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        font-family: Tahoma;
+        margin-top: -270px;
+    }
+    .txtSlide2 {
+        color: rgb(255, 255, 255);
+        font-size: 17px;
+        font-family: Tahoma;
+        margin-top: -25px;
+    }
+    .boxmainhome {
+        width: 100%;
+        height: 1000px;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        padding-top: 50px;
+        margin-top: -390px;
+        position: relative;
+        margin-bottom: 100px;
+    }
+    .boxIklan {
+        width: 100%;
+        height: 50px;
+        background-color: rgb(142, 81, 2);
+        padding-left: -10px;
+    }
+    .h1PopUser {
+        font-size: 20px;
+    }
+    .PPopUser {
+        font-size: 10px;
+    }
+    #ImgPopUser {
+        width: 200%;
+        height: 180px;
+    }
+    #imgTokoMain {
+        width: 200px;
+        height: 50px;
+        padding: 0 0 0 0;
+    }
+    .TxtH {
+        font-size: 20px;
+    }
+    .ImgSlideUser {
+        width: 100%;
+        height: 123px;
+    }
+    .txtKT {
+        font-size: 10px;
+    }
+    /* / homepages */
+
+    /* profile merch user */
+
+    .boxHeaderProfileMerc {
+        background-color: #10375d;
+        width: 100%;
+        height: 400px;
+    }
+
+    .imgHeaderProfileMerc {
+        width: 100%;
+        height: 400px;
+        opacity: 20%;
+    }
+    .ProfileHeader {
+        width: 90%;
+
+        margin-top: 90px;
+        position: absolute;
+    }
+    .imgProfileMerc {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        margin-top: -295px;
+        position: absolute;
+    }
+    .txtProfileMerch1 {
+        color: rgb(255, 255, 255);
+        font-size: 28px;
+        font-family: Tahoma;
+        margin-top: -290px;
+        position: absolute;
+    }
+    .txtProfileMerch2 {
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        font-family: Tahoma;
+        margin-top: -230px;
+        position: absolute;
+    }
+    .boxMainProfileMerc {
+        width: 100%;
+        height: 1000px;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        padding-top: 50px;
+        margin-top: -80px;
+        position: relative;
+    }
+    .txtTokoMerc {
+        font-size: 15px;
+    }
+    #imgTokoMerch {
+        width: 100%;
+        height: 60px;
+    }
+    .boxIklanToko {
+        width: 100%;
+        height: 65px;
+        background-color: rgb(142, 81, 2);
+
+    }
+    .txtChatMerch {
+        font-size: 15px;
+    }
+    .txtLokMerch {
+        font-size: 18px;
+    }
+
+    /* / profile merc */
+
+        /* kategori */
+.boxKategoriMakanan {
+    background-image: url("/assets/images/bgktmakanan.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriMinuman {
+    background-image: url("/assets/images/bgktminuman.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriStore {
+    background-image: url("/assets/images/bgktstore.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriWisata {
+    background-image: url("/assets/images/bgktwisata.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriBarang {
+    background-image: url("/assets/images/bgktbarang.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriJasa {
+    background-image: url("/assets/images/bgktjasa.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriProperti {
+    background-image: url("/assets/images/bgktProperti.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriHasilBumi {
+    background-image: url("/assets/images/bgkthasilbumi.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.textKategori {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    font-family: Tahoma;
+    padding-top: 130px;
+}
+
+.boxmainkt {
+    width: 100%;
+    height: 1000px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    margin-top: -100px;
+}
+.imgKT {
+    width: 45px;
+    height: 45px;
+}
+.txtKTU{
+    font-size: 25px;
+}
+.txtKT {
+    margin-bottom: 20px;
+    font-family: Tahoma;
+    color: black;
+}
+.txtSKT {
+    font-family: Tahoma;
+    color: black;
+    font-size: 12px;
+}
+.txtTokoKT{
+    font-size: 13px;
+    padding-left: 10px;
+  
+}
+#imgTokoKT{
+    width: 70px;
+    height: 60px;
+    align-items: left;
+}
+.srtKT{
+    font-size: 15px;
+}
+.txtLkSKT{
+    font-size: 12px;
+}
+.srtSKT{
+    font-size: 10px;
+}
+#srtSKT{
+    font-size: 20px;
+}
+.srtKTU{
+    font-size: 18px;
+}
+/* /kategori */
+
+/* regist */
+
+.boxRegist {
+    width: 77%;
+    height: 600px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 7px 7px 10px;
+    font-size: 12px;
+}
+.hdFmRg{
+    font-size: 25px;
+}
+
+/* /regist */
+
+/* Profile merch */
+.boxMainProfileMercAlert{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    margin-top: -80px;
+    position: relative;
+}
+.dsMerch{
+    font-size: 25px;
+}
+.imgHeaderProfileMerc2 {
+    width: 100%;
+    height: 250px;
+    opacity: 20%;
+}
+.ProfileHeader2 {
+    width: 90%;
+
+    margin-top: 120px;
+    position: absolute;
+}
+.imgProfileMerc2 {
+    width: 85px;
+    height: 85px;
+    border-radius: 50px;
+    margin-top: -295px;
+    position: absolute;
+}
+.txtProfileMerch11 {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: Tahoma;
+    margin-top: -290px;
+    position: absolute;
+}
+.txtProfileMerch22 {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: Tahoma;
+    margin-top: -242px;
+    position: absolute;
+}
+#thProfileMerch{
+    font-size: 10px;
+}
+/*  / profile Merch */
+/* bantuan */
+.hBtn{
+    font-size: 25px;
+}
+/* / bantuan */
+}
+
+@media screen and (max-width: 375px) {
+    /* landing pages */
+    .body {
+        width: 100%;
+        height: auto;
+    }
+    .boxLanding {
+        background-size: 100% 400px;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+    .textLanding1 {
+        font-size: 30px;
+        padding-bottom: 15px;
+    }
+    .textLanding2 {
+        font-size: 50px;
+    }
+    .ljt {
+        font-size: 15px;
+    }
+    footer {
+        margin-top: 100px;
+        font-size: 10px;
+    }
+    .imgNavLand {
+        width: 60px;
+        height: 50px;
+    }
+    .txtNavLand {
+        font-size: 10px;
+        margin-top: 30px;
+    }
+    /*  / landing pages */
+
+    /* base layout */
+    .boxHeader {
+        width: 100%;
+        background: #10375d;
+        position: absolute;
+        padding-top: 10px;
+    }
+    .HdText {
+        font-size: 15px;
+        padding-top: -20px;
+    }
+    #footer {
+        margin-top: 50px;
+        font-size: 10px;
+    }
+    .txtTokoMain {
+        font-size: 12px;
+    }
+
+    /* / base layout */
+
+    /* homepages */
+
+    .boxHeaderHome {
+        background-color: #10375d;
+        width: 100%;
+        height: 650px;
+        padding-top: 50px;
+    }
+    .imgSlide {
+        width: 100%;
+        height: 330px;
+        padding-top: 60px;
+    }
+    .textSlider {
+        margin-top: 100px;
+        position: absolute;
+    }
+    .txtSlide1 {
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        font-family: Tahoma;
+        margin-top: -270px;
+    }
+    .txtSlide2 {
+        color: rgb(255, 255, 255);
+        font-size: 17px;
+        font-family: Tahoma;
+        margin-top: -25px;
+    }
+    .boxmainhome {
+        width: 100%;
+        height: 1000px;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        padding-top: 50px;
+        margin-top: -390px;
+        position: relative;
+        margin-bottom: 100px;
+    }
+    .boxIklan {
+        width: 100%;
+        height: 50px;
+        background-color: rgb(142, 81, 2);
+        padding-left: -10px;
+    }
+    .h1PopUser {
+        font-size: 20px;
+    }
+    .PPopUser {
+        font-size: 10px;
+    }
+    #ImgPopUser {
+        width: 200%;
+        height: 150px;
+    }
+    #imgTokoMain {
+        width: 200px;
+        height: 45px;
+        padding: 0 0 0 0;
+    }
+    .TxtH {
+        font-size: 20px;
+    }
+    .ImgSlideUser {
+        width: 100%;
+        height: 123px;
+    }
+    .txtKT {
+        font-size: 10px;
+    }
+    .imgKT {
+        width: 40px;
+        height: 40px;
+    }
+    /* / homepages */
+
+     /* profile merch user */
+
+     .boxHeaderProfileMerc {
+        background-color: #10375d;
+        width: 100%;
+        height: 350px;
+    }
+
+    .imgHeaderProfileMerc {
+        width: 100%;
+        height: 350px;
+        opacity: 20%;
+    }
+    .ProfileHeader {
+        width: 90%;
+
+        margin-top: 120px;
+        position: absolute;
+    }
+    .imgProfileMerc {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        margin-top: -295px;
+        position: absolute;
+    }
+    .txtProfileMerch1 {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-family: Tahoma;
+        margin-top: -290px;
+        position: absolute;
+    }
+    .txtProfileMerch2 {
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-family: Tahoma;
+        margin-top: -242px;
+        position: absolute;
+    }
+    .boxMainProfileMerc {
+        width: 100%;
+        height: 1000px;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        padding-top: 50px;
+        margin-top: -80px;
+        position: relative;
+    }
+    .txtTokoMerc {
+        font-size: 12px;
+    }
+    #imgTokoMerch {
+        width: 100%;
+        height: 50px;
+    }
+    .boxIklanToko {
+        width: 100%;
+        height: 65px;
+        background-color: rgb(142, 81, 2);
+
+    }
+    .txtChatMerch {
+        font-size: 15px;
+    }
+    .txtLokMerch {
+        font-size: 18px;
+    }
+
+    /* / profile merc */
+            /* kategori */
+.boxKategoriMakanan {
+    background-image: url("/assets/images/bgktmakanan.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriMinuman {
+    background-image: url("/assets/images/bgktminuman.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriStore {
+    background-image: url("/assets/images/bgktstore.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriWisata {
+    background-image: url("/assets/images/bgktwisata.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriBarang {
+    background-image: url("/assets/images/bgktbarang.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriJasa {
+    background-image: url("/assets/images/bgktjasa.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriProperti {
+    background-image: url("/assets/images/bgktProperti.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.boxKategoriHasilBumi {
+    background-image: url("/assets/images/bgkthasilbumi.jpg");
+    background-size: 100% 320px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 320px;
+}
+.textKategori {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: Tahoma;
+    padding-top: 150px;
+}
+
+.boxmainkt {
+    width: 100%;
+    height: 1000px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    margin-top: -100px;
+}
+.imgKT {
+    width: 45px;
+    height: 45px;
+}
+.txtKTU{
+    font-size: 25px;
+}
+.txtKT {
+    margin-bottom: 10px;
+    font-family: Tahoma;
+    color: black;
+    font-size: 7px;
+    text-align: center;
+
+}
+.txtSKT {
+    font-family: Tahoma;
+    color: black;
+    font-size: 12px;
+}
+.txtTokoKT{
+    font-size: 13px;
+ 
+  
+}
+#imgTokoKT{
+    width: 180%;
+    height: 45px;
+
+}
+.srtKT{
+    font-size: 12px;
+}
+.txtLkSKT{
+    font-size: 12px;
+}
+.srtSKT{
+    font-size: 10px;
+}
+
+.srtKTU{
+    font-size: 15px;
+}
+.srtKTSU{
+    font-size: 12px;
+}
+/* /kategori */
+
+/* regist */
+
+.boxRegist {
+    width: 73%;
+    height: 600px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 7px 7px 10px;
+    font-size: 12px;
+}
+.hdFmRg{
+    font-size: 20px;
+}
+
+/* /regist */
+
+/* Profile merch */
+.boxMainProfileMercAlert{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    margin-top: -80px;
+    position: relative;
+}
+.dsMerch{
+    font-size: 20px;
+}
+.imgHeaderProfileMerc2 {
+    width: 100%;
+    height: 200px;
+    opacity: 20%;
+}
+.ProfileHeader2 {
+    width: 90%;
+
+    margin-top: 130px;
+    position: absolute;
+}
+.imgProfileMerc2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    margin-top: -295px;
+    position: absolute;
+}
+.txtProfileMerch11 {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: Tahoma;
+    margin-top: -290px;
+    position: absolute;
+}
+.txtProfileMerch22 {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-family: Tahoma;
+    margin-top: -242px;
+    position: absolute;
+}
+#thProfileMerch{
+    font-size: 5px;
+}
+/*  / profile Merch */
+
+/* bantuan */
+.hBtn{
+    font-size: 20px;
+}
+/*  / bantuan */
+}
