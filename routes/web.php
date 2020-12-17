@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('landingPage');
 });
-
+Route::get('/superAdmin', function () {
+    return view('/admin/superAdmin');
+});
 Auth::routes();
 
 //Route::get('/homepage', 'a');

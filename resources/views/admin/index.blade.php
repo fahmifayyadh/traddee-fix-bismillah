@@ -28,6 +28,9 @@
                 <a class="nav-link" data-toggle="pill" href="#iklan"><font color="white">Iklan</font></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#PengajuanIklan"><font color="white">Pengajuan Iklan</font></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" data-toggle="pill" href="#pengaturan"><font color="white">Pengaturan Lainnya</font></a>
             </li>
             <li class="nav-item">
@@ -400,7 +403,44 @@
             </div>
         </div>
         </br>
-    </div>
+     </div>
+    <!-- /panel iklan -->
+
+     <!-- panel iklan -->
+     <div id="PengajuanIklan" class="tab-pane container-fluid fade mt-5">
+        <div class="card">
+            <div class="card-body">
+                <center><h5>Daftar pengajuan iklan</h5></center>
+                </br>
+                <table class="table table-bordered">
+                    <thead  class="table-dark" >
+                    <tr>
+                        <th><center>No</center></th>
+                        <th><center>Nama Toko</center></th>
+                        <th><center>Tanggal Pengajuan</center></th>
+                        <th><center>Tanggal Acc</center></th>
+                        <th><center>Iklan</center></th>
+                        <th><center>Status</center></th>
+                        <th><center>Aksi</center></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><center> 1 </center></td>
+                        <td><center> Toko A </center></td>
+                        <td><center>19-10-2020</center></td>
+                        <td><center>19-10-2020</center></td>
+                        <td><center><img src = 'assets/icon/013-shop.png' width="50px" height="50px">| <img src = 'assets/icon/013-shop.png' width="50px" height="50px"></center></td>
+                        <td><center><strong>Aktif</strong></center></td>
+                        <td><center><button type="button" class="btn btn-success">Download</button> | <button type="button" class="btn btn-primary">ACC</button></center></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+     </div>
     <!-- /panel iklan -->
 
     <!-- panel pengaturan -->
