@@ -50,8 +50,24 @@
 <div class="tab-content">
 
     <!-- panel dashboard -->
-    <div id="dashboard" class="tab-pane container-fluid active mt-5">
+    <div id="dashboard" class="tab-pane container-fluid mt-5 active">
         </br>
+        @if($success = Session::get('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Sukses !</strong> {{ $success }}.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @elseif($error = Session::get('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong> {{ $error }}.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+
         <h1> Dashboard</h1>
         <hr/>
         <div class="card">
@@ -89,9 +105,11 @@
                     @foreach($ads->where('category', 'slideshow user') as $index=>$usr)
                         <div class="col-4">
                             @if(empty($usr->image))
-                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @else
-                            <img src="{{ asset(Storage::url($usr->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset(Storage::url($usr->image)) }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @endif
                             <center><p>Iklan {{ $index+1 }}</p></center>
                         </div>
@@ -110,9 +128,11 @@
                     @foreach($ads->where('category', 'slideshow merchant') as $index=>$usrb)
                         <div class="col-4">
                             @if(empty($usrb->image))
-                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @else
-                                <img src="{{ asset(Storage::url($usrb->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset(Storage::url($usrb->image)) }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @endif
                             <center><p>Iklan {{ $index+1 }}</p></center>
                         </div>
@@ -131,9 +151,11 @@
                     @foreach($ads->where('category', 'ads member') as $index=>$usrc)
                         <div class="col-4">
                             @if(empty($usrc->image))
-                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @else
-                                <img src="{{ asset(Storage::url($usrc->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset(Storage::url($usrc->image)) }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @endif
                             <center><p>Iklan {{ $index+1 }}</p></center>
                         </div>
@@ -152,9 +174,11 @@
                     @foreach($ads->where('category', 'ads home user') as $index=>$usrd)
                         <div class="col-4">
                             @if(empty($usrd->image))
-                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset('assets/images/empty.jpg') }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @else
-                                <img src="{{ asset(Storage::url($usrd->image)) }}" width="100%" height="200px" style="object-fit: cover">
+                                <img src="{{ asset(Storage::url($usrd->image)) }}" width="100%" height="200px"
+                                     style="object-fit: cover">
                             @endif
                             <center><p>Iklan {{ $index+1 }}</p></center>
                         </div>
@@ -171,8 +195,9 @@
         </br>
         <h1>List Toko</h1>
         <hr/>
-        <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Cari Toko">
+        <form class="form-inline" action="{{ route('admin.merchant.search') }}" method="get">
+            @csrf
+            <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Cari Toko">
             <button class="btn btn-success" type="submit">Search</button>
         </form>
         </br>
@@ -188,16 +213,24 @@
             </tr>
             </thead>
             <tbody>
-           @foreach($merch as $index=>$ukm)
-            <tr>
-                <td>{{ $index+1 }}</td>
-                <td>{{ $ukm->merchant_name }}</td>
-                <td>{{ $ukm->id }}</td>
-                <td>{{ $ukm->user->name }}</td>
-                <td>{!!  $ukm->active==1?'<span class="badge-success">Aktif</span>':'<span class="badge-danger">tidak aktif</span>' !!}</td>
-                <td> Detail | <a href="" class="btn btn-danger">Nonaktifkan</a></td>
-            </tr>
-               @endforeach
+            @foreach($merch as $index=>$ukm)
+                <tr>
+                    <td>{{ $index+1 }}</td>
+                    <td>{{ $ukm->merchant_name }}</td>
+                    <td>{{ $ukm->id }}</td>
+                    <td>{{ $ukm->user->name }}</td>
+                    <td>{!!  $ukm->active==1?'<span class="badge-success">Aktif</span>':'<span class="badge-danger">tidak aktif</span>' !!}</td>
+                    <td><a href="" class="btn btn-success"> Detail</a> |
+
+                        @if($ukm->active==1)
+                        <a href="{{ route('admin.merchant.inactive', $ukm->id) }}" class="btn btn-danger">Nonaktifkan</a>
+                        @else
+                        <a href="{{ route('admin.merchant.active', $ukm->id) }}" class="btn btn-danger">aktifkan</a>
+                            @endif
+                    </td>
+
+                </tr>
+            @endforeach
 
             </tbody>
         </table>
@@ -513,12 +546,17 @@
                     <form action="#">
                         <div class="form-group">
                             <label>Foto Profile : </label></br>
-                            <img src='assets/images/admin.png' width="100px" height="100px"> <input type="file"
-                                                                                                    class="form-control-file border mr-2"
-                                                                                                    id="fotoProfile">
+                            @if(empty($user->image))
+                            <img src='assets/images/admin.png' width="100px" height="100px">
+                            @else
+                            <img src='{{ asset(Storage::url($user->image)) }}' width="100px" height="100px" style="object-fit: cover">
+                            @endif
+                                <input type="file"
+                                   class="form-control-file border mr-2"
+                                   id="fotoProfile">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username" id="email">
+                            <input type="text" class="form-control" placeholder="Username" id="email" value="{{ $user->name }}">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Password" id="pwd">
