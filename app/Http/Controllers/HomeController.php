@@ -39,10 +39,12 @@ class HomeController extends Controller
     }
 
     public function admin(){
+        $user = Auth::user();
         $ads = Ads::all();
         $merch = Ukm::all();
         return view('admin.index')
             ->with('ads', $ads)
-            ->with('merch', $merch);
+            ->with('merch', $merch)
+            ->with('user', $user);
     }
 }
