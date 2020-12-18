@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
          $this->call(AdsTableSeeder::class);
          $this->call(UkmTableSeeder::class);
          $this->call(GeneralTableSeeder::class);
+         $this->call(RequestAdsTableSeeder::class);
     }
 }

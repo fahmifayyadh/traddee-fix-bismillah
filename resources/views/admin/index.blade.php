@@ -195,8 +195,8 @@
         </br>
         <h1>List Toko</h1>
         <hr/>
-        <form class="form-inline" action="{{ route('admin.merchant.search') }}" method="get">
-            @csrf
+        <form class="form-inline" action="" method="get">
+            {{--            @csrf--}}
             <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Cari Toko">
             <button class="btn btn-success" type="submit">Search</button>
         </form>
@@ -223,10 +223,10 @@
                     <td><a href="" class="btn btn-success"> Detail</a> |
 
                         @if($ukm->active==1)
-                        <a href="{{ route('admin.merchant.inactive', $ukm->id) }}" class="btn btn-danger">Nonaktifkan</a>
+                            <a href="{{ route('admin.merchant.inactive', $ukm->id) }}" class="btn btn-danger">Nonaktifkan</a>
                         @else
-                        <a href="{{ route('admin.merchant.active', $ukm->id) }}" class="btn btn-danger">aktifkan</a>
-                            @endif
+                            <a href="{{ route('admin.merchant.active', $ukm->id) }}" class="btn btn-danger">aktifkan</a>
+                        @endif
                     </td>
 
                 </tr>
@@ -436,44 +436,85 @@
             </div>
         </div>
         </br>
-     </div>
+    </div>
     <!-- /panel iklan -->
 
-     <!-- panel iklan -->
-     <div id="PengajuanIklan" class="tab-pane container-fluid fade mt-5">
+    <!-- panel iklan -->
+    <div id="PengajuanIklan" class="tab-pane container-fluid fade mt-5">
         <div class="card">
             <div class="card-body">
                 <center><h5>Daftar pengajuan iklan</h5></center>
                 </br>
                 <table class="table table-bordered">
-                    <thead  class="table-dark" >
+                    <thead class="table-dark">
                     <tr>
-                        <th><center>No</center></th>
-                        <th><center>Nama Toko</center></th>
-                        <th><center>Tanggal Pengajuan</center></th>
-                        <th><center>Tanggal Acc</center></th>
-                        <th><center>Iklan</center></th>
-                        <th><center>Status</center></th>
-                        <th><center>Aksi</center></th>
+                        <th>
+                            <center>No</center>
+                        </th>
+                        <th>
+                            <center>Nama Toko</center>
+                        </th>
+                        <th>
+                            <center>Tanggal Pengajuan</center>
+                        </th>
+                        <th>
+                            <center>Tanggal Acc</center>
+                        </th>
+                        <th>
+                            <center>Iklan</center>
+                        </th>
+                        <th>
+                            <center>Status</center>
+                        </th>
+                        <th>
+                            <center>Aksi</center>
+                        </th>
 
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><center> 1 </center></td>
-                        <td><center> Toko A </center></td>
-                        <td><center>19-10-2020</center></td>
-                        <td><center>19-10-2020</center></td>
-                        <td><center><img src = 'assets/icon/013-shop.png' width="50px" height="50px">| <img src = 'assets/icon/013-shop.png' width="50px" height="50px"></center></td>
-                        <td><center><strong>Aktif</strong></center></td>
-                        <td><center><button type="button" class="btn btn-success">Download</button> | <button type="button" class="btn btn-primary">ACC</button></center></td>
-                    </tr>
-                    
+                    @foreach($reqAds as $index=>$req)
+                        <tr>
+                            <td>
+                                <center> {{ $index+1 }}</center>
+                            </td>
+                            <td>
+                                <center> {{ $req->ukm->merchant_name }}</center>
+                            </td>
+                            <td>
+                                <center>{{ $req->created_at }}</center>
+                            </td>
+                            <td>
+                                <center>{{ empty($req->acc)? 'Belum di ACC' : date('d-M-Y H:i', strtotime($req->acc) ) }}</center>
+                            </td>
+                            <td>
+                                <center><img src='{{ asset(Storage::url($req->image)) }}' width="50px" height="50px">
+                                </center>
+                            </td>
+                            <td>
+                                <center><strong>{{ empty($req->acc)? 'Non-aktif' : 'aktif' }}</strong></center>
+                            </td>
+                            <td>
+                                <center>
+                                    <a href="{{ url('/admins/req/'.$req->id.'/download') }}">
+                                        <button type="button" class="btn btn-success">Download</button>
+                                    </a>
+                                    |
+                                    @if(empty($req->acc))
+                                        <a href="{{ url('/admins/req/'.$req->id.'/acc') }}">
+                                            <button type="button" class="btn btn-primary">ACC</button>
+                                        </a>
+                                    @endif
+                                </center>
+                            </td>
+                        </tr>
+                    @endforeach
+
                     </tbody>
                 </table>
             </div>
         </div>
-     </div>
+    </div>
     <!-- /panel iklan -->
 
     <!-- panel pengaturan -->
@@ -518,7 +559,7 @@
                         </center>
                     </div>
                     <div class="col-4">
-                        <img src="assets/images/bgheader3.jpg"" width="100%" height="100px">
+                        <img src="assets/images/bgheader3.jpg" width="100%" height="100px">
                         <center>
                             <form action="#">
                                 <div class="form-group">
@@ -547,16 +588,18 @@
                         <div class="form-group">
                             <label>Foto Profile : </label></br>
                             @if(empty($user->image))
-                            <img src='assets/images/admin.png' width="100px" height="100px">
+                                <img src='assets/images/admin.png' width="100px" height="100px">
                             @else
-                            <img src='{{ asset(Storage::url($user->image)) }}' width="100px" height="100px" style="object-fit: cover">
+                                <img src='{{ asset(Storage::url($user->image)) }}' width="100px" height="100px"
+                                     style="object-fit: cover">
                             @endif
-                                <input type="file"
+                            <input type="file"
                                    class="form-control-file border mr-2"
                                    id="fotoProfile">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username" id="email" value="{{ $user->name }}">
+                            <input type="text" class="form-control" placeholder="Username" id="email"
+                                   value="{{ $user->name }}">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Password" id="pwd">
