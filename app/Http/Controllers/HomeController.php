@@ -39,8 +39,9 @@ class HomeController extends Controller
         }
         if ($user->role == 'ukm'){
             return redirect()->route('merchant.index');
+        }else{
+            return view('home');
         }
-        return view('home');
     }
 
     public function admin(){
