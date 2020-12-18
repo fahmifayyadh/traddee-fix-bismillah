@@ -95,7 +95,7 @@
 
             <div class="start">
                 <button type="button" class="btn btn-link">
-                    <a href="HomePagesUser">
+                    <a href="{{ url('/index') }}">
                         <center><font face="Tahoma" color="white" size="5px" class="ljt">Lanjutkan</font></center>
                     </a>
                 </button>

@@ -17,9 +17,13 @@ Route::get('/', function () {
 Route::get('/superAdmin', function () {
     return view('/admin/superAdmin');
 });
+Route::group(['middleware' => ['guest']], function(){
+    Route::get('/index', 'guest\GuestController@home');
+});
+
+
 Auth::routes();
 
-//Route::get('/homepage', 'a');
 
 Route::group(['middleware' => ['auth','checkRole:admin']], function(){
     Route::group((['prefix' => 'admins']), function () {
