@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->string('description');
             $table->integer('category_id');
-            $table->integer('subCategory_id');
+            $table->integer('sub_category_id');
             $table->string('variant')->nullable();
             $table->integer('price');
             $table->boolean('available');

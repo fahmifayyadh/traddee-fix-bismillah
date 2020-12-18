@@ -121,6 +121,7 @@
                         <div class="col-9">
 
                             <div class="row">
+                                @forelse($subs->product as $products)
                                 <div class="col-3">
                                     <center>
                                         <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
@@ -128,30 +129,10 @@
                                         <p class="txtTokoKT"> Toko A</p>
                                     </center>
                                 </div>
+                                    @empty
+                                    <p>Tidak ada data di kategori ini.</p>
+                                @endforelse
 
-                                <div class="col-3">
-                                    <center>
-                                        <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
-                                             data-toggle="modal" data-target="#myModalbarang"></br>
-                                        <p class="txtTokoKT"> Toko A</p>
-                                    </center>
-                                </div>
-
-                                <div class="col-3">
-                                    <center>
-                                        <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
-                                             data-toggle="modal" data-target="#myModalbarang"></br>
-                                        <p class="txtTokoKT"> Toko A</p>
-                                    </center>
-                                </div>
-
-                                <div class="col-3">
-                                    <center>
-                                        <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
-                                             data-toggle="modal" data-target="#myModalbarang"></br>
-                                        <p class="txtTokoKT"> Toko A</p>
-                                    </center>
-                                </div>
                             </div>
                         </div>
                     </div>
