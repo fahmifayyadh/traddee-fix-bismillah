@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Ads;
 use App\Notification;
+use App\RequestAds;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,6 +22,29 @@ class AdsController extends Controller
     public function index()
     {
         //
+    }
+
+    public function acc($id){
+        $now = Carbon::now();
+        $user = Auth::user();
+        RequestAds::where('id', $id)->update([
+            'acc' => $now
+        ]);
+
+        Notification::create([
+            'category' => 5,
+            'user_id' => 1,
+            'title' => $user->name.' as admin has been ACC Ads merchant',
+            'description' => $user->name.' as admin has been ACC Ads merchant'
+        ]);
+
+        Session::flash('success', 'success acc Ads');
+        return redirect()->back();
+    }
+
+    public function download($id){
+        $req = RequestAds::findOrFail($id);
+        return response()->file(Storage::url($req->image));
     }
 
     /**
