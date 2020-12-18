@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="39f79f08-77bf-4612-b452-e2afa9db8477" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_18_105857_create_sub_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_18_105857_create_sub_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SubCategorySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SubCategorySeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/guest/GuestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/guest/GuestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/SubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SubCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_133704_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_16_133704_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guest/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guest/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guest/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guest/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +160,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608124478513</updated>
       <workItem from="1608124480697" duration="22153000" />
-      <workItem from="1608257142976" duration="21380000" />
+      <workItem from="1608257142976" duration="23784000" />
     </task>
     <servers />
   </component>

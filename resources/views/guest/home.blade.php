@@ -57,84 +57,16 @@
                 <div class="card-body">
                     <div class="container-fluid">
                         <div class="row">
-
-
+                            @foreach($category as $ctgr)
                             <div class="col-3">
                                 <center>
-                                    <a href="Makanan">
+                                    <a href="{{ url('/'.$ctgr->slug) }}">
                                         <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                        <div class="txtKT">Makanan</div>
+                                        <div class="txtKT">{{ $ctgr->name }}</div>
                                     </a>
                                 </center>
                             </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <a href="Produsen">
-                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                        <div class="txtKT">Produsen</div>
-                                    </a>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <a href="Store">
-                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                        <div class="txtKT">Store</div>
-                                    </a>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <a href="Wisata">
-                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                        <div class="txtKT">Wisata dan Inap</div>
-                                    </a>
-                                </center>
-                            </div>
-
-                            </br>
-                            </br>
-
-                            <div class="col-3">
-                                <center>
-                                    <a href="Barang">
-                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                        <div class="txtKT">Barang</div>
-                                    </a>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <a href="Jasa">
-                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                        <div class="txtKT">Jasa</div>
-                                    </a>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <a href="Properti">
-                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                        <div class="txtKT">Properti</div>
-                                    </a>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <a href="Hasilbumi">
-                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                        <div class="txtKT">Hasil Bumi</div>
-                                    </a>
-                                </center>
-                            </div>
-
-
+                            @endforeach
                         </div>
                     </div>
                 </div>

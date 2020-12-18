@@ -19,7 +19,7 @@ Route::get('/superAdmin', function () {
 });
 Route::group(['middleware' => ['guest']], function(){
     Route::get('/index', 'guest\GuestController@home');
-    Route::get('/{category}', 'guest\GuestController@icategory');
+    Route::get('/{category}', 'guest\GuestController@category');
 });
 
 
