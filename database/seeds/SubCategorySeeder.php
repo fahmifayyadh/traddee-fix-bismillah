@@ -22,14 +22,53 @@ class SubCategorySeeder extends Seeder
         $properti = ['Perumahan', 'kavling tanah', 'jual tanah', 'jual kebun'];
         $bumi = ['Pertanian', 'perkebunan', 'perikanan'];
 
-        for ($i=0; $i<8; $i++){
-            $sip = $category[$i];
-            foreach ($sip as $index=>$ctgr){
-                SubCategory::create([
-                    'category_id' => $i+1,
-                    'name' => $sip[$index]
-                ]);
-            }
+        foreach ($makanan as $index=>$ctgr){
+            SubCategory::create([
+                'category_id' => 1,
+                'name' => $makanan[$index]
+            ]);
+        }
+        foreach ($produsen as $index=>$ctgr){
+            SubCategory::create([
+                'category_id' => 2,
+                'name' => $produsen[$index]
+            ]);
+        }
+        foreach ($store as $index=>$ctgr){
+            SubCategory::create([
+                'category_id' => 3,
+                'name' => $store[$index]
+            ]);
+        }
+        foreach ($inap as $index=>$ctgr){
+            SubCategory::create([
+                'category_id' => 4,
+                'name' => $inap[$index]
+            ]);
+        }
+        foreach ($barang as $index=>$ctgr){
+            SubCategory::create([
+                'category_id' => 5,
+                'name' => $barang[$index]
+            ]);
+        }
+        foreach ($jasa as $index=>$ctgr){
+            SubCategory::create([
+                'category_id' => 6,
+                'name' => $jasa[$index]
+            ]);
+        }
+        foreach ($properti as $index=>$ctgr){
+            SubCategory::create([
+                'category_id' => 7,
+                'name' => $properti[$index]
+            ]);
+        }
+        foreach ($bumi as $index=>$ctgr){
+            SubCategory::create([
+                'category_id' => 8,
+                'name' => $bumi[$index]
+            ]);
         }
     }
 }
