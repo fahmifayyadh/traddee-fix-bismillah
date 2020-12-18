@@ -23,10 +23,11 @@ class SubCategorySeeder extends Seeder
         $bumi = ['Pertanian', 'perkebunan', 'perikanan'];
 
         for ($i=0; $i<8; $i++){
-            foreach ($category as $ctgr){
+            $sip = $category[$i];
+            foreach ($sip as $index=>$ctgr){
                 SubCategory::create([
                     'category_id' => $i+1,
-                    'name' => $ctgr
+                    'name' => $sip[$index]
                 ]);
             }
         }
