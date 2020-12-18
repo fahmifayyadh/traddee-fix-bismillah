@@ -112,10 +112,10 @@
             <div class="row">
                 <div class="col-sm-3">
 
-                    <a class="nav-link" href="HomePagesUser"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
+                    <a class="nav-link" href="{{ url('/index') }}"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
                 </div>
                 <div class="col-sm-8">
-                    <form class="form" action="/action_page.php">
+                    <form class="form" action="">
                         <div class="input-group mb-3" id="Src">
                             <input type="text" class="form-control" placeholder="Cari Toko di Traddee">
                             <div class="input-group-append">
