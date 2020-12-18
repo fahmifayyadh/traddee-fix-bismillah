@@ -10,14 +10,14 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src = 'assets/images/bgheader1.jpg' class="imgSlide">
+                    <img src='assets/images/bgheader1.jpg' class="imgSlide">
 
                 </div>
                 <div class="carousel-item">
-                    <img src = 'assets/images/bgheader2.jpg' class="imgSlide">
+                    <img src='assets/images/bgheader2.jpg' class="imgSlide">
                 </div>
                 <div class="carousel-item">
-                    <img src = 'assets/images/bgheader3.jpg' class="imgSlide">
+                    <img src='assets/images/bgheader3.jpg' class="imgSlide">
                 </div>
             </div>
 
@@ -61,8 +61,8 @@
 
                             <div class="col-3">
                                 <center>
-                                    <a href="Makanan" >
-                                        <img src = 'assets/icon/013-shop.png' class="imgKT"></br>
+                                    <a href="Makanan">
+                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
                                         <div class="txtKT">Makanan</div>
                                     </a>
                                 </center>
@@ -70,8 +70,8 @@
 
                             <div class="col-3">
                                 <center>
-                                    <a href="Produsen" >
-                                        <img src = 'assets/icon/013-shop.png' class="imgKT"></br>
+                                    <a href="Produsen">
+                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
                                         <div class="txtKT">Produsen</div>
                                     </a>
                                 </center>
@@ -79,8 +79,8 @@
 
                             <div class="col-3">
                                 <center>
-                                    <a href="Store" >
-                                        <img src = 'assets/icon/013-shop.png' class="imgKT"></br>
+                                    <a href="Store">
+                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
                                         <div class="txtKT">Store</div>
                                     </a>
                                 </center>
@@ -88,8 +88,8 @@
 
                             <div class="col-3">
                                 <center>
-                                    <a href="Wisata" >
-                                        <img src = 'assets/icon/013-shop.png' class="imgKT"></br>
+                                    <a href="Wisata">
+                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
                                         <div class="txtKT">Wisata dan Inap</div>
                                     </a>
                                 </center>
@@ -100,8 +100,8 @@
 
                             <div class="col-3">
                                 <center>
-                                    <a href="Barang" >
-                                        <img src = 'assets/icon/013-shop.png' class="imgKT"></br>
+                                    <a href="Barang">
+                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
                                         <div class="txtKT">Barang</div>
                                     </a>
                                 </center>
@@ -109,8 +109,8 @@
 
                             <div class="col-3">
                                 <center>
-                                    <a href="Jasa" >
-                                        <img src = 'assets/icon/013-shop.png' class="imgKT"></br>
+                                    <a href="Jasa">
+                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
                                         <div class="txtKT">Jasa</div>
                                     </a>
                                 </center>
@@ -118,8 +118,8 @@
 
                             <div class="col-3">
                                 <center>
-                                    <a href="Properti" >
-                                        <img src = 'assets/icon/013-shop.png' class="imgKT"></br>
+                                    <a href="Properti">
+                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
                                         <div class="txtKT">Properti</div>
                                     </a>
                                 </center>
@@ -127,8 +127,8 @@
 
                             <div class="col-3">
                                 <center>
-                                    <a href="Hasilbumi" >
-                                        <img src = 'assets/icon/013-shop.png' class="imgKT"></br>
+                                    <a href="Hasilbumi">
+                                        <img src='assets/icon/013-shop.png' class="imgKT"></br>
                                         <div class="txtKT">Hasil Bumi</div>
                                     </a>
                                 </center>
@@ -158,15 +158,15 @@
                         </ul>
 
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="assets/images/iklanH1.jpg" class="ImgSlideUser">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/iklanH2.jpg" class="ImgSlideUser">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/iklanH3.jpg" class="ImgSlideUser">
-                            </div>
+                            @foreach($ads->where('category', 'slideshow user') as $slide)
+                                <div class="carousel-item active">
+                                    @if(empty($slide->image))
+                                        <img src="{{ asset('assets/images/empty.jpg') }}" class="ImgSlideUser">
+                                    @else
+                                        <img src="{{ asset(Storage::url($slide->image)) }}" class="ImgSlideUser">
+                                    @endif
+                                </div>
+                            @endforeach
                         </div>
 
                         <a class="carousel-control-prev" href="#demo" data-slide="prev"></a>
@@ -176,13 +176,20 @@
                 </div>
                 <!-- iklan -->
                 <div class="col-3">
-                    <div class="boxIklan">
-                        <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label>
-                    </div>
-                    </br>
-                    <div class="boxIklan">
-                        <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label>
-                    </div>
+                    @foreach($ads->where('category', 'ads home user') as $usr)
+                        <div class="boxIklan">
+                            @if(empty($usr->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" alt=""
+                                     style="width: 100%; height: 100%; object-fit: cover">
+                            @else
+                                <img src="{{ asset(Storage::url($usr->image)) }}" alt=""
+                                     style="width: 100%; height: 100%; object-fit: cover">
+                            @endif
+                            {{--                        <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label>--}}
+                        </div>
+                        <br>
+                    @endforeach
+
                 </div>
                 <!-- /iklan -->
                 <!-- /iklan slide show -->
@@ -194,63 +201,24 @@
                     <div class="container-fluid">
 
                         <div class="row">
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang"  ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
+                            @foreach($rekom as $toko)
+                                <div class="col-3">
+                                    <center>
+                                        @if(empty($toko->image))
+                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
+                                                 data-target="#myModalbarang">
+                                        @else
+                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
+                                                 data-target="#myModalbarang">
+                                        @endif
 
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg' id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
+                                        {{--                                            </br>--}}
+                                        <p class="txtTokoMain"> {{ $toko->merchant_name }}</p>
+                                    </center>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- /rekomendasi -->
@@ -264,63 +232,24 @@
                     <div class="container-fluid">
 
                         <div class="row">
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg' id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
+                            @foreach($store as $toko)
+                                <div class="col-3">
+                                    <center>
+                                        @if(empty($toko->image))
+                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
+                                                 data-target="#myModalbarang">
+                                        @else
+                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
+                                                 data-target="#myModalbarang">
+                                            @endif
 
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg' id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg' id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg' id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
-
-                            <div class="col-3">
-                                <center>
-                                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                                    <p class="txtTokoMain"> Toko A</p>
-                                </center>
-                            </div>
+{{--                                            </br>--}}
+                                            <p class="txtTokoMain"> {{ $toko->merchant_name }}</p>
+                                    </center>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- /Toko -->
@@ -328,7 +257,6 @@
                 </div>
 
             </div>
-
 
 
             </br>
