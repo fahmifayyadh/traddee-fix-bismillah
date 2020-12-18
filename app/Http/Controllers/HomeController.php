@@ -58,7 +58,10 @@ class HomeController extends Controller
     public function ukm(){
         $user = Auth::user();
         $product = Product::where('ukm_id', $user->ukm->id)->get();
+        $ukm = $user->ukm;
+
         return view('ukm.index')
-            ->with('product', $product);
+            ->with('product', $product)
+            ->with('ukm', $ukm);
     }
 }

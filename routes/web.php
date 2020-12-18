@@ -38,6 +38,9 @@ Route::group(['middleware' => ['auth','checkRole:admin']], function(){
 Route::group(['middleware' => ['auth','checkRole:ukm']], function() {
     Route::group((['prefix' => 'ukm']), function () {
         Route::get('/', 'HomeController@ukm')->name('merchant.index');
+        Route::post('/profile', 'ukm\UkmController@updateProfile')->name('ukm.editprofile');
+        Route::post('/info', 'ukm\UkmController@informasiToko')->name('ukm.editinformasi');
+        Route::post('/request', 'ukm\RequestAdsController@req')->name('ukm.requestads');
     });
 });
 

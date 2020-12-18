@@ -126,6 +126,21 @@
 
     <div class="boxMainProfileMercAlert">
         <div class="container-fluid">
+            @if($success = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Sukses !</strong> {{ $success }}.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @elseif($error = Session::get('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Error!</strong> {{ $error }}.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-9">
 
@@ -240,7 +255,7 @@
                                     <tr>
                                         <td id="thProfileMerch">{{ $index+1 }}</td>
                                         <td id="thProfileMerch">{{ $prod->name }}</td>
-                                        <td id="thProfileMerch">{{ asset(Storage::url($prod->image)) }}</td>
+                                        <td id="thProfileMerch">{{ asset(Storage::url($prod->productImage->first())) }}</td>
                                         <td id="thProfileMerch">{{ $prod->description }}</td>
                                         <td id="thProfileMerch">Tampil</td>
                                         <td>
@@ -284,20 +299,17 @@
                         <!-- konten informasi toko -->
                         <div id="informasi" class="container tab-pane fade"><br>
 
-                            <p>Nama Toko : Aqila Busana</p>
-                            <p>Id Toko : 000011</p>
-                            <p>Alamat Toko : </p>
-                            <p>Nama Pemilik Toko : Aqila</p>
-                            <p>No Tlp / WA: </p>
+                            <p>Nama Toko : {{ $ukm->merchant_name }}</p>
+                            <p>Id Toko : {{ $ukm->id }}</p>
+                            <p>Alamat Toko : {{ $ukm->address }}</p>
+                            <p>Nama Pemilik Toko : {{ $ukm->user->name }}</p>
+                            <p>No Tlp / WA: {{ empty($ukm->phone)? 'no.HP belum diinputkan' : $ukm->phone }}</p>
                             </br>
                             <h3>Lokasi</h3>
                             <div class="container-fluid">
 
                                 <center>
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.18072672806!2d107.0185125958462!3d-6.323309853560492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69918ff08d6a23%3A0x43afe6f00e8b0288!2sAqela%20Busana!5e0!3m2!1sen!2sid!4v1605552677186!5m2!1sen!2sid"
-                                        width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""
-                                        aria-hidden="false" tabindex="0"></iframe>
+                                    {!! empty($ukm->iframe)? 'maps lokasi belum diinputkan' : $ukm->iframe !!}
                                 </center>
                             </div>
                         </div>
@@ -306,23 +318,30 @@
                         <!-- konten Edit Profile -->
                         <div id="editprofile" class="container tab-pane fade"><br>
 
-                            <form action="#">
+                            <form action="{{ route('ukm.editprofile') }}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group">
                                     <label>Nama Toko : </label></br>
                                     <input type="text" class="form-control" id="namaToko"
-                                           placeholder="TOKO BUSANA AQILA">
+                                           placeholder="TOKO BUSANA AQILA" name="name"
+                                           value="{{ $ukm->merchant_name }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Foto Profile : </label></br>
-                                    <img src='assets/images/user.png' width="100px" height="100px"> <input type="file"
-                                                                                                           class="form-control-file border mr-2"
-                                                                                                           id="fotoProfile">
+                                    @if(empty($ukm->image))
+                                        <img src='assets/images/user.png' width="100px" height="100px">
+                                    @else
+                                        <img src='{{ asset(Storage::url($ukm->image)) }}' width="100px" height="100px"
+                                             style="object-fit: cover">
+                                    @endif
+                                    <input type="file" class="form-control-file border mr-2" name="image"
+                                           id="fotoProfile">
                                 </div>
-                                <div class="form-group">
-                                    <label for="pwd">Banner Profile : </label></br>
-                                    <img src='assets/images/aqilabg.jpg' width="150px" height="100px"> <input
-                                        type="file" class="form-control-file border mt-2" id="bannerProfile">
-                                </div>
+                                {{--                                <div class="form-group">--}}
+                                {{--                                    <label for="pwd">Banner Profile : </label></br>--}}
+                                {{--                                    <img src='assets/images/aqilabg.jpg' width="150px" height="100px"> <input--}}
+                                {{--                                        type="file" class="form-control-file border mt-2" id="bannerProfile">--}}
+                                {{--                                </div>--}}
                                 <button type="submit" class="btn btn-primary">Ubah</button>
                             </form>
 
@@ -332,18 +351,22 @@
                         <!-- konten edit informasi toko -->
                         <div id="editinformasi" class="container tab-pane fade"><br>
 
-                            <form action="#">
+                            <form action="{{ route('ukm.editinformasi') }}" method="post">
+                                @csrf
                                 <div class="form-group">
                                     <label for="email">ID Toko : </label></br>
-                                    <input type="text" class="form-control" id="namaToko" readonly placeholder="000011">
+                                    <input type="text" class="form-control" id="namaToko" readonly
+                                           value="{{ $ukm->id }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">ID Pemilik : </label></br>
-                                    <input type="text" class="form-control" id="namaToko" readonly placeholder="00000">
+                                    <input type="text" class="form-control" id="namaToko" readonly
+                                           value="{{ $ukm->user->id }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">ID Pengajak : </label></br>
-                                    <input type="text" class="form-control" id="namaToko" readonly placeholder="00002">
+                                    <input type="text" class="form-control" id="namaToko" readonly
+                                           value="{{ $ukm->user->reveral_id }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Jenis Usaha : </label></br>
@@ -355,27 +378,32 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Nama Pemilik : </label></br>
-                                    <input type="text" class="form-control" id="namaToko"
-                                           placeholder="Aqila nur amalia">
+                                    <input type="text" class="form-control" id="namaToko" name="name_user"
+                                           value="{{ $ukm->user->name }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Alamat Toko : </label></br>
-                                    <input type="text" class="form-control" id="namaToko" placeholder="Provinsi"></br>
+                                    <input type="text" class="form-control" id="namaToko" placeholder="Provinsi"
+                                           name="province" value="{{ $ukm->province }}"></br>
                                     <input type="text" class="form-control" id="namaToko"
-                                           placeholder="Kabupaten / Kota"></br>
-                                    <input type="text" class="form-control" id="namaToko" placeholder="Kecamatan"></br>
+                                           placeholder="Kabupaten / Kota" name="city" value="{{ $ukm->city }}"></br>
+                                    <input type="text" class="form-control" id="namaToko" placeholder="Kecamatan"
+                                           value="{{ $ukm->district }}" name="district"></br>
                                     <input type="text" class="form-control" id="namaToko"
-                                           placeholder="Kelurahan / Desa"></br>
-                                    <input type="text" class="form-control" id="namaToko" placeholder="Alamat">
+                                           placeholder="Kelurahan / Desa" value="{{ $ukm->village }}"
+                                           name="village"></br>
+                                    <input type="text" class="form-control" id="namaToko" placeholder="Alamat"
+                                           value="{{ $ukm->address }}" name="address">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">NO Tlp/WA : </label></br>
-                                    <input type="text" class="form-control" id="namaToko" placeholder="000000000000">
+                                    <input type="text" class="form-control" id="namaToko" placeholder="000000000000"
+                                           value="{{ $ukm->phone }}" name="phone">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Nomer Rekening : </label></br>
                                     <input type="text" class="form-control" id="namaToko"
-                                           placeholder="2323-2323-2323-222">
+                                           placeholder="2323-2323-2323-222" value="{{ $ukm->debit }}" name="debit">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Ubah</button>
@@ -391,18 +419,34 @@
                                 <div class="card-body">
                                     <h3>Iklan Terdaftar</h3>
                                     <hr/>
-                                    <p>tidak ada iklan terdaftar</p>
+                                    <div class="row">
+                                        @forelse($ukm->request as $request)
+
+                                            <div class="col-3">
+                                                <div class="container">
+                                                    <div
+                                                        class="p-2 card {{ empty($request->acc)? 'bg-warning' : 'bg-success' }}">
+                                                        <img src="{{ asset(Storage::url($request->image)) }}" alt=""
+                                                             height="100" width="100%" style="object-fit: cover">
+                                                        <br>
+                                                        <p class="text-center">{{ empty($request->acc)? 'Belum di acc' : 'sudah di acc' }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        @empty
+                                            <p>tidak ada iklan terdaftar</p>
+                                        @endforelse
+                                    </div>
                                 </div>
                             </div>
                             </br>
-                            <form action="#">
+                            <form action="{{ route('ukm.requestads') }}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group">
                                     <label>input Iklan : </label></br>
-                                    <input type="file" class="form-control-file border mr-2" id="fotoProfile">
-                                </div>
-                                <div class="form-group">
-                                    <label> Input Iklan : </label></br>
-                                    <input type="file" class="form-control-file border mt-2" id="bannerProfile">
+                                    <input type="file" class="form-control-file border mr-2" id="fotoProfile"
+                                           name="image">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Ajukan</button>
                             </form>
