@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotificationsTable extends Migration
+class CreateGeneralsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateNotificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('notifications', function (Blueprint $table) {
+        Schema::create('generals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('category', ['verification', 'block user', 'change ads', 'delete ads', 'acc ads'])->nullable();
-            $table->integer('user_id')->nullable();
-            $table->string('title');
+            $table->string('name')->nullable();
+            $table->string('phone')->nullable();
             $table->text('description')->nullable();
-            $table->boolean('status')->default(1);
+            $table->string('banner1')->nullable();
+            $table->string('banner2')->nullable();
+            $table->string('banner3')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notifications');
+        Schema::dropIfExists('generals');
     }
 }
