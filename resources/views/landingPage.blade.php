@@ -88,7 +88,7 @@
             <center><font face="Tahoma" color="white" >Selamat datang di</font></center>
         </div>
         <div class="textLanding2">
-            <center><font face="Tahoma" color="white" >Traddee.com</font></center>
+            <center><img src = 'assets/images/logo.png' class="imglogoLanding"> <font face="Tahoma" color="white" >Traddee.com</font></center>
 
         </div>
         <div class="container">
@@ -96,7 +96,7 @@
             <div class="start">
                 <button type="button" class="btn btn-link">
                     <a href="{{ url('/index') }}">
-                        <center><font face="Tahoma" color="white" size="5px" class="ljt">Lanjutkan</font></center>
+                        <center><font face="Tahoma" color="#10375d" size="5px" class="ljt">Lanjutkan</font></center>
                     </a>
                 </button>
             </div>
