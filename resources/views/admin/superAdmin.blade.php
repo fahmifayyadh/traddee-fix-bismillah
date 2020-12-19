@@ -94,6 +94,7 @@
 <!-- / Modal Detail Merch -->
 
 
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <img src="assets/images/admin.png" class="imgAdmin"> <font color="white" size="4"> | Super Admin</font>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -168,6 +169,7 @@
         </div>
     </div>
     </br>
+
 <hr/>
 <div class="card">
     <div class="card-body">
@@ -254,6 +256,7 @@
                 <th>Aksi</th>
                 <th></th>
 
+
             </tr>
             </thead>
             <tbody>
@@ -292,12 +295,11 @@
                 <td>1223233</td>
                 <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch">Detail</button></td>
             </tr>
-
-            
             </tbody>
         </table>
     </div>
 </div>
+
 
 </br>
 <hr/>
@@ -426,10 +428,6 @@
         </table>
     </div>
 </div>
-
-
-
-
 </div>
 </br>
   <center><p>Kisah Kreatif | Copyright 2020 © All Rights Reserved</p></center>

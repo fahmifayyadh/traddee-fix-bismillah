@@ -117,6 +117,7 @@
     </div>
   </div>
 <!-- / Modal withdraw -->
+
 <!-- modal edit product -->
 <div class="modal fade" id="editProduct">
     <div class="modal-dialog modal-xl">
@@ -216,6 +217,7 @@
 
                     <div class="col-9">
                         <p class="txtProfileMerch11">TOKO BUSANAN AQILA</p>
+
                         <p class="txtProfileMerch22">ID : 000011 | <strong>Verified</strong></p>
 
                     </div>
@@ -417,11 +419,13 @@
 
                             <p>Nama Toko : {{ $ukm->merchant_name }}</p>
                             <p>Id Toko : {{ $ukm->id }}</p>
+
                             <p>Id Anggota : 000011</p>
                               <p>Followers : </p>
                               <p>Kode Referal : 000011</p>
                               <p>Point: </p>
                               <p>Bonus: <button type="button" class="btn btn-success" data-toggle="modal" data-target="#WithDraw">Withdraw</button></p>
+
                             <p>Alamat Toko : {{ $ukm->address }}</p>
                             <p>Nama Pemilik Toko : {{ $ukm->user->name }}</p>
                             <p>No Tlp / WA: {{ empty($ukm->phone)? 'no.HP belum diinputkan' : $ukm->phone }}</p>

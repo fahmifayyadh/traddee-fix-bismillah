@@ -273,83 +273,50 @@
     <div id="toko" class="tab-pane container-fluid fade mt-5">
         </br>
         <h1>List Toko</h1>
+        <hr/>
+        <form class="form-inline" action="" method="get">
+            {{--            @csrf--}}
+            <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Cari Toko">
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+        </br>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Toko</th>
+                <th>ID Toko</th>
+                <th>ID Anggota</th>
+                <th>ID Referal</th>
+                <th>Nama Pemilik Toko</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($merch as $index=>$ukm)
+                <tr>
+                    <td>{{ $index+1 }}</td>
+                    <td>{{ $ukm->merchant_name }}</td>
+                    <td>{{ $ukm->id }}</td>
+                    <th>ID Anggota</th>
+                    <th>ID Referal</th>
+                    <td>{{ $ukm->user->name }}</td>
+                    <td>{!!  $ukm->active==1?'<span class="badge-success">Aktif</span>':'<span class="badge-danger">tidak aktif</span>' !!}</td>
+                    <td><a href="" class="btn btn-success"> Detail</a> |
 
-                                <p> yang baru <p>
-                                <form class="form-inline" action="/action_page.php">
-                                    <input class="form-control mr-sm-2" type="text" placeholder="Cari Toko">
-                                    <button class="btn btn-success" type="submit">Search</button>
-                                </form>
-                            </br>
-                            <table cellspacing="0" class="scroll">
-                                <thead >
-                                <tr>
-                                    <th>Nama Toko</th>
-                                    <th>ID Toko</th>
-                                    <th>ID Anggota</th>
-                                    <th>ID Referal</th>
-                                    <th>Aksi</th>
-                                    <th></th>
+                        @if($ukm->active==1)
+                            <a href="{{ route('admin.merchant.inactive', $ukm->id) }}" class="btn btn-danger">Nonaktifkan</a>
+                        @else
+                            <a href="{{ route('admin.merchant.active', $ukm->id) }}" class="btn btn-danger">aktifkan</a>
+                        @endif
+                    </td>
 
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Toko A</td>
-                                    <td>0000011</td>
-                                    <td>0000011</td>
-                                    <td>1223233</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch" >Detail</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Toko A</td>
-                                    <td>0000011</td>
-                                    <td>0000011</td>
-                                    <td>1223233</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch">Detail</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Toko A</td>
-                                    <td>0000011</td>
-                                    <td>0000011</td>
-                                    <td>1223233</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch">Detail</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Toko A</td>
-                                    <td>0000011</td>
-                                    <td>0000011</td>
-                                    <td>1223233</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch">Detail</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Toko A</td>
-                                    <td>0000011</td>
-                                    <td>0000011</td>
-                                    <td>1223233</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch">Detail</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Toko A</td>
-                                    <td>0000011</td>
-                                    <td>0000011</td>
-                                    <td>1223233</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch">Detail</button></td>
-                                </tr>                                <tr>
-                                    <td>Toko A</td>
-                                    <td>0000011</td>
-                                    <td>0000011</td>
-                                    <td>1223233</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch">Detail</button></td>
-                                </tr>                                <tr>
-                                    <td>Toko A</td>
-                                    <td>0000011</td>
-                                    <td>0000011</td>
-                                    <td>1223233</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailMerch">Detail</button></td>
-                                </tr>
-                                
-                                </tbody>
-                            </table>
+                </tr>
+            @endforeach
+
+            </tbody>
+        </table>
     </div>
     <!-- /panel toko -->
 
