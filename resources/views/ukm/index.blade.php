@@ -11,9 +11,112 @@
     <link rel="stylesheet" type="text/css" href="css/userStyle.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+          <style type="text/css">
+		table.scroll {
+			width:100%;
+			border:1px #a9c6c9 solid;
+      font-size:15px;
+		}
+		table.scroll thead {
+			display:table;
+			width:100%;
+			background-color: grey;
+		}
+		table.scroll tbody {
+			display:block;
+			height:150px;
+			overflow:auto;
+			float:left;
+			width:100%;
+		}
+		table.scroll tbody tr {
+			display:table;
+			width:100%;
+      
+		}
+		table.scroll th, td {
+			width:35%;
+			padding:8px;
+		}
+    .scrollIklan{
+     display:block;
+     border: 0px solid red;
+     width:300px;
+     height:320px;
+     overflow:auto;
+    }
+	</style>
 </head>
 <body>
+
+ <!-- modal Withdraw -->
+ <div class="modal fade" id="WithDraw">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6">
+              <p> Nama Bank : </p>
+              <p> Nomer Rekening : </p>
+              <p> Point : </p>
+              <p> Bonus : </p>
+              <form action="/action_page.php">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Jumlah" id="Jumlah" readonly>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Withdraw</button>
+              </form>
+            </div>
+            <div class="col-6">
+            <h3> HISTORI WITHDRAW <h3>
+            <table cellspacing="0" class="scroll">
+                                <thead >
+                                <tr>
+                                    <th>Tanggal Pengajuan</th>
+                                    <th>Jumlah</th>
+                                    <th>Status</th>
+                                    <th></th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>12/12/2020</td>
+                                    <td>1.0000.000</td>
+                                    <td><strong>Success</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>12/12/2020</td>
+                                    <td>1.0000.000</td>
+                                    <td><strong>Success</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>12/12/2020</td>
+                                    <td>1.0000.000</td>
+                                    <td><strong>Success</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>12/12/2020</td>
+                                    <td>1.0000.000</td>
+                                    <td><strong>Success</strong></td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+            </div>
+          </div>
+       
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<!-- / Modal withdraw -->
 
 <!-- modal edit product -->
 <div class="modal fade" id="editProduct">
@@ -114,7 +217,8 @@
 
                     <div class="col-9">
                         <p class="txtProfileMerch11">TOKO BUSANAN AQILA</p>
-                        <p class="txtProfileMerch22">ID : 000011</p>
+
+                        <p class="txtProfileMerch22">ID : 000011 | <strong>Verified</strong></p>
 
                     </div>
                 </div>
@@ -173,13 +277,27 @@
                 </div>
                 <!-- iklan -->
                 <div class="col-3">
+                <div class="scrollIklan">
                     <div class="boxIklan">
-                        iklan dari admin Khusus Anggota
+                    iklan dari admin Khusus Anggota
                     </div>
                     </br>
                     <div class="boxIklan">
-                        iklan dari admin Khusus Anggota
+                    iklan dari admin Khusus Anggota
                     </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari admin Khusus Anggota
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari admin Khusus Anggota
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari admin Khusus Anggota
+                    </div>
+                </div>
                 </div>
                 <!-- /iklan -->
                 <!-- /iklan slide show -->
@@ -301,6 +419,13 @@
 
                             <p>Nama Toko : {{ $ukm->merchant_name }}</p>
                             <p>Id Toko : {{ $ukm->id }}</p>
+
+                            <p>Id Anggota : 000011</p>
+                              <p>Followers : </p>
+                              <p>Kode Referal : 000011</p>
+                              <p>Point: </p>
+                              <p>Bonus: <button type="button" class="btn btn-success" data-toggle="modal" data-target="#WithDraw">Withdraw</button></p>
+
                             <p>Alamat Toko : {{ $ukm->address }}</p>
                             <p>Nama Pemilik Toko : {{ $ukm->user->name }}</p>
                             <p>No Tlp / WA: {{ empty($ukm->phone)? 'no.HP belum diinputkan' : $ukm->phone }}</p>
@@ -399,6 +524,11 @@
                                     <label for="email">NO Tlp/WA : </label></br>
                                     <input type="text" class="form-control" id="namaToko" placeholder="000000000000"
                                            value="{{ $ukm->phone }}" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Nama Bank : </label></br>
+                                    <input type="text" class="form-control" id="namaBank"
+                                           placeholder="2323-2323-2323-222" value="" name="debit">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Nomer Rekening : </label></br>

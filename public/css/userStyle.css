@@ -21,6 +21,14 @@ body {
     margin-top: 100px;
     color: rgb(0, 0, 0);
 }
+.imglogoHeader{
+    width: 45px;
+    height: 45px;
+
+}
+.txtLogo{
+    padding-bottom: 15px;
+}
 /*/ header Base*/
 
 /* landing Pages */
@@ -29,7 +37,7 @@ body {
     background-image: url("/assets/images/bgHeader.jpg");
     background-size: 100% 500px;
     background-repeat: no-repeat;
-
+    
     width: 100%;
     height: 500px;
 
@@ -54,6 +62,12 @@ body {
 }
 .txtLdNav {
     color: black;
+}
+.imglogoLanding{
+width: 250px;
+height: 250px;
+margin-top: -18px;
+
 }
 /* / landing pages */
 

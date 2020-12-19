@@ -11,9 +11,88 @@
     <link rel="stylesheet" type="text/css" href="css/userStyle.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+          <style type="text/css">
+		table.scroll {
+			width:100%;
+			border:1px #a9c6c9 solid;
+		}
+		table.scroll thead {
+			display:table;
+			width:100%;
+			background-color: grey;
+		}
+		table.scroll tbody {
+			display:block;
+			height:320px;
+			overflow:auto;
+			float:left;
+			width:100%;
+		}
+		table.scroll tbody tr {
+			display:table;
+			width:100%;
+		}
+		table.scroll th, td {
+			width:25%;
+			padding:8px;
+		}
+	</style>
 </head>
 <body>
+
+ <!-- modal Detail Merchants -->
+ <div class="modal fade" id="detailMerch">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+
+        <form action="/action_page.php">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nama Toko" id="namaToko" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nama Pemilik" id="namaPemilik" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="ID toko" id="IdToko" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="ID Anggota" id="IdAnggota" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Followers" id="Followers" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Kode Referal" id="Refereal" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Point" id="point" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Bonus" id="bonus" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nomer Rekening" id="Rekening" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nama Bank" id="namaBank" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nomer Telepon" id="Tlp" readonly>
+            </div>
+
+        </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<!-- / Modal Detail Merch -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <img src="assets/images/admin.png" class="imgAdmin"> <font color="white" size="4"> | Admin</font>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -207,6 +286,8 @@
                 <th>No</th>
                 <th>Nama Toko</th>
                 <th>ID Toko</th>
+                <th>ID Anggota</th>
+                <th>ID Referal</th>
                 <th>Nama Pemilik Toko</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -218,6 +299,8 @@
                     <td>{{ $index+1 }}</td>
                     <td>{{ $ukm->merchant_name }}</td>
                     <td>{{ $ukm->id }}</td>
+                    <th>ID Anggota</th>
+                    <th>ID Referal</th>
                     <td>{{ $ukm->user->name }}</td>
                     <td>{!!  $ukm->active==1?'<span class="badge-success">Aktif</span>':'<span class="badge-danger">tidak aktif</span>' !!}</td>
                     <td><a href="" class="btn btn-success"> Detail</a> |
