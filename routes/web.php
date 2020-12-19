@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('landingPage');
 });
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/superAdmin', function () {
     return view('/admin/superAdmin');
 });
@@ -50,4 +51,3 @@ Route::group(['middleware' => ['auth','checkRole:ukm']], function() {
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
