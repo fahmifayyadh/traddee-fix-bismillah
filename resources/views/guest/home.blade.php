@@ -108,6 +108,7 @@
                 </div>
                 <!-- iklan -->
                 <div class="col-3">
+
                     @foreach($ads->where('category', 'ads home user') as $usr)
                         <div class="boxIklan">
                             @if(empty($usr->image))
@@ -121,7 +122,6 @@
                         </div>
                         <br>
                     @endforeach
-
                 </div>
                 <!-- /iklan -->
                 <!-- /iklan slide show -->
