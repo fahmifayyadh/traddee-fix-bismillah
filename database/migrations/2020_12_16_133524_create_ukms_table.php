@@ -23,11 +23,11 @@ class CreateUkmsTable extends Migration
             $table->string('city')->nullable();
             $table->string('district')->nullable();
             $table->string('village')->nullable();
-            $table->text('iframe');
+            $table->text('iframe')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('debit')->nullable();
-            $table->boolean('active')->default(1);
+            $table->boolean('active')->default(0);
             $table->timestamps();
         });
     }

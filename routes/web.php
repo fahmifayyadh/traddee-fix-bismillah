@@ -15,17 +15,10 @@ Route::get('/', function () {
     return view('landingPage');
 });
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/superAdmin', function () {
-    return view('/admin/superAdmin');
-});
-Route::group(['middleware' => ['guest']], function(){
-    Route::get('/index', 'guest\GuestController@home');
-    Route::get('/{category}', 'guest\GuestController@category');
-});
 
+Auth::routes(['register' => false]);
 
-Auth::routes();
-
+Route::get('/superAdmin', 'HomeController@superadmin')->name('suadmin.index');
 
 Route::group(['middleware' => ['auth','checkRole:admin']], function(){
     Route::group((['prefix' => 'admins']), function () {
@@ -50,4 +43,9 @@ Route::group(['middleware' => ['auth','checkRole:ukm']], function() {
     });
 });
 
-
+Route::group(['middleware' => ['guest']], function(){
+    Route::get('/index', 'guest\GuestController@home');
+    Route::get('/daftar-toko', 'guest\guestController@daftar')->name('regist.toko');
+    Route::post('/regist-toko', 'guest\GuestController@formRegist')->name('regist.form');
+    Route::get('/{category}', 'guest\GuestController@category');
+});

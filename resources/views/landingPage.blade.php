@@ -62,7 +62,7 @@
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Login') }}
                             </button>
-                            <a href="Regist" class="txtLdNav">Buka Toko</a>
+                            <a href="{{route('regist.toko')}}" class="txtLdNav">Buka Toko</a>
 
 {{--                            @if (Route::has('password.request'))--}}
 {{--                                <a class="btn btn-link" href="{{ route('password.request') }}">--}}

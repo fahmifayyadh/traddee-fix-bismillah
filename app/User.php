@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function ukm(){
         return $this->hasOne('App\Ukm');
     }
+
+    public function bonus(){
+        return $this->hasMany('App\Bonus');
+    }
 }
