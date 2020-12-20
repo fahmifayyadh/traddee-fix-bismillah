@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Harap tunggu. akun akan di-falidasi terlebih dahulu oleh admin.
                 </div>
             </div>
         </div>

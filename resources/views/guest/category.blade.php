@@ -53,7 +53,7 @@
 
             <ul class="nav nav-pills">
                 @foreach($sub as $index=>$suba)
-                    @if($index ==0)
+                    @if($loop->first)
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#{{ $suba->id }}">
                                 <div class="txtSKT">{{ $suba->name }}</div>
@@ -73,7 +73,7 @@
             <div class="tab-content">
                 <!-- olahraga-->
                 @foreach($sub as $index=>$subs)
-                <div id="{{ $subs->id }}" class="container-fluid tab-pane {{ $index==0?'active':'' }}"><br>
+                <div id="{{ $subs->id }}" class="container-fluid tab-pane {{ $loop->first ?'active' : ' ' }}"><br>
                     <div class="row">
                         <div class="col-3">
                             <h3 class="srtKTU"><strong>Sorting</strong></h3>

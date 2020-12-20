@@ -32,7 +32,7 @@
 		table.scroll tbody tr {
 			display:table;
 			width:100%;
-      
+
 		}
 		table.scroll th, td {
 			width:35%;
@@ -105,14 +105,14 @@
                                     <td>1.0000.000</td>
                                     <td><strong>Success</strong></td>
                                 </tr>
-                                
+
                                 </tbody>
                             </table>
             </div>
           </div>
-       
+
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -216,9 +216,9 @@
                     </div>
 
                     <div class="col-9">
-                        <p class="txtProfileMerch11">TOKO BUSANAN AQILA</p>
+                        <p class="txtProfileMerch11">TOKO {{ $ukm->merchant_name}}</p>
 
-                        <p class="txtProfileMerch22">ID : 000011 | <strong>Verified</strong></p>
+                        <p class="txtProfileMerch22">ID : {{ $ukm->id }}  <strong>{{ !empty($ukm->user->email_ferivied_at) ?' |  Verified' : ''}}</strong></p>
 
                     </div>
                 </div>
@@ -345,6 +345,10 @@
                                                      document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
+                                    <form id="logout-form" action="{{ route('logout') }}"
+                                    method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                                 </li>
                             </ul>
                         </div>
