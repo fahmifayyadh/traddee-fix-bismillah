@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth','checkRole:ukm']], function() {
 
 Route::group(['middleware' => ['guest']], function(){
     Route::get('/index', 'guest\GuestController@home');
-    Route::get('/daftar-toko', 'guest\guestController@daftar')->name('regist.toko');
+    Route::get('/daftar-toko', 'guest\GuestController@daftar')->name('regist.toko');
     Route::post('/regist-toko', 'guest\GuestController@formRegist')->name('regist.form');
     Route::get('/{category}', 'guest\GuestController@category');
 });
