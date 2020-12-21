@@ -48,12 +48,12 @@
     </div>
   </nav>
 
- 
+
   <div class="tab-content">
     <div id="bantuan" class="container tab-pane active"><br>
         <div class="card">
             <div class="card-body">
-                Isi Bantuan 
+                Isi Bantuan
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    
+
   </div>
 </div>
 

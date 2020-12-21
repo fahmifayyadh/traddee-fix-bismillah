@@ -15,4 +15,9 @@ class Ukm extends Model
     public function request(){
         return $this->hasMany('App\RequestAds');
     }
+
+    public function product()
+    {
+        return $this->hasMany('App\Product');
+    }
 }
