@@ -47,5 +47,7 @@ Route::group(['middleware' => ['guest']], function(){
     Route::get('/index', 'guest\GuestController@home');
     Route::get('/daftar-toko', 'guest\GuestController@daftar')->name('regist.toko');
     Route::post('/regist-toko', 'guest\GuestController@formRegist')->name('regist.form');
+    Route::get('store/{slug}', 'guest\GuestController@store');
+    Route::get('/bantuan', 'guest\GuestController@help')->name('guest.help');
     Route::get('/{category}', 'guest\GuestController@category');
 });

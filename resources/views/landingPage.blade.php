@@ -139,7 +139,7 @@
                 <div class="col-3">
                     <div class="txtNavLand">
                         <center>
-                            <a href="Bantuan">
+                            <a href="{{route('guest.help')}}">
                                 <img src = 'assets/icon/041-customer service.png' class="imgNavLand  btn btn-light"></br>
                                 <p class="txtLdNav"> Bantuan</p></a>
                         </center>
