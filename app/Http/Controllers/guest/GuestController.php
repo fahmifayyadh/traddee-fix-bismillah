@@ -18,8 +18,8 @@ class GuestController extends Controller
     public function home(){
         $category = Category::all();
         $ads = Ads::all();
-        $store = Ukm::take(20)->get();
-        $rekom = Ukm::orderBy('id', 'desc')->take(8)->get();
+        $store = Ukm::where('active', 1)->take(20)->get();
+        $rekom = Ukm::where('active', 1)->orderBy('id', 'desc')->take(8)->get();
         return view('guest.home')
             ->with('ads', $ads)
             ->with('store', $store)
