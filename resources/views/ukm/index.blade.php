@@ -335,6 +335,9 @@
                                 </li>
                                 <li>
                                     <a class="nav-link" data-toggle="pill" href="#iklan">Ajukan Pemasangan Iklan</a>
+                                <li>
+                                <a class="nav-link" data-toggle="pill" href="#Verif">Verifikasi Toko</a>
+                                </li>
                                 </li>
                                 <li>
                                     <a class="nav-link mr-5" href="/HomePagesUser">Live View</a>
@@ -545,6 +548,43 @@
 
                         </div>
                         <!-- / konten edit informasi toko -->
+
+                                          <!-- konten Verifikasi-->
+                  <div id="Verif" class="container tab-pane fade"><br>
+                    <form action="#">
+                      <div class="form-group">
+                        <label> Masukan Foto KTP : </label></br>  
+                        <input type="file" class="form-control-file border mt-2" id="bannerProfile">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Ajukan</button>
+                    </form>
+
+                  </div>
+                  <!-- / konten Verifikasi-->
+                                          <!-- konten pasang iklan-->
+                  <div id="iklan" class="container tab-pane fade"><br>
+                    <div class="card">
+                      <div class="card-body">
+                        <h3>Iklan Terdaftar</h3><hr/>
+                        <p>tidak ada iklan terdaftar</p>
+                      </div>
+                    </div></br>
+                    <form action="#">
+                      <div class="form-group">
+                        <label>input Iklan : </label></br>
+                      <input type="file" class="form-control-file border mr-2" id="fotoProfile">
+                      </div>
+                      <div class="form-group">
+                        <label> Input Iklan : </label></br>  
+                        <input type="file" class="form-control-file border mt-2" id="bannerProfile">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Ajukan</button>
+                    </form>
+
+                  </div>
+                  <!-- / konten pasang iklan-->
+                </div>
+                <!-- /konten -->
 
 
                         <!-- konten pasang iklan-->

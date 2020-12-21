@@ -31,7 +31,6 @@
             float: left;
             width: 100%;
         }
-
         table.scroll tbody tr {
             display: table;
             width: 100%;
@@ -39,7 +38,7 @@
 
         table.scroll th,
         td {
-            width: 25%;
+            width: 20%;
             padding: 8px;
         }
 
@@ -256,6 +255,7 @@
             </div>
         </div>
         </br>
+
         <hr />
         <div class="card">
             <div class="card-body">
