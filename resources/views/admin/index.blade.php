@@ -278,7 +278,7 @@
         <form class="form-inline" action="" method="get">
             {{--            @csrf--}}
             <p><input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Cari Toko">
-            <button class="btn btn-success" type="submit">Search</button> <a href="/daftar-toko"><button type="button" class="btn btn-primary" >Tambah Toko</button></a></p>
+            <button class="btn btn-success" type="submit">Search</button> <a href="{{route('regist.toko')}}"><button type="button" class="btn btn-primary" >Tambah Toko</button></a></p>
         </form>
         </br>
         <table class="table table-dark">

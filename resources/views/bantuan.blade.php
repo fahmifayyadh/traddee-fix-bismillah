@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-sm-3">
            
-                <a class="txtLogo" href="/"><img src = 'assets/images/logo.png' class="imglogoHeader"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
+                <a class="txtLogo" href="{{ url('/index') }}"><img src = 'assets/images/logo.png' class="imglogoHeader"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
             </div>
         </div>
     </div>
