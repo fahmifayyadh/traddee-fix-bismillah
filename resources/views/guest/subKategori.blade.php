@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@yield('title')</title>
+    <title>Sub Kategori Makanan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -10,7 +10,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/userStyle.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+    <style type="text/css">
+    .scrollIklan{
+     display:block;
+     border: 0px solid red;
+     width:300px;
+     height:320px;
+     overflow:auto;
+    }
+	</style>
 
 </head>
 <body>
@@ -34,7 +42,7 @@
 </div>
 <!-- / Modal chat -->
 <!-- modal barang -->
-{{-- <div class="modal fade" id="myModalbarang">
+<div class="modal fade" id="myModalbarang">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
@@ -101,7 +109,7 @@
 
         </div>
     </div>
-</div> --}}
+</div>
 <!-- / Modal barang -->
 
 
@@ -131,7 +139,96 @@
 <!-- /header -->
 
 
-@yield('content')
+
+<div class="boxKategoriMakanan">
+      <div class="textKategori">
+        Rumah Makan
+      </div>
+</div>  
+
+</br>
+</br>
+<div class="boxmainkt">
+
+<div class="container-fluid"></br>
+    <h3 class="TxtH">Rekomendasi Rumah Makan</h3>
+          <hr/>
+              <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-3">
+                    <center>
+                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang"  ></br>
+                      <p class="txtTokoMain"> Toko A</p>
+                    </center>
+                    </div>
+
+                    <div class="col-3">
+                    <center>
+                      <img src = 'assets/images/iklan1.jpg' id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
+                      <p class="txtTokoMain"> Toko A</p>
+                    </center>
+                    </div>
+
+                    <div class="col-3">
+                    <center>
+                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
+                      <p class="txtTokoMain"> Toko A</p>
+                    </center>
+                    </div>
+
+                    <div class="col-3">
+                    <center>
+                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
+                      <p class="txtTokoMain"> Toko A</p>
+                    </center>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                    <center>
+                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
+                    <p class="txtTokoMain"> Toko A</p>
+                    </center>
+                    </div>
+
+                    <div class="col-3">
+                    <center>
+                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
+                      <p class="txtTokoMain"> Toko A</p>
+                    </center>
+                    </div>
+
+                    <div class="col-3">
+                    <center>
+                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
+                      <p class="txtTokoMain"> Toko A</p>
+                    </center>
+                    </div>
+
+                    <div class="col-3">
+                    <center>
+                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
+                      <p class="txtTokoMain"> Toko A</p>
+                    </center>
+                    </div>
+                </div>
+            </div>
+<!-- /rekomendasi -->
+
+</div>
+</br>
+</br>
+
+</br>
+</br>
+</br>
+</br>
+
+
+
+
 
 <center><p id="footer">Kisah Kreatif | Copyright 2020 © All Rights Reserved</p></center>
 
