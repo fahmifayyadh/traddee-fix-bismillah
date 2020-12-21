@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('landingPage');
 });
+Route::get('/subkategori', function () {
+    return view('/guest/subkategori');
+});
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes(['register' => false]);

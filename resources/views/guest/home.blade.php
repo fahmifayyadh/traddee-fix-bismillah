@@ -108,8 +108,30 @@
                 </div>
                 <!-- iklan -->
                 <div class="col-3">
+                
+                <div class="scrollIklan">
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                </div>
 
-                    @foreach($ads->where('category', 'ads home user') as $usr)
+                    <!-- @foreach($ads->where('category', 'ads home user') as $usr)
                         <div class="boxIklan">
                             @if(empty($usr->image))
                                 <img src="{{ asset('assets/images/empty.jpg') }}" alt=""
@@ -121,7 +143,7 @@
                             {{--                        <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label>--}}
                         </div>
                         <br>
-                    @endforeach
+                    @endforeach -->
                 </div>
                 <!-- /iklan -->
                 <!-- /iklan slide show -->

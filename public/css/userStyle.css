@@ -278,6 +278,13 @@ margin-top: -18px;
     width: 100%;
     height: 324px;
 }
+.scrollIklan{
+    display:block;
+    border: 0px solid red;
+    width:300px;
+    height:320px;
+    overflow:auto;
+}
 /* / homepages */
 
 /* kategori */
@@ -472,6 +479,13 @@ margin-top: -18px;
         height: 80px;
         background-color: rgb(142, 81, 2);
         padding-left: -10px;
+    }
+    .scrollIklan{
+        display:block;
+        border: 0px solid rgb(0, 0, 0);
+        width:100%;
+        height:180px;
+        overflow:auto;
     }
     .h1PopUser {
         font-size: 20px;
@@ -833,6 +847,13 @@ margin-top: -18px;
         height: 50px;
         background-color: rgb(142, 81, 2);
         padding-left: -10px;
+    }
+    .scrollIklan{
+        display:block;
+        border: 0px solid rgb(0, 0, 0);
+        width:100%;
+        height:130px;
+        overflow:auto;
     }
     .h1PopUser {
         font-size: 20px;
@@ -1223,6 +1244,13 @@ margin-top: -18px;
         height: 50px;
         background-color: rgb(142, 81, 2);
         padding-left: -10px;
+    }
+    .scrollIklan{
+        display:block;
+        border: 0px solid rgb(0, 0, 0);
+        width:100%;
+        height:122px;
+        overflow:auto;
     }
     .h1PopUser {
         font-size: 20px;
