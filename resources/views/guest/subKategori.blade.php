@@ -149,9 +149,56 @@
 </br>
 </br>
 <div class="boxmainkt">
-
 <div class="container-fluid"></br>
-    <h3 class="TxtH">Rekomendasi Rumah Makan</h3>
+
+<div class="row">
+<div class="col-3">
+
+
+                            <h3 class="srtKTU"><strong>Sorting</strong></h3>
+                            <hr/>
+                            <div class="srtKTSU"><strong>Lokasi</strong></div>
+                            <form><label class="srtKT">Provinsi</label>
+                                <select name="provinsi" class="custom-select">
+                                    <option selected class="srtSKT"> Jawa Barat</option>
+                                    <option class="srtSKT">Jawa Tengah</option>
+                                    <option class="srtSKT">Jawa Timur</option>
+                                </select>
+                            </form>
+
+                            <form><label class="srtKT">Kota</label>
+                                <select name="kota" class="custom-select">
+                                    <option selected class="srtSKT">Kota Bekasi</option>
+                                    <option class="srtSKT">Kab Bekasi</option>
+                                    <option class="srtSKT">Kota Bandung</option>
+                                </select>
+                            </form>
+
+                            <form><label class="srtKT">Kecamatan</label>
+                                <select name="kecamatan" class="custom-select">
+                                    <option selected class="srtSKT">Bekasi Timur</option>
+                                    <option class="srtSKT">Mustika Jaya</option>
+                                    <option class="srtSKT">Pekayon</option>
+                                </select>
+                            </form>
+                            </br>
+
+                            <div class="srtKT"><strong>Berdasarkan Huruf</strong></div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" value="">A-H
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" value="">I-Z
+                                </label>
+                            </div>
+
+</div>
+
+<div class="col-6">
+<h3 class="TxtH">Rekomendasi Rumah Makan</h3>
           <hr/>
               <div class="container-fluid">
 
@@ -214,9 +261,10 @@
                     </center>
                     </div>
                 </div>
-            </div>
-<!-- /rekomendasi -->
+</div>
+</div>
 
+</div>
 </div>
 </br>
 </br>
