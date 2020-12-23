@@ -108,7 +108,7 @@
     <div class="container">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3">
+                <div class="col-4">
                     <div class="txtNavLand">
                         <center><a href="#">
                                 <img src = 'assets/icon/013-shop.png' class="imgNavLand btn btn-light" data-toggle="modal" data-target="#login" ></br>
@@ -118,7 +118,7 @@
                     </div>
                 </div>
 
-                <div class="col-3">
+                <div class="col-4">
                     <div class="txtNavLand">
                         <center>
                             <img src = 'assets/icon/023-online store.png' class="imgNavLand  btn btn-light"></br>
@@ -127,21 +127,13 @@
                     </div>
                 </div>
 
-                <div class="col-3">
-                    <div class="txtNavLand">
-                        <center>
-                            <img src = 'assets/icon/045-website.png'class="imgNavLand  btn btn-light"></br>
-                            Tentang Kami
-                        </center>
-                    </div>
-                </div>
 
-                <div class="col-3">
+                <div class="col-4">
                     <div class="txtNavLand">
                         <center>
                             <a href="{{route('guest.help')}}">
                                 <img src = 'assets/icon/041-customer service.png' class="imgNavLand  btn btn-light"></br>
-                                <p class="txtLdNav"> Bantuan</p></a>
+                                <p class="txtLdNav"> Tentang Kami</p></a>
                         </center>
                     </div>
                 </div>

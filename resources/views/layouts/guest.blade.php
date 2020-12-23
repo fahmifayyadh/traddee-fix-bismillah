@@ -14,6 +14,74 @@
 
 </head>
 <body>
+
+<!-- The Modal Main -->
+<div class="modal fade" id="login">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h1>Login</h1>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Login') }}
+                            </button>
+                            <a href="{{route('regist.toko')}}" class="txtLdNav">Buka Toko</a>
+
+{{--                            @if (Route::has('password.request'))--}}
+{{--                                <a class="btn btn-link" href="{{ route('password.request') }}">--}}
+{{--                                    {{ __('Forgot Your Password?') }}--}}
+{{--                                </a>--}}
+{{--                            @endif--}}
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
 <!-- Tmodal Chat -->
 <div class="modal fade" id="modalChat">
     <div class="modal-dialog modal-xl">
@@ -111,10 +179,10 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-3">
                 <a class="txtLogo" href="{{ url('/index') }}"><img src = 'assets/images/logo.png' class="imglogoHeader"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-6">
                     <form class="form" action="">
                         <div class="input-group mb-3" id="Src">
                             <input type="text" class="form-control" placeholder="Cari Toko di Traddee">
@@ -123,6 +191,9 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="col-3">
+                <a href=/bantuan class="btn btn-link">Bantuan</a> <a href="/bantuan" class="btn btn-link disabled">Download APK</a> <a data-toggle="modal" data-target="#login" class="btn btn-warning btn-end">Login</a>
                 </div>
             </div>
         </div>
