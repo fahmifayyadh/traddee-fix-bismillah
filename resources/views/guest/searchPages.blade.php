@@ -26,23 +26,24 @@
                                     <option class="srtSKT">Jawa Tengah</option>
                                     <option class="srtSKT">Jawa Timur</option>
                                 </select>
-                            </form>
+                            
 
-                            <form><label class="srtKT">Kota</label>
+                            <label class="srtKT">Kota</label>
                                 <select name="kota" class="custom-select">
                                     <option selected class="srtSKT">Kota Bekasi</option>
                                     <option class="srtSKT">Kab Bekasi</option>
                                     <option class="srtSKT">Kota Bandung</option>
                                 </select>
-                            </form>
+                            
 
-                            <form><label class="srtKT">Kecamatan - Kelurahan</label>
+                            <label class="srtKT">Kecamatan - Kelurahan</label>
                                 <select name="kecamatan" class="custom-select">
                                     <option selected class="srtSKT">Bekasi Timur</option>
                                     <option class="srtSKT">Mustika Jaya</option>
                                     <option class="srtSKT">Pekayon</option>
                                 </select>
-                            </form>
+
+
                             </br>
                             </br>
 
@@ -57,6 +58,9 @@
                                     <input type="radio" class="form-check-input" value="">I-Z
                                 </label>
                             </div>
+                            </br>
+                            <button type="button" class="btn btn-success" >Sorting</button>                                
+                            </form>
 
 </div>
 
