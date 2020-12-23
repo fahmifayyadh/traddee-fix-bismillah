@@ -9,7 +9,6 @@ use App\Ukm;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Product;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -19,8 +18,8 @@ class GuestController extends Controller
     public function home(){
         $category = Category::all();
         $ads = Ads::all();
-        $store = Ukm::where('active', 1)->orderBy('id', 'desc')->take(12)->get();
-        $rekom = Product::where('available', 1)->orderBy('created_at', 'desc')->take(12)->get();
+        $store = Ukm::take(20)->get();
+        $rekom = Ukm::orderBy('id', 'desc')->take(8)->get();
         return view('guest.home')
             ->with('ads', $ads)
             ->with('store', $store)

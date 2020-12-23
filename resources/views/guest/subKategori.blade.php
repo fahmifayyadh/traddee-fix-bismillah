@@ -182,6 +182,14 @@
                                 </select>
                             </form>
                             </br>
+                            <form><label class="srtKT">Keluharan</label>
+                                <select name="kecamatan" class="custom-select">
+                                    <option selected class="srtSKT">mustikasari</option>
+                                    <option class="srtSKT">narogong</option>
+                                    <option class="srtSKT">jatimulya</option>
+                                </select>
+                            </form>
+                            </br>
 
                             <div class="srtKT"><strong>Berdasarkan Huruf</strong></div>
                             <div class="form-check">
@@ -203,65 +211,16 @@
               <div class="container-fluid">
 
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-4">
                     <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang"  ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg' id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
+                      <img src = 'assets/images/iklan1.jpg'  id="imgSKT" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang"  ></br>
+                      <p class="txtSKT"> Toko A</p>
                     </center>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-3">
-                    <center>
-                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                    <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
+               
                 </div>
-</div>
 </div>
 
 </div>

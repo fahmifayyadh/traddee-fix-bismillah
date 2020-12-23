@@ -206,18 +206,18 @@
                             @foreach($rekom as $toko)
                                 <div class="col-3">
                                     <center>
-                                        @if(empty($toko->productImage->image))
+                                        @if(empty($toko->image))
                                             <img src='assets/images/iklan1.jpg' id="imgTokoMain"
                                                  class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang{{$toko->id}}">
+                                                 data-target="#myModalbarang">
                                         @else
-                                            <img src='{{ asset(Storage::url($toko->productImage->image->first()))}}' id="imgTokoMain"
+                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
                                                  class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang{{$toko->id}}">
+                                                 data-target="#myModalbarang">
                                         @endif
 
                                         {{--                                            </br>--}}
-                                        <p class="txtTokoMain"> {{ $toko->name }}</p>
+                                        <p class="txtTokoMain"> {{ $toko->merchant_name }}</p>
                                     </center>
                                 </div>
 
