@@ -1,7 +1,6 @@
 @extends('layouts.guest')
-@section('title', 'SUB KATEGORI | Barang | Traddee.com')
+@section('title', 'SEARCH | Traddee.com')
 @section('content')
-
 
 
 
@@ -62,7 +61,7 @@
 </div>
 
 <div class="col-6">
-            <h3 class="srtKTSU">Kategori :  <button type="button" class="btn btn-outline-dark" disabled>Makanan</button> <button type="button" class="btn btn-outline-dark" disabled>Rumah Makan</button></h3>
+            <h3 class="srtKTSU">Hasil Pencarian :  <button type="button" class="btn btn-outline-dark" disabled>Toko</button> <button type="button" class="btn btn-outline-dark" disabled>Toko Busana Aqila</button></h3>
             <h3 class="srtKTSU">Hasil Sorting : <button type="button" class="btn btn-outline-primary" disabled>Jakarta</button> <button type="button" class="btn btn-outline-primary" disabled>Jakarta Barat</button> <button type="button" class="btn btn-outline-primary" disabled>Kecamatan - Kelurahan</button> <button type="button" class="btn btn-outline-danger" disabled>A-H</button></h3>
           <hr/>
               <div class="container-fluid">
@@ -75,16 +74,13 @@
                     </center>
                     </div>
                 </div>
-
-               
                 </div>
 </div>
 
 </div>
 </div>
-
+</br>
+</br>
 
 
 @endsection
-
-

@@ -549,8 +549,14 @@
                         </div>
                         <!-- / konten edit informasi toko -->
 
-                                          <!-- konten Verifikasi-->
+                    <!-- konten Verifikasi-->
                   <div id="Verif" class="container tab-pane fade"><br>
+                    <div class="alert alert-primary">
+                        <strong>Success !</strong> akun anda berhasil di verifikasi.
+                    </div>
+                    <div class="alert alert-danger">
+                        <strong>Failed !</strong> akun anda gagal di verifikasi, coba lagi!.
+                    </div>
                     <form action="#">
                       <div class="form-group">
                         <label> Masukan Foto KTP : </label></br>  
