@@ -263,35 +263,35 @@
                 <td>0000011</td>
                 <td>0000011</td>
                 <td>1223233</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#detailMerch" >Tolak</button></td>
             </tr>
             <tr>
                 <td>Toko A</td>
                 <td>0000011</td>
                 <td>0000011</td>
                 <td>1223233</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#detailMerch" >Tolak</button></td>
             </tr>
             <tr>
                 <td>Toko A</td>
                 <td>0000011</td>
                 <td>0000011</td>
                 <td>1223233</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#detailMerch" >Tolak</button></td>
             </tr>
             <tr>
                 <td>Toko A</td>
                 <td>0000011</td>
                 <td>0000011</td>
                 <td>1223233</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#detailMerch" >Tolak</button></td>
             </tr>
             <tr>
                 <td>Toko A</td>
                 <td>0000011</td>
                 <td>0000011</td>
                 <td>1223233</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button></td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailMerch" >Verifikasi</button> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#detailMerch" >Tolak</button></td>
             </tr>
 
             

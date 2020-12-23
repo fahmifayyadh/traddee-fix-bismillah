@@ -609,57 +609,112 @@
 
         <div class="card">
             <div class="container-fluid"><br/>
-                <h3> Edit Banner User</h3>
+                <h3> Buat Banner User</h3>
                 <hr/>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/bgheader1.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser1">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/bgheader2.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser2">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
-                    </div>
-                    <div class="col-4">
-                        <img src="assets/images/bgheader3.jpg" width="100%" height="100px">
-                        <center>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="file" class="form-control" id="ssUser3">
-                                </div>
-                            </form>
-                            <a href="/Profilemerchants">
-                                <button type="" class="btn bg-primary btn-block "><font color="white">Ganti</font>
-                                </button>
-                            </a>
-                        </center>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form action="proses.php" method="POST">
+                        <div class="control-group after-add-more">
+
+                            <label>Masukan Gambar</label>
+                            <input type="file" name="gambar" class="form-control"></br>
+
+                            <button class="btn btn-success add-more" type="button">
+                            <i class="glyphicon glyphicon-plus"></i> Add
+                            </button>
+
+                            <hr>
+
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                        </form>
+
+                        <div class="copy invisible">
+                            <div class="control-group">
+                                <label>Masukan Gambar</label>
+                                <input type="file" name="gambar" class="form-control"></br>
+                                <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+
+                                <hr>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         </br>
+               
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $(".add-more").click(function(){ 
+                var html = $(".copy").html();
+                $(".after-add-more").after(html);
+            });
+            $("body").on("click",".remove",function(){ 
+                $(this).parents(".control-group").remove();
+            });
+            });
+        </script>
+
+        <div class="card">
+            <div class="container-fluid"><br/>
+            <h3> Buat Banner kategori</h3>
+            <hr/>
+            <div class="card-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form action="#" method="POST">
+                        <div class="control-group after-add-mores">
+
+                            <label>Masukan Nama</label>
+                            <input type="text" name="Nama" class="form-control">
+
+                            <label>Masukan Gambar</label>
+                            <input type="file" name="gambar" class="form-control"></br>
+
+                            <button class="btn btn-success add-mores" type="button">
+                            <i class="glyphicon glyphicon-plus"></i> Add
+                            </button>
+
+                            <hr>
+
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                        </form>
+
+                        <div class="copyk invisible">
+                            <div class="control-group">
+                                <label>Masukan Nama</label>
+                                <input type="text" name="Nama" class="form-control">
+
+                                <label>Masukan Gambar</label>
+                                <input type="file" name="gambar" class="form-control"></br>
+                                <button class="btn btn-danger removes" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </br>
+               
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $(".add-mores").click(function(){ 
+                var html = $(".copyk").html();
+                $(".after-add-mores").after(html);
+            });
+            $("body").on("click",".removes",function(){ 
+                $(this).parents(".control-group").remove();
+            });
+            });
+        </script>
 
         <div class="card">
             <div class="container-fluid"><br/>

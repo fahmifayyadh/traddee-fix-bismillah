@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/subkategori', function () {
     return view('/guest/subkategori');
 });
+Route::get('/search', function () {
+    return view('/guest/searchPages');
+});
 Route::get('/bantuan', function () {
     return view('/bantuan');
 });

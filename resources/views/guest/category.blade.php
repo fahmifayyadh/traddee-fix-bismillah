@@ -41,11 +41,83 @@
         </div>
         <!-- / ketogori lainnya -->
         </br>
+        <!-- new sub kategori -->
+        <div class="container-fluid">
+            <h3>Sub Kategori</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                        <a type="button" class="btn btn-outline-dark" href="{{ url('/subkategori') }}">Rumah Makan</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- / new sub kategori -->
         </br>
+        <!-- new List -->
+        <div class="container-fluid">
+        <h3>Yang berhubungan dengan Kategori ini</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2">
+                        <center>
+                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                                <p class="txtTokoKT"> Toko A</p>
+                        </center>
+                        </div>
+                        <div class="col-2">
+                        <center>
+                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                                <p class="txtTokoKT"> Toko A</p>
+                        </center>
+                        </div>
+                        <div class="col-2">
+                        <center>
+                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                                <p class="txtTokoKT"> Toko A</p>
+                        </center>
+                        </div>
+                        <div class="col-2">
+                        <center>
+                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                                <p class="txtTokoKT"> Toko A</p>
+                        </center>
+                        </div>
+                        <div class="col-2">
+                        <center>
+                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                                <p class="txtTokoKT"> Toko A</p>
+                        </center>
+                        </div>
+                        <div class="col-2">
+                        <center>
+                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                                <p class="txtTokoKT"> Toko A</p>
+                        </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /new list -->
+
+
+
+
+
+
+
+
         <!-- sub katergori -->
 
         <!-- Nav sub kategori -->
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <h2>Sub Kategori</h2>
 
             <br>
@@ -70,11 +142,11 @@
                     @endif
                 @endforeach
             </ul>
-            <hr/>
+            <hr/> -->
             <!-- panel sub kategori -->
-            <div class="tab-content">
+            <!-- <div class="tab-content"> -->
                 <!-- olahraga-->
-                @foreach($sub as $index=>$subs)
+                <!-- @foreach($sub as $index=>$subs)
                 <div id="{{ $subs->id }}" class="container-fluid tab-pane {{ $loop->first ?'active' : ' ' }}"><br>
                     <div class="row">
                         <div class="col-3">
@@ -139,21 +211,21 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @endforeach -->
                 <!-- /olahraga-->
 
-            </div>
+            <!-- </div> -->
             <!-- panel sub kategori -->
-        </div>
+        <!-- </div> -->
         <!-- / nav sub kategori -->
         <!-- / sub kategori -->
-        </br>
+        <!-- </br>
         </br>
     </div>
     </br>
     </br>
     </br>
-    </br>
+    </br> -->
 
 
 

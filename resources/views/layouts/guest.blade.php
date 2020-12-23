@@ -182,16 +182,26 @@
                 <div class="col-sm-3">
                 <a class="txtLogo" href="{{ url('/index') }}"><img src = "{{ asset('assets/images/logo.png') }}" class="imglogoHeader"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
                 </div>
+
                 <div class="col-6">
                     <form class="form" action="">
-                        <div class="input-group mb-3" id="Src">
-                            <input type="text" class="form-control" placeholder="Cari Toko di Traddee">
-                            <div class="input-group-append">
-                                <span class="btn bg-warning">Search</span>
+                            <div class="input-group mb-3">
+                                <div class="input-group-append mr-1">
+                                    <select class="form-control" name="sortSearch">
+                                        <option>Toko</option>
+                                        <option>Barang</option>
+                                    </select>
+                                </div>
+
+                                <input type="text" class="form-control" placeholder="Username" name="search">
+                                
+                                <div class="input-group-append">
+                                    <span class="btn bg-warning" type="submit" name="submit">Search</span>
+                                </div>
                             </div>
-                        </div>
                     </form>
                 </div>
+
                 <div class="col-3">
                 <a href=/bantuan class="btn btn-link">Bantuan</a> <a href="/bantuan" class="btn btn-link disabled">Download APK</a> <a data-toggle="modal" data-target="#login" class="btn btn-warning btn-end">Login</a>
                 </div>
