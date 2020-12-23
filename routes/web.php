@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landingPage');
-});
+Route::get('/', 'guest\GuestController@home');
+
 Route::get('/subkategori', function () {
     return view('/guest/subkategori');
 });
@@ -56,8 +55,9 @@ Route::group(['middleware' => ['auth','checkRole:ukm']], function() {
 });
 
 Route::group(['middleware' => ['guest']], function(){
-    Route::get('/index', 'guest\GuestController@home');
+    Route::get('/merchant/{slug}', 'guest\GuestController@store');
     Route::get('/daftar-toko', 'guest\GuestController@daftar')->name('regist.toko');
     Route::post('/regist-toko', 'guest\GuestController@formRegist')->name('regist.form');
+    Route::get('/{category}/{subcategory}', 'guest\GuestController@subCategory');
     Route::get('/{category}', 'guest\GuestController@category');
 });

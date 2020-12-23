@@ -23,12 +23,12 @@
                     <div class="container-fluid">
                         <div class="row">
 
-                            @foreach($category as $ctgr)
+                            @foreach($category as $ctgry)
                                 <div class="col-3">
                                     <center>
-                                        <a href="{{ url('/'.$ctgr->slug) }}">
+                                        <a href="{{ url('/'.$ctgry->slug) }}">
                                             <img src='assets/icon/013-shop.png' class="imgKT"></br>
-                                            <div class="txtKT">{{ $ctgr->name }}</div>
+                                            <div class="txtKT">{{ $ctgry->name }}</div>
                                         </a>
                                     </center>
                                 </div>
@@ -48,9 +48,9 @@
                 <div class="card-body">
                     <div class="container-fluid">
                         <div class="row">
-
-                        <a type="button" class="btn btn-outline-dark" href="{{ url('/subkategori') }}">Rumah Makan</a>
-
+                            @foreach($sub as $index=>$subctgr)
+                                <a type="button" class="btn btn-outline-dark mr-2" href="{{ url('/'.$ctgr->slug.'/'.$subctgr->slug) }}">{{ $subctgr->name }}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -61,45 +61,51 @@
         </br>
         <!-- new List -->
         <div class="container-fluid">
-        <h3>Yang berhubungan dengan Kategori ini</h3>
+            <h3>Yang berhubungan dengan Kategori ini</h3>
             <div class="card">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-2">
-                        <center>
-                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                            <center>
+                                <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
+                                     data-toggle="modal" data-target="#myModalbarang"></br>
                                 <p class="txtTokoKT"> Toko A</p>
-                        </center>
+                            </center>
                         </div>
                         <div class="col-2">
-                        <center>
-                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                            <center>
+                                <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
+                                     data-toggle="modal" data-target="#myModalbarang"></br>
                                 <p class="txtTokoKT"> Toko A</p>
-                        </center>
+                            </center>
                         </div>
                         <div class="col-2">
-                        <center>
-                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                            <center>
+                                <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
+                                     data-toggle="modal" data-target="#myModalbarang"></br>
                                 <p class="txtTokoKT"> Toko A</p>
-                        </center>
+                            </center>
                         </div>
                         <div class="col-2">
-                        <center>
-                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                            <center>
+                                <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
+                                     data-toggle="modal" data-target="#myModalbarang"></br>
                                 <p class="txtTokoKT"> Toko A</p>
-                        </center>
+                            </center>
                         </div>
                         <div class="col-2">
-                        <center>
-                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                            <center>
+                                <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
+                                     data-toggle="modal" data-target="#myModalbarang"></br>
                                 <p class="txtTokoKT"> Toko A</p>
-                        </center>
+                            </center>
                         </div>
                         <div class="col-2">
-                        <center>
-                            <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"data-toggle="modal" data-target="#myModalbarang"></br>
+                            <center>
+                                <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
+                                     data-toggle="modal" data-target="#myModalbarang"></br>
                                 <p class="txtTokoKT"> Toko A</p>
-                        </center>
+                            </center>
                         </div>
                     </div>
                 </div>
@@ -108,16 +114,10 @@
         <!-- /new list -->
 
 
-
-
-
-
-
-
         <!-- sub katergori -->
 
         <!-- Nav sub kategori -->
-        <!-- <div class="container-fluid">
+    <!-- <div class="container-fluid">
             <h2>Sub Kategori</h2>
 
             <br>
@@ -127,27 +127,27 @@
 
             <ul class="nav nav-pills">
                 @foreach($sub as $index=>$suba)
-                    @if($loop->first)
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#{{ $suba->id }}">
+        @if($loop->first)
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#{{ $suba->id }}">
                                 <div class="txtSKT">{{ $suba->name }}</div>
                             </a>
                         </li>
                     @else
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#{{ $suba->id }}">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#{{ $suba->id }}">
                                 <div class="txtSKT">{{ $suba->name }}</div>
                             </a>
                         </li>
                     @endif
-                @endforeach
-            </ul>
-            <hr/> -->
-            <!-- panel sub kategori -->
-            <!-- <div class="tab-content"> -->
-                <!-- olahraga-->
-                <!-- @foreach($sub as $index=>$subs)
-                <div id="{{ $subs->id }}" class="container-fluid tab-pane {{ $loop->first ?'active' : ' ' }}"><br>
+    @endforeach
+        </ul>
+        <hr/> -->
+        <!-- panel sub kategori -->
+        <!-- <div class="tab-content"> -->
+        <!-- olahraga-->
+    <!-- @foreach($sub as $index=>$subs)
+        <div id="{{ $subs->id }}" class="container-fluid tab-pane {{ $loop->first ?'active' : ' ' }}"><br>
                     <div class="row">
                         <div class="col-3">
                             <h3 class="srtKTU"><strong>Sorting</strong></h3>
@@ -196,26 +196,26 @@
 
                             <div class="row">
                                 @forelse($subs->product as $products)
-                                <div class="col-3">
-                                    <center>
-                                        <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
-                                             data-toggle="modal" data-target="#myModalbarang"></br>
-                                        <p class="txtTokoKT"> Toko A</p>
-                                    </center>
-                                </div>
-                                    @empty
-                                    <p>Tidak ada data di kategori ini.</p>
-                                @endforelse
+            <div class="col-3">
+                <center>
+                    <img src='assets/images/iklan1.jpg' id="imgTokoKT" class="btn btn-light"
+                         data-toggle="modal" data-target="#myModalbarang"></br>
+                    <p class="txtTokoKT"> Toko A</p>
+                </center>
+            </div>
+@empty
+            <p>Tidak ada data di kategori ini.</p>
+@endforelse
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach -->
-                <!-- /olahraga-->
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach -->
+        <!-- /olahraga-->
 
-            <!-- </div> -->
-            <!-- panel sub kategori -->
+        <!-- </div> -->
+        <!-- panel sub kategori -->
         <!-- </div> -->
         <!-- / nav sub kategori -->
         <!-- / sub kategori -->

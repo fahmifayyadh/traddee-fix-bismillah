@@ -15,4 +15,8 @@ class Product extends Model
     public function subCategory(){
         return $this->belongsTo('App\SubCategory', 'subCategory_id');
     }
+
+    public function ukm(){
+        return $this->belongsTo('App\Ukm', 'ukm_id');
+    }
 }

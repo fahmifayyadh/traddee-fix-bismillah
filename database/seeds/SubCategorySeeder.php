@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\SubCategory;
+use Illuminate\Support\Str;
 
 class SubCategorySeeder extends Seeder
 {
@@ -25,49 +26,57 @@ class SubCategorySeeder extends Seeder
         foreach ($makanan as $index=>$ctgr){
             SubCategory::create([
                 'category_id' => 1,
-                'name' => $makanan[$index]
+                'name' => $makanan[$index],
+                'slug' => Str::slug($makanan[$index]),
             ]);
         }
         foreach ($produsen as $index=>$ctgr){
             SubCategory::create([
                 'category_id' => 2,
-                'name' => $produsen[$index]
+                'name' => $produsen[$index],
+                'slug' =>  Str::slug($produsen[$index])
             ]);
         }
         foreach ($store as $index=>$ctgr){
             SubCategory::create([
                 'category_id' => 3,
-                'name' => $store[$index]
+                'name' => $store[$index],
+                'slug' => Str::slug($store[$index])
             ]);
         }
         foreach ($inap as $index=>$ctgr){
             SubCategory::create([
                 'category_id' => 4,
-                'name' => $inap[$index]
+                'name' => $inap[$index],
+                'slug' => Str::slug($inap[$index]),
             ]);
         }
         foreach ($barang as $index=>$ctgr){
             SubCategory::create([
                 'category_id' => 5,
-                'name' => $barang[$index]
+                'name' => $barang[$index],
+                'slug' => Str::slug($barang[$index])
             ]);
         }
         foreach ($jasa as $index=>$ctgr){
             SubCategory::create([
                 'category_id' => 6,
-                'name' => $jasa[$index]
+                'name' => $jasa[$index],
+                'slug' => Str::slug($jasa[$index])
             ]);
         }
         foreach ($properti as $index=>$ctgr){
             SubCategory::create([
                 'category_id' => 7,
-                'name' => $properti[$index]
+                'name' => $properti[$index],
+                'slug' => Str::slug($properti[$index])
             ]);
         }
         foreach ($bumi as $index=>$ctgr){
             SubCategory::create([
                 'category_id' => 8,
-                'name' => $bumi[$index]
+                'name' => $bumi[$index],
+                'slug' => Str::slug($bumi[$index])
             ]);
         }
     }
