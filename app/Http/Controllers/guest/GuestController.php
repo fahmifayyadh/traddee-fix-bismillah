@@ -9,7 +9,6 @@ use App\Ukm;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Product;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -19,8 +18,8 @@ class GuestController extends Controller
     public function home(){
         $category = Category::all();
         $ads = Ads::all();
-        $store = Ukm::where('active', 1)->orderBy('id', 'desc')->take(12)->get();
-        $rekom = Product::where('available', 1)->orderBy('created_at', 'desc')->take(12)->get();
+        $store = Ukm::take(20)->get();
+        $rekom = Ukm::orderBy('id', 'desc')->take(8)->get();
         return view('guest.home')
             ->with('ads', $ads)
             ->with('store', $store)
@@ -75,18 +74,5 @@ class GuestController extends Controller
         // DB::commit();
         Session::flash('success', 'registrasi sukses. silahkan tunggu admin untuk verifikasi, notifikasi akan dikirim melalui email');
         return redirect()->back();
-    }
-
-    public function help()
-    {
-        return view('guest.bantuan');
-    }
-
-    public function store($slug)
-    {
-        $ukm = Ukm::where('slug', $slug)->first();
-
-        return view('guest.profilemerchants')
-        ->with('ukm', $ukm);
     }
 }

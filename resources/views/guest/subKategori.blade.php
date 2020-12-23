@@ -205,63 +205,14 @@
                 <div class="row">
                     <div class="col-3">
                     <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang"  ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg' id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
+                      <img src = 'assets/images/iklan1.jpg'  id="imgSKT" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang"  ></br>
+                      <p class="txtSKT"> Toko A</p>
                     </center>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-3">
-                    <center>
-                    <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                    <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
-
-                    <div class="col-3">
-                    <center>
-                      <img src = 'assets/images/iklan1.jpg'  id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal" data-target="#myModalbarang" ></br>
-                      <p class="txtTokoMain"> Toko A</p>
-                    </center>
-                    </div>
+               
                 </div>
-</div>
 </div>
 
 </div>
