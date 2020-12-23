@@ -128,20 +128,20 @@
                         @endforeach
                     </div>
                 </div>
-            <!-- @foreach ($ads->where('category', 'ads home user') as $usr)
-                <div class="boxIklan">
-@if(empty($usr->image))
-                    <img src="{{ asset('assets/images/empty.jpg') }}" alt=""
-                                     style="width: 100%; height: 100%; object-fit: cover">
-                            @else
-                    <img src="{{ asset(Storage::url($usr->image)) }}" alt=""
-                                     style="width: 100%; height: 100%; object-fit: cover">
-                            @endif
-                {{-- <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label> --}}
-                    </div>
-                    <br>
-@endforeach -->
-                <!-- /iklan -->
+            {{--                @foreach ($ads->where('category', 'ads home user') as $usr)--}}
+            {{--                    <div class="boxIklan">--}}
+            {{--                        @if(empty($usr->image))--}}
+            {{--                            <img src="{{ asset('assets/images/empty.jpg') }}" alt=""--}}
+            {{--                                 style="width: 100%; height: 100%; object-fit: cover">--}}
+            {{--                        @else--}}
+            {{--                            <img src="{{ asset(Storage::url($usr->image)) }}" alt=""--}}
+            {{--                                 style="width: 100%; height: 100%; object-fit: cover">--}}
+            {{--                        @endif--}}
+            {{--                        --}}{{-- <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label> --}}
+            {{--                    </div>--}}
+            {{--                    <br>--}}
+            {{--            @endforeach--}}
+            <!-- /iklan -->
 
 
                 </br>
@@ -153,27 +153,30 @@
                     <div class="container-fluid">
 
                         <div class="row">
-                            @foreach($rekom as $toko)
+                            @foreach($rekom as $productrekom)
                                 <div class="col-3">
                                     <center>
-                                        @if(empty($toko->image))
+                                        @if(empty($productrekom->productImage->image))
                                             <img src='assets/images/iklan1.jpg' id="imgTokoMain"
                                                  class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang">
+                                                 data-target="#myModalbarang{{ $productrekom->id }}">
                                         @else
-                                            <img src='{{ asset(Storage::url($toko->image)) }}' id="imgTokoMain"
-                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang">
+                                            <img
+                                                src='{{ asset(Storage::url($productrekom->productImage->image->first())) }}'
+                                                id="imgTokoMain"
+                                                class="img-thumbnail btn btn-light" data-toggle="modal"
+                                                data-target="#myModalbarang{{ $productrekom->id }}">
                                             @endif
 
                                             </br>
-                                            <p class="txtTokoMain"> {{ $toko->merchant_name }}</p>
+                                            <p class="txtTokoMain"> {{ $productrekom->name }}</p>
                                     </center>
                                 </div>
 
-                                {{-- modal --}}
-
-                                <div class="modal fade" id="myModalbarang{{ $toko->id }}">
+                                {{--                                modal--}}
+                            @endforeach
+                            @foreach($rekom as $prdct)
+                                <div class="modal fade" id="myModalbarang{{ $prdct->id }}">
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
 
@@ -226,21 +229,30 @@
                                                     </br>
                                                     <div class="card">
                                                         <div class="card-body">
-{{--                                                            <h1 class="h1PopUser">{{ $toko->name }}</h1>--}}
-{{--                                                            <hr/>--}}
-{{--                                                            <p class="PPopUser">Kategori--}}
-{{--                                                                : {{ $toko->category->name }}--}}
-{{--                                                            </p>--}}
-{{--                                                            <p class="PPopUser">Sub Kategori :--}}
-{{--                                                                {{ $toko->subCategory->name }}</p>--}}
-{{--                                                            <p class="PPopUser">Nama Toko :--}}
-{{--                                                                {{ $toko->ukm->merchant_name }}</p>--}}
-{{--                                                            <p class="PPopUser">Alamat Toko :--}}
-{{--                                                                {{ $toko->ukm->address .' - '.$toko->ukm->district.' - '. $toko->ukm->city.' - '.$toko->ukm->province }}--}}
-{{--                                                            </p>--}}
-{{--                                                            <p class="PPopUser">Harga : {{ $toko->price }}</p>--}}
-{{--                                                            <p class="PPopUser">Deskripsi Produk :--}}
-{{--                                                                {{ $toko->description }}</p>--}}
+                                                            <h1 class="h1PopUser">{{ $prdct->name }}</h1>
+                                                            <hr/>
+                                                            <p class="PPopUser">Kategori
+                                                                : {{ $prdct->category->name }}
+                                                            </p>
+                                                            <p class="PPopUser">
+                                                                Sub Kategori
+                                                                :
+                                                                {{ $prdct->subCategory->name }}</p>
+                                                            <p class="PPopUser">
+                                                                Nama Toko :
+                                                                {{ $prdct->ukm->merchant_name }}</p>
+                                                            <p class="PPopUser">
+                                                                Alamat Toko
+                                                                :
+                                                                {{ $prdct->ukm->address .' - '.$prdct->ukm->district.' - '. $prdct->ukm->city.' - '.$prdct->ukm->province }}
+                                                            </p>
+                                                            <p class="PPopUser">
+                                                                Harga
+                                                                : {{ $prdct->price }}</p>
+                                                            <p class="PPopUser">
+                                                                Deskripsi
+                                                                Produk :
+                                                                {{ $prdct->description }}</p>
                                                             <hr/>
                                                         </div>
                                                     </div>
@@ -250,7 +262,7 @@
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-primary">
-{{--                                                    <a href="{{ url('/merchant/'.$toko->ukm->slug)}}">--}}
+                                                    <a href="{{ url('/merchant/'.$prdct->ukm->slug)}}">
                                                         <center>
                                                             <font face="Tahoma" color="white">Pergi ke
                                                                 Toko</font>
@@ -307,4 +319,7 @@
 
             </br>
 
+
+    {{--        </div>--}}
+    {{--    </div>--}}
 @endsection
