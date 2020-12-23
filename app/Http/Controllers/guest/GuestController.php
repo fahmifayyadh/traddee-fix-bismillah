@@ -59,6 +59,7 @@ class GuestController extends Controller
                 'user_id' => $user->id,
                 'merchant_name' => $request->merchant_name,
                 'slug' => \Str::slug($request->merchant_name),
+
                 'address' => $request->address,
                 'province' => $request->province,
                 'city' => $request->city,
@@ -74,5 +75,18 @@ class GuestController extends Controller
         // DB::commit();
         Session::flash('success', 'registrasi sukses. silahkan tunggu admin untuk verifikasi, notifikasi akan dikirim melalui email');
         return redirect()->back();
+    }
+
+    public function help()
+    {
+        return view('guest.bantuan');
+    }
+
+    public function store($slug)
+    {
+        $ukm = Ukm::where('slug', $slug)->first();
+
+        return view('guest.profileMerchantsUser')
+        ->with('ukm', $ukm);
     }
 }
