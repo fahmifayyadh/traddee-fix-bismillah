@@ -4,6 +4,7 @@ namespace App\Http\Controllers\guest;
 
 use App\Ads;
 use App\Category;
+use App\Product;
 use App\SubCategory;
 use App\Ukm;
 use Illuminate\Http\Request;
@@ -18,8 +19,8 @@ class GuestController extends Controller
     public function home(){
         $category = Category::all();
         $ads = Ads::all();
-        $store = Ukm::take(20)->get();
-        $rekom = Ukm::orderBy('id', 'desc')->take(8)->get();
+        $store = Ukm::where('active', 1)->take(20)->get();
+        $rekom = Product::orderBy('id', 'desc')->take(8)->get();
         return view('guest.home')
             ->with('ads', $ads)
             ->with('store', $store)
@@ -36,6 +37,16 @@ class GuestController extends Controller
             ->with('ctgr', $ctgr)
             ->with('category', $category)
             ->with('sub', $sub);
+    }
+
+    public function subCategory($category, $subcategory){
+        $ctgr = Category::where('slug', $category)->first();
+        $subctgr = SubCategory::where('slug', $subcategory)->first();
+        $product = Product::where('category_id', $ctgr->id)->where('sub_category_id', $subctgr->id)->get();
+        return view('guest/subkategori')
+            ->with('product', $product)
+            ->with('category', $ctgr)
+            ->with('subcategory', $subctgr);
     }
 
     public function daftar()
@@ -85,6 +96,9 @@ class GuestController extends Controller
     public function store($slug)
     {
         $ukm = Ukm::where('slug', $slug)->first();
+        if ($ukm->active == 0){
+            abort(404);
+        }
 
         return view('guest.profileMerchantsUser')
         ->with('ukm', $ukm);
