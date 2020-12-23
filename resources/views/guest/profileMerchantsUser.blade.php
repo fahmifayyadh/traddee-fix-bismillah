@@ -97,9 +97,11 @@
                             @foreach($ukm->product as $product)
                                 <div class="col-3">
                                     <center>
-                                        <img src='{{ empty($product->image) }}' id="imgTokoMerch"
-                                             class="img-thumbnail btn btn-light" data-toggle="modal"
-                                             data-target="#myModalbarang"></br>
+                                        <img
+                                            src='{{ empty($product->image)? asset('assets/images/iklan1.jpg') : asset(Storage::url($product->productImage->image->first())) }}'
+                                            id="imgTokoMerch"
+                                            class="img-thumbnail btn btn-light" data-toggle="modal"
+                                            data-target="#myModalbarang"></br>
                                         <p class="txtTokoMerc"> {{ $product->name }}</p>
                                     </center>
                                 </div>

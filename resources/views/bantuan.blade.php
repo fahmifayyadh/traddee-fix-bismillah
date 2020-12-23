@@ -18,8 +18,8 @@
 
         <div class="row">
             <div class="col-sm-3">
-           
-                <a class="txtLogo" href="{{ url('/index') }}"><img src = 'assets/images/logo.png' class="imglogoHeader"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
+
+                <a class="txtLogo" href="{{ url('/') }}"><img src = 'assets/images/logo.png' class="imglogoHeader"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
             </div>
         </div>
     </div>
@@ -57,12 +57,12 @@
     </div>
   </nav>
 
- 
+
   <div class="tab-content">
     <div id="bantuan" class="container tab-pane active"><br>
         <div class="card">
             <div class="card-body">
-                Isi Tentang Kami 
+                Isi Tentang Kami
             </div>
         </div>
     </div>
@@ -70,7 +70,7 @@
     <div id="faq" class="container tab-pane fade"><br>
         <div class="card">
             <div class="card-body">
-                
+
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    
+
   </div>
 </div>
 
