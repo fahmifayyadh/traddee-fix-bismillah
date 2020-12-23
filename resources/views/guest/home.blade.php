@@ -151,10 +151,75 @@
                                             data-target="#myModalbarang{{ $toko->id }}">
                                     @endif
 
-                                    {{-- </br> --}}
-                                    <p class="txtTokoMain"> {{ $toko->name }}</p>
-                                </center>
-                            </div>
+
+                    </div>
+                </div>
+                <!-- iklan -->
+                <div class="col-3">
+                
+                <div class="scrollIklan">
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                    </br>
+                    <div class="boxIklan">
+                    iklan dari Toko yang berbayar
+                    </div>
+                </div>
+
+                    <!-- @foreach($ads->where('category', 'ads home user') as $usr)
+                        <div class="boxIklan">
+                            @if(empty($usr->image))
+                                <img src="{{ asset('assets/images/empty.jpg') }}" alt=""
+                                     style="width: 100%; height: 100%; object-fit: cover">
+                            @else
+                                <img src="{{ asset(Storage::url($usr->image)) }}" alt=""
+                                     style="width: 100%; height: 100%; object-fit: cover">
+                            @endif
+                            {{--                        <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label>--}}
+                        </div>
+                        <br>
+                    @endforeach -->
+                </div>
+                <!-- /iklan -->
+                <!-- /iklan slide show -->
+                </br>
+                <!-- rekomendasi -->
+                <div class="container-fluid"></br>
+                    <h3 class="TxtH">Rekomendasi</h3>
+                    <hr/>
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            @foreach($rekom as $toko)
+                                <div class="col-3">
+                                    <center>
+                                        @if(empty($toko->productImage->image))
+                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
+                                                 data-target="#myModalbarang{{$toko->id}}">
+                                        @else
+                                            <img src='{{ asset(Storage::url($toko->productImage->image->first()))}}' id="imgTokoMain"
+                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
+                                                 data-target="#myModalbarang{{$toko->id}}">
+                                        @endif
+
+                                        {{--                                            </br>--}}
+                                        <p class="txtTokoMain"> {{ $toko->name }}</p>
+                                    </center>
+                                </div>
 
                             {{-- modal --}}
 

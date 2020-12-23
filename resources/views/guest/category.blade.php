@@ -49,7 +49,9 @@
             <h2>Sub Kategori</h2>
 
             <br>
-
+            <li class="nav-item">
+              <a class="nav-link"href="/subkategori"><div class="txtSKT" >Rekomendasi Rumah Makan</div></a>
+            </li>
 
             <ul class="nav nav-pills">
                 @foreach($sub as $index=>$suba)
