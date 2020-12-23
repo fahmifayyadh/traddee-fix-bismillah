@@ -102,7 +102,7 @@
 </div>
 <!-- / Modal chat -->
 <!-- modal barang -->
-<div class="modal fade" id="myModalbarang">
+{{-- <div class="modal fade" id="myModalbarang">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
@@ -169,7 +169,7 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 <!-- / Modal barang -->
 
 

@@ -158,19 +158,90 @@
                             @foreach($rekom as $toko)
                                 <div class="col-3">
                                     <center>
-                                        @if(empty($toko->image))
+                                        @if(empty($toko->productImage->image))
                                             <img src='assets/images/iklan1.jpg' id="imgTokoMain"
                                                  class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang">
+                                                 data-target="#myModalbarang{{$toko->id}}">
                                         @else
-                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                            <img src='{{ asset(Storage::url($toko->productImage->image->first()))}}' id="imgTokoMain"
                                                  class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang">
+                                                 data-target="#myModalbarang{{$toko->id}}">
                                         @endif
 
                                         {{--                                            </br>--}}
-                                        <p class="txtTokoMain"> {{ $toko->merchant_name }}</p>
+                                        <p class="txtTokoMain"> {{ $toko->name }}</p>
                                     </center>
+                                </div>
+
+                                {{-- modal --}}
+
+                                <div class="modal fade" id="myModalbarang{{$toko->id}}">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="container-fluid">
+
+                                                    <!-- slideshow detail produk -->
+                                                    <div id="demo" class="carousel slide" data-ride="carousel">
+                                                        <ul class="carousel-indicators">
+                                                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                                            <li data-target="#demo" data-slide-to="1"></li>
+                                                            <li data-target="#demo" data-slide-to="2"></li>
+                                                        </ul>
+
+                                                        <div class="carousel-inner">
+                                                            <div class="carousel-item active">
+                                                                <img src = 'assets/images/iklan1.jpg'  class="img-thumbnail" id="ImgPopUser">
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <img src = 'assets/images/iklan2.jpg'  class="img-thumbnail" id="ImgPopUser">
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <img src = 'assets/images/iklan1.jpg'  class="img-thumbnail" id="ImgPopUser">
+                                                            </div>
+                                                        </div>
+
+                                                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                                            <span class="carousel-control-prev-icon"></span>
+                                                        </a>
+                                                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                                                            <span class="carousel-control-next-icon"></span>
+                                                        </a>
+                                                    </div>
+                                                    <!-- /slideshow detail produk -->
+                                                    </br>
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h1 class="h1PopUser">{{$toko->name}}</h1>
+                                                            <hr/>
+                                                            <p class="PPopUser">Kategori : {{$toko->category->name}}</p>
+                                                            <p class="PPopUser">Sub Kategori : {{$toko->subCategory->name}}</p>
+                                                            <p class="PPopUser">Nama Toko : {{$toko->ukm->merchant_name}}</p>
+                                                            <p class="PPopUser">Alamat Toko : {{$toko->ukm->address .' - '.$toko->ukm->district.' - '. $toko->ukm->city.' - '.$toko->ukm->province}}</p>
+                                                            <p class="PPopUser">Harga : {{$toko->price}}</p>
+                                                            <p class="PPopUser">Deskripsi Produk : {{$toko->description}}</p>
+                                                            <hr/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary">
+                                                    <a href="ProfileMerchantsUser">
+                                                        <center><font face="Tahoma" color="white" >Pergi ke Toko</font></center>
+                                                    </a>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
