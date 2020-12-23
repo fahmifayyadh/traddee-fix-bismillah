@@ -3,61 +3,61 @@
 @section('content')
 
 
-    <div class="boxHeaderHome">
-        <!-- iklan slide show -->
-        <div id="demo" class="carousel slide" data-ride="carousel">
+<div class="boxHeaderHome">
+    <!-- iklan slide show -->
+    <div id="demo" class="carousel slide" data-ride="carousel">
 
 
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src='assets/images/bgheader1.jpg' class="imgSlide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src='assets/images/bgheader1.jpg' class="imgSlide">
 
-                </div>
-                <div class="carousel-item">
-                    <img src='assets/images/bgheader2.jpg' class="imgSlide">
-                </div>
-                <div class="carousel-item">
-                    <img src='assets/images/bgheader3.jpg' class="imgSlide">
-                </div>
             </div>
-
-
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-
-            </a>
+            <div class="carousel-item">
+                <img src='assets/images/bgheader2.jpg' class="imgSlide">
+            </div>
+            <div class="carousel-item">
+                <img src='assets/images/bgheader3.jpg' class="imgSlide">
+            </div>
         </div>
 
-        <!-- tutup iklan slide show -->
 
-        <!-- txt Slide Show -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
 
-        <div class="container-fluid">
-            <div class="textSlider">
-                <p class="txtSlide1">Traddee.com</p>
-                <p class="txtSlide2">Cari Toko Offline di Online</p>
-            </div>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
 
-        </div>
-        <!-- / txt Slide Show -->
+        </a>
     </div>
 
+    <!-- tutup iklan slide show -->
+
+    <!-- txt Slide Show -->
+
+    <div class="container-fluid">
+        <div class="textSlider">
+            <p class="txtSlide1">Traddee.com</p>
+            <p class="txtSlide2">Cari Toko Offline di Online</p>
+        </div>
+
+    </div>
+    <!-- / txt Slide Show -->
+</div>
 
 
-    </br>
-    </br>
-    <div class="boxmainhome">
 
-        <!-- Katergori  -->
-        <div class="container-fluid">
-            <h3 class="TxtH">Kategori</h3>
-            <div class="card">
-                <div class="card-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            @foreach($category as $ctgr)
+</br>
+</br>
+<div class="boxmainhome">
+
+    <!-- Katergori  -->
+    <div class="container-fluid">
+        <h3 class="TxtH">Kategori</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        @foreach($category as $ctgr)
                             <div class="col-3">
                                 <center>
                                     <a href="{{ url('/'.$ctgr->slug) }}">
@@ -66,202 +66,218 @@
                                     </a>
                                 </center>
                             </div>
-                            @endforeach
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
-        <!-- tutup kategori -->
-        </br>
-        </br>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-9">
+    </div>
+    <!-- tutup kategori -->
+    </br>
+    </br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-9">
 
-                    <!-- iklan Slide Show -->
-                    <div id="demo" class="carousel slide" data-ride="carousel">
+                <!-- iklan Slide Show -->
+                <div id="demo" class="carousel slide" data-ride="carousel">
 
-
-                        <ul class="carousel-indicators">
-                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                            <li data-target="#demo" data-slide-to="1"></li>
-                            <li data-target="#demo" data-slide-to="2"></li>
-                        </ul>
-
-                        <div class="carousel-inner">
-                            @foreach($ads->where('category', 'slideshow user') as $slide)
-                                <div class="carousel-item active">
-                                    @if(empty($slide->image))
-                                        <img src="{{ asset('assets/images/empty.jpg') }}" class="ImgSlideUser">
-                                    @else
-                                        <img src="{{ asset(Storage::url($slide->image)) }}" class="ImgSlideUser">
-                                    @endif
-                                </div>
-                            @endforeach
-                        </div>
-
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev"></a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next"></a>
-
-                    </div>
-                </div>
-                <!-- iklan -->
-                <div class="col-3">
-
-                    @foreach($ads->where('category', 'ads home user') as $usr)
-                        <div class="boxIklan">
-                            @if(empty($usr->image))
-                                <img src="{{ asset('assets/images/empty.jpg') }}" alt=""
-                                     style="width: 100%; height: 100%; object-fit: cover">
+                    <ul class="carousel-indicators">
+                        @foreach ($ads->where('category','slideshow user') as $index=> $slide)
+                            @if ($loop->first)
+                                <li data-target="#demo" data-slide-to="0" class="active"></li>
                             @else
-                                <img src="{{ asset(Storage::url($usr->image)) }}" alt=""
-                                     style="width: 100%; height: 100%; object-fit: cover">
+                                <li data-target="#demo" data-slide-to="{{$index+1}}"></li>
                             @endif
-                            {{--                        <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label>--}}
-                        </div>
-                        <br>
-                    @endforeach
+                        @endforeach
+                    </ul>
+
+                    <div class="carousel-inner">
+
+                        @foreach ($ads->where('category','slideshow user') as $slide)
+                            <div class="carousel-item active">
+                                @if(empty($slide->image))
+                                    <img src="{{ asset('assets/images/empty.jpg') }}"
+                                        class="ImgSlideUser">
+                                @else
+                                    <img src="{{ asset(Storage::url($slide->image)) }}" class="ImgSlideUser">
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev"></a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next"></a>
+
                 </div>
-                <!-- /iklan -->
-                <!-- /iklan slide show -->
-                </br>
-                <!-- rekomendasi -->
-                <div class="container-fluid"></br>
-                    <h3 class="TxtH">Rekomendasi</h3>
-                    <hr/>
-                    <div class="container-fluid">
+            </div>
+            <!-- iklan -->
+            <div class="col-3">
 
-                        <div class="row">
-                            @foreach($rekom as $toko)
-                                <div class="col-3">
-                                    <center>
-                                        @if(empty($toko->productImage->image))
-                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
-                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang{{$toko->id}}">
-                                        @else
-                                            <img src='{{ asset(Storage::url($toko->productImage->image->first()))}}' id="imgTokoMain"
-                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang{{$toko->id}}">
-                                        @endif
+                @foreach ($ads->where('category', 'ads home user') as $usr)
+                    <div class="boxIklan">
+                        @if(empty($usr->image))
+                            <img src="{{ asset('assets/images/empty.jpg') }}" alt=""
+                                style="width: 100%; height: 100%; object-fit: cover">
+                        @else
+                            <img src="{{ asset(Storage::url($usr->image)) }}" alt=""
+                                style="width: 100%; height: 100%; object-fit: cover">
+                        @endif
+                        {{-- <label>Iklan dari Admin berdasarkan toko yang bayar iklan</label> --}}
+                    </div>
+                    <br>
+                @endforeach
+            </div>
+            <!-- /iklan -->
+            <!-- /iklan slide show -->
+            </br>
+            <!-- rekomendasi -->
+            <div class="container-fluid"></br>
+                <h3 class="TxtH">Rekomendasi</h3>
+                <hr />
+                <div class="container-fluid">
 
-                                        {{--                                            </br>--}}
-                                        <p class="txtTokoMain"> {{ $toko->name }}</p>
-                                    </center>
-                                </div>
+                    <div class="row">
+                        @foreach($rekom as $toko)
+                            <div class="col-3">
+                                <center>
+                                    @if(empty($toko->productImage->image))
+                                        <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                            class="img-thumbnail btn btn-light" data-toggle="modal"
+                                            data-target="#myModalbarang{{ $toko->id }}">
+                                    @else
+                                        <img src='{{ asset(Storage::url($toko->productImage->image->first())) }}'
+                                            id="imgTokoMain" class="img-thumbnail btn btn-light" data-toggle="modal"
+                                            data-target="#myModalbarang{{ $toko->id }}">
+                                    @endif
 
-                                {{-- modal --}}
+                                    {{-- </br> --}}
+                                    <p class="txtTokoMain"> {{ $toko->name }}</p>
+                                </center>
+                            </div>
 
-                                <div class="modal fade" id="myModalbarang{{$toko->id}}">
-                                    <div class="modal-dialog modal-xl">
-                                        <div class="modal-content">
+                            {{-- modal --}}
 
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            </div>
+                            <div class="modal fade" id="myModalbarang{{ $toko->id }}">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
 
-                                            <div class="modal-body">
-                                                <div class="container-fluid">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
 
-                                                    <!-- slideshow detail produk -->
-                                                    <div id="demo" class="carousel slide" data-ride="carousel">
-                                                        <ul class="carousel-indicators">
-                                                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                                            <li data-target="#demo" data-slide-to="1"></li>
-                                                            <li data-target="#demo" data-slide-to="2"></li>
-                                                        </ul>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
 
-                                                        <div class="carousel-inner">
-                                                            <div class="carousel-item active">
-                                                                <img src = 'assets/images/iklan1.jpg'  class="img-thumbnail" id="ImgPopUser">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src = 'assets/images/iklan2.jpg'  class="img-thumbnail" id="ImgPopUser">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src = 'assets/images/iklan1.jpg'  class="img-thumbnail" id="ImgPopUser">
-                                                            </div>
+                                                <!-- slideshow detail produk -->
+                                                <div id="demo" class="carousel slide" data-ride="carousel">
+                                                    <ul class="carousel-indicators">
+                                                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                                        <li data-target="#demo" data-slide-to="1"></li>
+                                                        <li data-target="#demo" data-slide-to="2"></li>
+                                                    </ul>
+
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src='assets/images/iklan1.jpg' class="img-thumbnail"
+                                                                id="ImgPopUser">
                                                         </div>
-
-                                                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                                                            <span class="carousel-control-prev-icon"></span>
-                                                        </a>
-                                                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                                                            <span class="carousel-control-next-icon"></span>
-                                                        </a>
+                                                        <div class="carousel-item">
+                                                            <img src='assets/images/iklan2.jpg' class="img-thumbnail"
+                                                                id="ImgPopUser">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src='assets/images/iklan1.jpg' class="img-thumbnail"
+                                                                id="ImgPopUser">
+                                                        </div>
                                                     </div>
-                                                    <!-- /slideshow detail produk -->
-                                                    </br>
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <h1 class="h1PopUser">{{$toko->name}}</h1>
-                                                            <hr/>
-                                                            <p class="PPopUser">Kategori : {{$toko->category->name}}</p>
-                                                            <p class="PPopUser">Sub Kategori : {{$toko->subCategory->name}}</p>
-                                                            <p class="PPopUser">Nama Toko : {{$toko->ukm->merchant_name}}</p>
-                                                            <p class="PPopUser">Alamat Toko : {{$toko->ukm->address .' - '.$toko->ukm->district.' - '. $toko->ukm->city.' - '.$toko->ukm->province}}</p>
-                                                            <p class="PPopUser">Harga : {{$toko->price}}</p>
-                                                            <p class="PPopUser">Deskripsi Produk : {{$toko->description}}</p>
-                                                            <hr/>
-                                                        </div>
+
+                                                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                                        <span class="carousel-control-prev-icon"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                                                        <span class="carousel-control-next-icon"></span>
+                                                    </a>
+                                                </div>
+                                                <!-- /slideshow detail produk -->
+                                                </br>
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="h1PopUser">{{ $toko->name }}</h1>
+                                                        <hr />
+                                                        <p class="PPopUser">Kategori : {{ $toko->category->name }}
+                                                        </p>
+                                                        <p class="PPopUser">Sub Kategori :
+                                                            {{ $toko->subCategory->name }}</p>
+                                                        <p class="PPopUser">Nama Toko :
+                                                            {{ $toko->ukm->merchant_name }}</p>
+                                                        <p class="PPopUser">Alamat Toko :
+                                                            {{ $toko->ukm->address .' - '.$toko->ukm->district.' - '. $toko->ukm->city.' - '.$toko->ukm->province }}
+                                                        </p>
+                                                        <p class="PPopUser">Harga : {{ $toko->price }}</p>
+                                                        <p class="PPopUser">Deskripsi Produk :
+                                                            {{ $toko->description }}</p>
+                                                        <hr />
                                                     </div>
                                                 </div>
                                             </div>
-
-
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary">
-                                                    <a href="ProfileMerchantsUser">
-                                                        <center><font face="Tahoma" color="white" >Pergi ke Toko</font></center>
-                                                    </a>
-                                                </button>
-                                            </div>
-
                                         </div>
+
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">
+                                                <a href="{{ url('/store/'.$toko->ukm->slug)}}">
+                                                    <center>
+                                                        <font face="Tahoma" color="white">Pergi ke Toko</font>
+                                                    </center>
+                                                </a>
+                                            </button>
+                                        </div>
+
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
-                    <!-- /rekomendasi -->
-
-
-                    </br>
-                    <!-- Toko -->
-                    <h3 class="TxtH">Toko</h3>
-                    <hr/>
-
-                    <div class="container-fluid">
-
-                        <div class="row">
-                            @foreach($store as $toko)
-                                <div class="col-3">
-                                    <center>
-                                        @if(empty($toko->image))
-                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
-                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang">
-                                        @else
-                                            <img src='assets/images/iklan1.jpg' id="imgTokoMain"
-                                                 class="img-thumbnail btn btn-light" data-toggle="modal"
-                                                 data-target="#myModalbarang">
-                                            @endif
-
-{{--                                            </br>--}}
-                                            <p class="txtTokoMain"> {{ $toko->merchant_name }}</p>
-                                    </center>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <!-- /Toko -->
-
                 </div>
+                <!-- /rekomendasi -->
+
+
+                </br>
+                <!-- Toko -->
+                <h3 class="TxtH">Toko</h3>
+                <hr />
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        @foreach($store as $toko)
+                            <div class="col-3">
+                                <center>
+                                    @if(empty($toko->image))
+                                        <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                            class="img-thumbnail btn btn-light" data-toggle="modal"
+                                            data-target="#myModalbarang">
+                                    @else
+                                        <img src='assets/images/iklan1.jpg' id="imgTokoMain"
+                                            class="img-thumbnail btn btn-light" data-toggle="modal"
+                                            data-target="#myModalbarang">
+                                    @endif
+
+                                    {{-- </br> --}}
+                                    <p class="txtTokoMain"> {{ $toko->merchant_name }}</p>
+                                </center>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <!-- /Toko -->
 
             </div>
 
+        </div>
 
-            </br>
 
-@endsection
+        </br>
+
+        @endsection

@@ -60,6 +60,7 @@ class GuestController extends Controller
                 'user_id' => $user->id,
                 'merchant_name' => $request->merchant_name,
                 'slug' => \Str::slug($request->merchant_name),
+
                 'address' => $request->address,
                 'province' => $request->province,
                 'city' => $request->city,
@@ -86,7 +87,7 @@ class GuestController extends Controller
     {
         $ukm = Ukm::where('slug', $slug)->first();
 
-        return view('guest.profilemerchants')
+        return view('guest.profileMerchantsUser')
         ->with('ukm', $ukm);
     }
 }

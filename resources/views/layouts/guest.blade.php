@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/userStyle.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/userStyle.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style type="text/css">
     .scrollIklan{
@@ -120,7 +120,7 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                <a class="txtLogo" href="{{ url('/index') }}"><img src = 'assets/images/logo.png' class="imglogoHeader"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
+                <a class="txtLogo" href="{{ url('/index') }}"><img src = "{{ asset('assets/images/logo.png') }}" class="imglogoHeader"> <font face="Tahoma" color="white" class="HdText" >Traddee.com</font> </a>
                 </div>
                 <div class="col-sm-8">
                     <form class="form" action="">
