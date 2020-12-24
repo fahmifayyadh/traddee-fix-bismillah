@@ -55,10 +55,10 @@ Route::group(['middleware' => ['auth','checkRole:ukm']], function() {
 });
 
 Route::group(['middleware' => ['guest']], function(){
+    Route::get('/search', 'guest\GuestController@search')->name('guest.search');
     Route::get('/merchant/{slug}', 'guest\GuestController@store');
     Route::get('/daftar-toko', 'guest\GuestController@daftar')->name('regist.toko');
     Route::post('/regist-toko', 'guest\GuestController@formRegist')->name('regist.form');
-    Route::get('/search', 'guest\GuestController@search')->name('guest.search');
     Route::get('/{category}/{subcategory}', 'guest\GuestController@subCategory');
     Route::get('/{category}', 'guest\GuestController@category');
 });

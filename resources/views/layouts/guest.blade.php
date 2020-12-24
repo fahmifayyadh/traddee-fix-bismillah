@@ -193,7 +193,7 @@
                                     </select>
                                 </div>
 
-                                <input type="text" class="form-control" placeholder="Username" name="search">
+                                <input type="text" class="form-control" placeholder="Username" name="search" value="{{ old('search') }}">
 
                                 <div class="input-group-append">
                                     <button class="btn bg-warning" type="submit">Search</button>

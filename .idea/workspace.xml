@@ -124,7 +124,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../traddee" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -160,7 +160,8 @@
       <workItem from="1608257142976" duration="25903000" />
       <workItem from="1608540719743" duration="2278000" />
       <workItem from="1608621595711" duration="919000" />
-      <workItem from="1608712251538" duration="12449000" />
+      <workItem from="1608712251538" duration="13661000" />
+      <workItem from="1608813858239" duration="4579000" />
     </task>
     <servers />
   </component>
@@ -176,10 +177,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="186" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1608282897863" />
-    <state x="580" y="186" key="FileChooserDialogImpl" timestamp="1608731273728">
+    <state x="580" y="186" key="FileChooserDialogImpl" timestamp="1608782948172">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1608731273728" />
+    <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1608782948172" />
     <state x="496" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1608712256415">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
