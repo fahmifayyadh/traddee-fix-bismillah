@@ -184,19 +184,19 @@
                 </div>
 
                 <div class="col-6">
-                    <form class="form" action="">
+                    <form class="form" action="{{ url('/search') }}" method="get">
                             <div class="input-group mb-3">
                                 <div class="input-group-append mr-1">
                                     <select class="form-control" name="sortSearch">
-                                        <option>Toko</option>
-                                        <option>Barang</option>
+                                        <option value="toko">Toko</option>
+                                        <option value="barang">Barang</option>
                                     </select>
                                 </div>
 
-                                <input type="text" class="form-control" placeholder="Username" name="search">
+                                <input type="text" class="form-control" placeholder="Username" name="search" value="{{ old('search') }}">
 
                                 <div class="input-group-append">
-                                    <span class="btn bg-warning" type="submit" name="submit">Search</span>
+                                    <button class="btn bg-warning" type="submit">Search</button>
                                 </div>
                             </div>
                     </form>

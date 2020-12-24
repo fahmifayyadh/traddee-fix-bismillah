@@ -88,6 +88,26 @@ class GuestController extends Controller
         return redirect()->back();
     }
 
+    public function search(Request $request){
+        $merchant = null;
+        $product = null;
+
+        if ($request->sortSearch == 'toko'){
+            $merchant = Ukm::where('merchant_name', 'like', '%'.$request->search.'%')->get();
+        }else{
+            $product = Product::where('name', 'like', '%'.$request->search.'%')->get();
+        }
+
+        $keyword = $request->sortSearch;
+        $search = $request->search;
+
+        return view('guest.searchPages')
+            ->with('merchant', $merchant)
+            ->with('product', $product)
+            ->with('keyword', $keyword)
+            ->with('search', $search);
+    }
+
     public function help()
     {
         return view('guest.bantuan');

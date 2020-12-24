@@ -16,9 +16,9 @@ Route::get('/', 'guest\GuestController@home');
 Route::get('/subkategori', function () {
     return view('/guest/subkategori');
 });
-Route::get('/search', function () {
-    return view('/guest/searchPages');
-});
+//Route::get('/search', function () {
+//    return view('/guest/searchPages');
+//});
 Route::get('/bantuan', function () {
     return view('/bantuan');
 });
@@ -55,6 +55,7 @@ Route::group(['middleware' => ['auth','checkRole:ukm']], function() {
 });
 
 Route::group(['middleware' => ['guest']], function(){
+    Route::get('/search', 'guest\GuestController@search')->name('guest.search');
     Route::get('/merchant/{slug}', 'guest\GuestController@store');
     Route::get('/daftar-toko', 'guest\GuestController@daftar')->name('regist.toko');
     Route::post('/regist-toko', 'guest\GuestController@formRegist')->name('regist.form');
