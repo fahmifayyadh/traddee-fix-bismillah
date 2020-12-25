@@ -54,8 +54,123 @@
 </head>
 <body>
 
-<!-- modal Withdraw -->
-<div class="modal fade" id="WithDraw">
+ <!-- modal Withdraw -->
+ <div class="modal fade" id="WithDraw">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6">
+              <p> Nama Bank : </p>
+              <p> Nomer Rekening : </p>
+              <p> Point : </p>
+              <p> Bonus : </p>
+              <form action="/action_page.php">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Jumlah" id="Jumlah" readonly>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Withdraw</button>
+              </form>
+            </div>
+            <div class="col-6">
+            <h3> HISTORI WITHDRAW <h3>
+            <table cellspacing="0" class="scroll">
+                                <thead >
+                                <tr>
+                                    <th>Tanggal Pengajuan</th>
+                                    <th>Jumlah</th>
+                                    <th>Status</th>
+                                    <th></th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>12/12/2020</td>
+                                    <td>1.0000.000</td>
+                                    <td><strong>Success</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>12/12/2020</td>
+                                    <td>1.0000.000</td>
+                                    <td><strong>Success</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>12/12/2020</td>
+                                    <td>1.0000.000</td>
+                                    <td><strong>Success</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>12/12/2020</td>
+                                    <td>1.0000.000</td>
+                                    <td><strong>Success</strong></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- / Modal withdraw -->
+
+
+<!-- modal create product -->
+<div class="modal fade" id="createProduct">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+
+        <form action="/action_page.php">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nama Product" id="namaProduct">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Harga" id="harga">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Kategori" id="kategori">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Sub Kategori" id="sub kategori">
+            </div>
+            <div class="form-group">
+                <label for="comment">Deskripsi Product:</label>
+                <textarea class="form-control" rows="5" id="Deskripsi"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="desc">Foto Product : </label>
+                <input type="file" class="form-control-file border"></br>
+                <input type="file" class="form-control-file border"></br>
+                <input type="file" class="form-control-file border">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sumbit</button>
+        </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<!-- / Modal create product -->
+
+
+<!-- modal edit product -->
+<div class="modal fade" id="editProduct">
+
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
@@ -403,6 +518,24 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <tr>
+
+                                    <td id="thProfileMerch">1</td>
+                                    <td id="thProfileMerch">baju tidur</td>
+                                    <td id="thProfileMerch"><img src="assets/images/iklanH3.jpg" width="20px" height="20px"> | <img src="assets/images/iklanH3.jpg" width="20px" height="20px"> | <img src="assets/images/iklanH3.jpg" width="20px" height="20px"></td>
+                                    <td id="thProfileMerch">ukuran s,m dan xl Ready</td>
+                                    <td id="thProfileMerch">Aktif</td>
+
+
+                                    <td>
+                                        <button type="button" class="btn" data-toggle="modal"
+                                                data-target="#editProduct"
+                                                id="thProfileMerch">Edit
+                                        </button>
+                                        |
+                                        <button type="button" class="btn" id="thProfileMerch">Hapus</button>
+                                    </td>
+                                </tr>
                                 @foreach($product as $index=>$prod)
                                     <tr>
                                         <td id="thProfileMerch">{{ $index+1 }}</td>
@@ -527,20 +660,9 @@
                         <div id="chat" class="container tab-pane fade"><br>
 
                             <h3>List Chat</h3>
-                            <ul>
-                                <li>
-                                    <h5>User 1</a>
-                                </li>
-                                <li>
-                                    <h5>User 2</a>
-                                </li>
-                                <li>
-                                    <h5>User 3</a>
-                                </li>
-                                <li>
-                                    <h5>User 4</a>
-                                </li>
-                            </ul>
+                            <div class="alert alert-primary">
+                                <strong>Beta !</strong> Fitur ini akan segera hadir.
+                            </div>
 
                         </div>
                         <!-- / konten chat -->
@@ -602,8 +724,56 @@
                                 {{--                                    <img src='assets/images/aqilabg.jpg' width="150px" height="100px"> <input--}}
                                 {{--                                        type="file" class="form-control-file border mt-2" id="bannerProfile">--}}
                                 {{--                                </div>--}}
-                                <button type="submit" class="btn btn-primary">Ubah</button>
-                            </form>
+                                
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="container-fluid">
+                                            <h3>Iklan</h3>
+                                            <p>iklan ini akan tampil di halaman Toko anda</p><hr/>
+                                        </br>
+                                        <div class="alert alert-success">
+                                            <strong>Success !</strong> iklan sudah tampil di halaman toko !
+                                        </div>
+
+                                        <div class="control-group after-add-mores">
+                                            <label>Masukan Gambar</label>
+                                            <input type="file" name="gambar" class="form-control"></br>
+
+                                            <button class="btn btn-success add-mores" type="button">
+                                            <i class="glyphicon glyphicon-plus"></i> Add
+                                            </button>
+
+                                            <hr>
+
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Submit</button>
+                                            </form>
+
+                                            <div class="copys invisible">
+                                                <div class="control-group">
+                                                    <label>Masukan Gambar</label>
+                                                    <input type="file" name="gambar" class="form-control"></br>
+                                                    <button class="btn btn-danger removes" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <script type="text/javascript">
+                                            $(document).ready(function() {
+                                            $(".add-mores").click(function(){ 
+                                                var html = $(".copys").html();
+                                                $(".after-add-mores").after(html);
+                                            });
+                                            $("body").on("click",".removes",function(){ 
+                                                $(this).parents(".control-group").remove();
+                                            });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                </div>
 
                         </div>
                         <!-- / konten edit profile -->
@@ -656,6 +826,11 @@
                                            value="{{ $ukm->address }}" name="address">
                                 </div>
                                 <div class="form-group">
+                                    <label for="email">Link IFrame : </label></br>
+                                    <input type="text" class="form-control" id="iframe" placeholder="https://sadsdjisdasndasndjnjspdgoidsofnsodf"
+                                           value="{{ $ukm->phone }}" name="phone">
+                                </div>
+                                <div class="form-group">
                                     <label for="email">NO Tlp/WA : </label></br>
                                     <input type="text" class="form-control" id="namaToko" placeholder="000000000000"
                                            value="{{ $ukm->phone }}" name="phone">
@@ -677,21 +852,84 @@
                         </div>
                         <!-- / konten edit informasi toko -->
 
-                        <!-- konten Verifikasi-->
-                        <div id="Verif" class="container tab-pane fade"><br>
-                            <div class="alert alert-primary">
-                                <strong>Success !</strong> akun anda berhasil di verifikasi.
+                    <!-- konten Verifikasi-->
+                  <div id="Verif" class="container tab-pane fade"><br>
+                  <div class="alert alert-primary">
+                        <strong>Success !</strong> akun anda berhasil di verifikasi !
+                    </div>
+                    <div class="alert alert-danger">
+                        <strong>Failed !</strong> akun anda gagal di verifikasi, coba lagi !
+                    </div>
+                    <div class="alert alert-success">
+                        <strong>on Proccess !</strong> akun anda sedang di tinjau, harap bersabar !
+                    </div>
+                    <form action="#">
+                      <div class="form-group">
+                        <label> Masukan Foto KTP : </label></br>  
+                        <input type="file" class="form-control-file border mt-2" id="bannerProfile">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Ajukan</button>
+                    </form>
+
+                  </div>
+                  <!-- / konten Verifikasi-->
+                                          <!-- konten pasang iklan-->
+                                          <div id="iklan" class="container tab-pane fade"><br>
+                    <div class="card">
+                      <div class="card-body">
+                        <h3>Iklan Terdaftar <strong>Berbayar</strong></h3>
+                        <p>iklan ini akan tampil di halaman Home</p><hr/>
+
+                        <div class="alert alert-success">
+                            <strong>On Going !</strong> admin akan menghubungi anda via whatsapp !
+                        </div>
+                        <div class="alert alert-danger">
+                            <strong>Failed!</strong> pengjauan iklan gagal, coba lagi !
+                        </div>
+                        <div class="alert alert-primary">
+                            <strong>Success !</strong> iklan sudah tampil di halaman Home !
+                        </div>
+                      </div>
+                    </div></br>
+                    <form action="#">
+                    <div class="control-group after-add-more">
+                        <label>Masukan Gambar</label>
+                        <input type="file" name="gambar" class="form-control"></br>
+
+                        <button class="btn btn-success add-more" type="button">
+                        <i class="glyphicon glyphicon-plus"></i> Add
+                        </button>
+
+                        <hr>
+
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                        </form>
+
+                        <div class="copy invisible">
+                            <div class="control-group">
+                                <label>Masukan Gambar</label>
+                                <input type="file" name="gambar" class="form-control"></br>
+                                <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+
+                                <hr>
                             </div>
-                            <div class="alert alert-danger">
-                                <strong>Failed !</strong> akun anda gagal di verifikasi, coba lagi!.
-                            </div>
-                            <form action="#">
-                                <div class="form-group">
-                                    <label> Masukan Foto KTP : </label></br>
-                                    <input type="file" class="form-control-file border mt-2" id="bannerProfile">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Ajukan</button>
-                            </form>
+                        </div>
+                    </form>
+                  <script type="text/javascript">
+                        $(document).ready(function() {
+                        $(".add-more").click(function(){ 
+                            var html = $(".copy").html();
+                            $(".after-add-more").after(html);
+                        });
+                        $("body").on("click",".remove",function(){ 
+                            $(this).parents(".control-group").remove();
+                        });
+                        });
+                    </script>
+                </div>
+                <!-- /konten -->
+
 
                         </div>
                         <!-- / konten Verifikasi-->

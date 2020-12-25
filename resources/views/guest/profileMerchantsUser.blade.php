@@ -53,17 +53,27 @@
 
                 </div>
                 </br>
-                <ul class="nav nav-pills" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#profil">Profil Toko</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#produk">Produk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#chat">Chat</a>
-                    </li>
-                </ul>
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="nav " role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#profil">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#produk">Produk</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#chat">Chat</a>
+                                </li>
+                            </ul>
+                        </div>
+                </nav>
+
 
                 <div class="tab-content">
                     <div id="profil" class="container tab-pane active"><br>
@@ -96,7 +106,6 @@
                                         <p class="txtTokoMerc"> {{ $product->name }}</p>
                                     </center>
                                 </div>
-
 
                                 <div class="modal fade" id="myModalbarang{{ $product->id }}">
                                     <div class="modal-dialog modal-xl">
@@ -219,9 +228,9 @@
                         {{--                        </div>--}}
 
 
-                    </div>
+
                 </div>
             </div>
-
+        </div>
 
 @endsection
