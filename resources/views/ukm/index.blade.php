@@ -11,115 +11,51 @@
     <link rel="stylesheet" type="text/css" href="css/userStyle.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-          <style type="text/css">
-		table.scroll {
-			width:100%;
-			border:1px #a9c6c9 solid;
-      font-size:15px;
-		}
-		table.scroll thead {
-			display:table;
-			width:100%;
-			background-color: grey;
-		}
-		table.scroll tbody {
-			display:block;
-			height:150px;
-			overflow:auto;
-			float:left;
-			width:100%;
-		}
-		table.scroll tbody tr {
-			display:table;
-			width:100%;
+    <style type="text/css">
+        table.scroll {
+            width: 100%;
+            border: 1px #a9c6c9 solid;
+            font-size: 15px;
+        }
 
-		}
-		table.scroll th, td {
-			width:35%;
-			padding:8px;
-		}
-    .scrollIklan{
-     display:block;
-     border: 0px solid red;
-     width:300px;
-     height:320px;
-     overflow:auto;
-    }
-	</style>
+        table.scroll thead {
+            display: table;
+            width: 100%;
+            background-color: grey;
+        }
+
+        table.scroll tbody {
+            display: block;
+            height: 150px;
+            overflow: auto;
+            float: left;
+            width: 100%;
+        }
+
+        table.scroll tbody tr {
+            display: table;
+            width: 100%;
+
+        }
+
+        table.scroll th, td {
+            width: 35%;
+            padding: 8px;
+        }
+
+        .scrollIklan {
+            display: block;
+            border: 0px solid red;
+            width: 300px;
+            height: 320px;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
 
- <!-- modal Withdraw -->
- <div class="modal fade" id="WithDraw">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-6">
-              <p> Nama Bank : </p>
-              <p> Nomer Rekening : </p>
-              <p> Point : </p>
-              <p> Bonus : </p>
-              <form action="/action_page.php">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Jumlah" id="Jumlah" readonly>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Withdraw</button>
-              </form>
-            </div>
-            <div class="col-6">
-            <h3> HISTORI WITHDRAW <h3>
-            <table cellspacing="0" class="scroll">
-                                <thead >
-                                <tr>
-                                    <th>Tanggal Pengajuan</th>
-                                    <th>Jumlah</th>
-                                    <th>Status</th>
-                                    <th></th>
-
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>12/12/2020</td>
-                                    <td>1.0000.000</td>
-                                    <td><strong>Success</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>12/12/2020</td>
-                                    <td>1.0000.000</td>
-                                    <td><strong>Success</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>12/12/2020</td>
-                                    <td>1.0000.000</td>
-                                    <td><strong>Success</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>12/12/2020</td>
-                                    <td>1.0000.000</td>
-                                    <td><strong>Success</strong></td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-<!-- / Modal withdraw -->
-
-<!-- modal edit product -->
-<div class="modal fade" id="editProduct">
+<!-- modal Withdraw -->
+<div class="modal fade" id="WithDraw">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
@@ -128,67 +64,68 @@
             </div>
 
             <div class="modal-body">
-                <div class="container-fluid">
-
-                    <!-- slideshow detail produk -->
-                    <div id="demo" class="carousel slide" data-ride="carousel">
-                        <ul class="carousel-indicators">
-                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                            <li data-target="#demo" data-slide-to="1"></li>
-                            <li data-target="#demo" data-slide-to="2"></li>
-                        </ul>
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src='assets/images/iklan1.jpg' width="100%" height="150px" class="img-thumbnail">
+                <div class="row">
+                    <div class="col-6">
+                        <p> Nama Bank : </p>
+                        <p> Nomer Rekening : </p>
+                        <p> Point : </p>
+                        <p> Bonus : </p>
+                        <form action="/action_page.php">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Jumlah" id="Jumlah" readonly>
                             </div>
-                            <div class="carousel-item">
-                                <img src='assets/images/iklan2.jpg' width="100%" height="150px" class="img-thumbnail">
-                            </div>
-                            <div class="carousel-item">
-                                <img src='assets/images/iklan1.jpg' width="100%" height="150px" class="img-thumbnail">
-                            </div>
-                        </div>
-
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
+                            <button type="submit" class="btn btn-primary btn-block">Withdraw</button>
+                        </form>
                     </div>
-                    <!-- /slideshow detail produk -->
-                    </br>
+                    <div class="col-6">
+                        <h3> HISTORI WITHDRAW
+                            <h3>
+                                <table cellspacing="0" class="scroll">
+                                    <thead>
+                                    <tr>
+                                        <th>Tanggal Pengajuan</th>
+                                        <th>Jumlah</th>
+                                        <th>Status</th>
+                                        <th></th>
 
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>12/12/2020</td>
+                                        <td>1.0000.000</td>
+                                        <td><strong>Success</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12/12/2020</td>
+                                        <td>1.0000.000</td>
+                                        <td><strong>Success</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12/12/2020</td>
+                                        <td>1.0000.000</td>
+                                        <td><strong>Success</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12/12/2020</td>
+                                        <td>1.0000.000</td>
+                                        <td><strong>Success</strong></td>
+                                    </tr>
 
-                    <input type="text" class="form-control" placeholder="Nama Product "></br>
-                    <input type="text" class="form-control" placeholder="Kategori"></br>
-                    <input type="text" class="form-control" placeholder="Sub Kategori "></br>
-                    <input type="text" class="form-control" placeholder="Harga "></br>
-                    <hr/>
-
-                    <p style="color:black;">Ganti Foto 1</p>
-                    <input type="file" class="form-control-file border">
-                    <p style="color:black;">Ganti Foto 2</p>
-                    <input type="file" class="form-control-file border">
-                    <p style="color:black;">Ganti Foto 3</p>
-                    <input type="file" class="form-control-file border">
-                    <hr/>
-
+                                    </tbody>
+                                </table>
+                    </div>
                 </div>
-            </div>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">
-                    <a href="/Profilemerchants">
-                        <center><font face="Tahoma" color="white">Edit</font></center>
-                    </a>
-                </button>
             </div>
 
         </div>
     </div>
 </div>
+<!-- / Modal withdraw -->
+
+<!-- modal edit product -->
+
 <!-- / Modal bedit product -->
 
 
@@ -218,7 +155,8 @@
                     <div class="col-9">
                         <p class="txtProfileMerch11">TOKO {{ $ukm->merchant_name}}</p>
 
-                        <p class="txtProfileMerch22">ID : {{ $ukm->id }}  <strong>{{ !empty($ukm->user->email_ferivied_at) ?' |  Verified' : ''}}</strong></p>
+                        <p class="txtProfileMerch22">ID : {{ $ukm->id }}
+                            <strong>{{ !empty($ukm->user->email_ferivied_at) ?' |  Verified' : ''}}</strong></p>
 
                     </div>
                 </div>
@@ -277,27 +215,27 @@
                 </div>
                 <!-- iklan -->
                 <div class="col-3">
-                <div class="scrollIklan">
-                    <div class="boxIklan">
-                    iklan dari admin Khusus Anggota
+                    <div class="scrollIklan">
+                        <div class="boxIklan">
+                            iklan dari admin Khusus Anggota
+                        </div>
+                        </br>
+                        <div class="boxIklan">
+                            iklan dari admin Khusus Anggota
+                        </div>
+                        </br>
+                        <div class="boxIklan">
+                            iklan dari admin Khusus Anggota
+                        </div>
+                        </br>
+                        <div class="boxIklan">
+                            iklan dari admin Khusus Anggota
+                        </div>
+                        </br>
+                        <div class="boxIklan">
+                            iklan dari admin Khusus Anggota
+                        </div>
                     </div>
-                    </br>
-                    <div class="boxIklan">
-                    iklan dari admin Khusus Anggota
-                    </div>
-                    </br>
-                    <div class="boxIklan">
-                    iklan dari admin Khusus Anggota
-                    </div>
-                    </br>
-                    <div class="boxIklan">
-                    iklan dari admin Khusus Anggota
-                    </div>
-                    </br>
-                    <div class="boxIklan">
-                    iklan dari admin Khusus Anggota
-                    </div>
-                </div>
                 </div>
                 <!-- /iklan -->
                 <!-- /iklan slide show -->
@@ -336,7 +274,7 @@
                                 <li>
                                     <a class="nav-link" data-toggle="pill" href="#iklan">Ajukan Pemasangan Iklan</a>
                                 <li>
-                                <a class="nav-link" data-toggle="pill" href="#Verif">Verifikasi Toko</a>
+                                    <a class="nav-link" data-toggle="pill" href="#Verif">Verifikasi Toko</a>
                                 </li>
                                 </li>
                                 <li>
@@ -349,9 +287,9 @@
                                         Logout
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}"
-                                    method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                                          method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </li>
                             </ul>
                         </div>
@@ -361,8 +299,97 @@
                     <div class="tab-content">
                         <!-- konten daftar barang / jasa -->
                         <div id="daftar" class="tab-pane active"><br>
-                            <a href="" class="btn btn-success col-12">Buat Produk</a>
+                            <a data-toggle="modal"
+                               data-target="#createProduct" class="btn btn-success col-12">Buat Produk</a>
                             <br>
+                            <div class="modal fade" id="createProduct">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="container-fluid">
+                                                    <input type="text" class="form-control"
+                                                           placeholder="Nama Product" name="name"></br>
+                                                    <input type="text" class="form-control"
+                                                           placeholder="deskripsi Product " name="description"></br>
+                                                    <select name="category" id="ctgr" class="form-control" required>
+                                                        <option>Pilih kategori</option>
+                                                        @foreach($category as $cat)
+                                                            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    </br>
+                                                    <select name="subcategory" id="sub" class="form-control" required>
+                                                        <option>Pilih sub-kategori</option>
+                                                    </select>
+
+                                                    <script !src="">
+                                                        $(document).ready(()=>{
+                                                            $('select#ctgr').change(() => {
+                                                                $('#sub').empty();
+                                                                $('#sub').html(' <option>Pilih sub-kategori</option>');
+                                                                var id = $("#ctgr").val();
+                                                                $.ajax({
+                                                                    method: "get",
+                                                                    url: "/data/category/"+id,
+                                                                    dataType: "Json",
+                                                                    success: function (data, textStatus, jqXHR) {
+                                                                        var sub = data['sub'];
+                                                                        $.each(sub, (item, dt) => {
+                                                                            var sub = ['<option value="' + dt.id + '">' + dt.name +
+                                                                            '</option>'
+                                                                            ];
+                                                                            $('#sub').append(sub);
+                                                                        });
+                                                                        //data - response from server
+                                                                    },
+                                                                    error: function (jqXHR, textStatus, errorThrown) {
+                                                                        alert('error :' + textStatus);
+                                                                        console.log(errorThrown);
+
+                                                                    }
+                                                                });
+                                                            });
+
+                                                        })
+                                                    </script>
+                                                    <br>
+                                                    <input type="text" class="form-control"
+                                                           placeholder="varian" name="variant"></br>
+                                                    <input type="text" class="form-control"
+                                                           placeholder="Harga" name="price"></br>
+
+                                                    <hr/>
+
+                                                    <p style="color:black;">Foto 1</p>
+                                                    <input type="file" name="image[]" class="form-control-file border">
+                                                    <p style="color:black;">Foto 2</p>
+                                                    <input type="file" name="image[]" class="form-control-file border">
+                                                    <p style="color:black;">Foto 3</p>
+                                                    <input type="file" name="image[]" class="form-control-file border">
+                                                    <hr/>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <a href="/Profilemerchants">
+                                                        <center><font face="Tahoma" color="white">Buat</font>
+                                                        </center>
+                                                    </a>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                             <br>
                             <table class="table table-bordered ">
                                 <thead>
@@ -380,11 +407,25 @@
                                     <tr>
                                         <td id="thProfileMerch">{{ $index+1 }}</td>
                                         <td id="thProfileMerch">{{ $prod->name }}</td>
-                                        <td id="thProfileMerch">{{ asset(Storage::url($prod->productImage->first())) }}</td>
+                                        @if($photo = $prod->productImage->first())
+                                        <td id="thProfileMerch">{{ asset(Storage::url($photo->image)) }}</td>
+                                            @else
+                                            <td id="thProfileMerch">tidak ada foto</td>
+                                        @endif
                                         <td id="thProfileMerch">{{ $prod->description }}</td>
                                         <td id="thProfileMerch">Tampil</td>
                                         <td>
-                                            <button type="button" class="btn" data-toggle="modal"
+                                            @if($prod->available == 0)
+                                                <button type="button" class="btn btn-success" id="thProfileMerch">
+                                                    Aktif
+                                                </button>
+                                            @else
+                                                <button type="button" class="btn btn-danger" id="thProfileMerch">
+                                                    Nonaktif
+                                                </button>
+                                            @endif
+                                            |
+                                            <button type="button" class="btn btn-warning" data-toggle="modal"
                                                     data-target="#editProduct"
                                                     id="thProfileMerch">Edit
                                             </button>
@@ -392,6 +433,89 @@
                                             <button type="button" class="btn" id="thProfileMerch">Hapus</button>
                                         </td>
                                     </tr>
+
+                                    <div class="modal fade" id="editProduct">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content">
+
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;
+                                                    </button>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                    <div class="container-fluid">
+
+                                                        <!-- slideshow detail produk -->
+                                                        <div id="demo" class="carousel slide" data-ride="carousel">
+                                                            <ul class="carousel-indicators">
+                                                                <li data-target="#demo" data-slide-to="0"
+                                                                    class="active"></li>
+                                                                <li data-target="#demo" data-slide-to="1"></li>
+                                                                <li data-target="#demo" data-slide-to="2"></li>
+                                                            </ul>
+
+                                                            <div class="carousel-inner">
+                                                                <div class="carousel-item active">
+                                                                    <img src='assets/images/iklan1.jpg' width="100%"
+                                                                         height="150px" class="img-thumbnail">
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <img src='assets/images/iklan2.jpg' width="100%"
+                                                                         height="150px" class="img-thumbnail">
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <img src='assets/images/iklan1.jpg' width="100%"
+                                                                         height="150px" class="img-thumbnail">
+                                                                </div>
+                                                            </div>
+
+                                                            <a class="carousel-control-prev" href="#demo"
+                                                               data-slide="prev">
+                                                                <span class="carousel-control-prev-icon"></span>
+                                                            </a>
+                                                            <a class="carousel-control-next" href="#demo"
+                                                               data-slide="next">
+                                                                <span class="carousel-control-next-icon"></span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- /slideshow detail produk -->
+                                                        </br>
+
+
+                                                        <input type="text" class="form-control"
+                                                               placeholder="Nama Product "></br>
+                                                        <input type="text" class="form-control"
+                                                               placeholder="Kategori"></br>
+                                                        <input type="text" class="form-control"
+                                                               placeholder="Sub Kategori "></br>
+                                                        <input type="text" class="form-control"
+                                                               placeholder="Harga "></br>
+                                                        <hr/>
+
+                                                        <p style="color:black;">Ganti Foto 1</p>
+                                                        <input type="file" class="form-control-file border">
+                                                        <p style="color:black;">Ganti Foto 2</p>
+                                                        <input type="file" class="form-control-file border">
+                                                        <p style="color:black;">Ganti Foto 3</p>
+                                                        <input type="file" class="form-control-file border">
+                                                        <hr/>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary">
+                                                        <a href="/Profilemerchants">
+                                                            <center><font face="Tahoma" color="white">Edit</font>
+                                                            </center>
+                                                        </a>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endforeach
 
                                 </tbody>
@@ -428,10 +552,14 @@
                             <p>Id Toko : {{ $ukm->id }}</p>
 
                             <p>Id Anggota : 000011</p>
-                              <p>Followers : </p>
-                              <p>Kode Referal : 000011</p>
-                              <p>Point: </p>
-                              <p>Bonus: <button type="button" class="btn btn-success" data-toggle="modal" data-target="#WithDraw">Withdraw</button></p>
+                            <p>Followers : </p>
+                            <p>Kode Referal : 000011</p>
+                            <p>Point: </p>
+                            <p>Bonus:
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                        data-target="#WithDraw">Withdraw
+                                </button>
+                            </p>
 
                             <p>Alamat Toko : {{ $ukm->address }}</p>
                             <p>Nama Pemilik Toko : {{ $ukm->user->name }}</p>
@@ -549,84 +677,42 @@
                         </div>
                         <!-- / konten edit informasi toko -->
 
-                    <!-- konten Verifikasi-->
-                  <div id="Verif" class="container tab-pane fade"><br>
-                    <div class="alert alert-primary">
-                        <strong>Success !</strong> akun anda berhasil di verifikasi.
-                    </div>
-                    <div class="alert alert-danger">
-                        <strong>Failed !</strong> akun anda gagal di verifikasi, coba lagi!.
-                    </div>
-                    <form action="#">
-                      <div class="form-group">
-                        <label> Masukan Foto KTP : </label></br>  
-                        <input type="file" class="form-control-file border mt-2" id="bannerProfile">
-                      </div>
-                      <button type="submit" class="btn btn-primary">Ajukan</button>
-                    </form>
+                        <!-- konten Verifikasi-->
+                        <div id="Verif" class="container tab-pane fade"><br>
+                            <div class="alert alert-primary">
+                                <strong>Success !</strong> akun anda berhasil di verifikasi.
+                            </div>
+                            <div class="alert alert-danger">
+                                <strong>Failed !</strong> akun anda gagal di verifikasi, coba lagi!.
+                            </div>
+                            <form action="#">
+                                <div class="form-group">
+                                    <label> Masukan Foto KTP : </label></br>
+                                    <input type="file" class="form-control-file border mt-2" id="bannerProfile">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Ajukan</button>
+                            </form>
 
-                  </div>
-                  <!-- / konten Verifikasi-->
-                                          <!-- konten pasang iklan-->
-                  <div id="iklan" class="container tab-pane fade"><br>
-                    <div class="card">
-                      <div class="card-body">
-                        <h3>Iklan Terdaftar</h3><hr/>
-                        <p>tidak ada iklan terdaftar</p>
-                      </div>
-                    </div></br>
-                    <form action="#">
-                      <div class="form-group">
-                        <label>input Iklan : </label></br>
-                      <input type="file" class="form-control-file border mr-2" id="fotoProfile">
-                      </div>
-                      <div class="form-group">
-                        <label> Input Iklan : </label></br>  
-                        <input type="file" class="form-control-file border mt-2" id="bannerProfile">
-                      </div>
-                      <button type="submit" class="btn btn-primary">Ajukan</button>
-                    </form>
-
-                  </div>
-                  <!-- / konten pasang iklan-->
-                </div>
-                <!-- /konten -->
-
-
+                        </div>
+                        <!-- / konten Verifikasi-->
                         <!-- konten pasang iklan-->
                         <div id="iklan" class="container tab-pane fade"><br>
                             <div class="card">
                                 <div class="card-body">
                                     <h3>Iklan Terdaftar</h3>
                                     <hr/>
-                                    <div class="row">
-                                        @forelse($ukm->request as $request)
-
-                                            <div class="col-3">
-                                                <div class="container">
-                                                    <div
-                                                        class="p-2 card {{ empty($request->acc)? 'bg-warning' : 'bg-success' }}">
-                                                        <img src="{{ asset(Storage::url($request->image)) }}" alt=""
-                                                             height="100" width="100%" style="object-fit: cover">
-                                                        <br>
-                                                        <p class="text-center">{{ empty($request->acc)? 'Belum di acc' : 'sudah di acc' }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        @empty
-                                            <p>tidak ada iklan terdaftar</p>
-                                        @endforelse
-                                    </div>
+                                    <p>tidak ada iklan terdaftar</p>
                                 </div>
                             </div>
                             </br>
-                            <form action="{{ route('ukm.requestads') }}" method="post" enctype="multipart/form-data">
-                                @csrf
+                            <form action="#">
                                 <div class="form-group">
                                     <label>input Iklan : </label></br>
-                                    <input type="file" class="form-control-file border mr-2" id="fotoProfile"
-                                           name="image">
+                                    <input type="file" class="form-control-file border mr-2" id="fotoProfile">
+                                </div>
+                                <div class="form-group">
+                                    <label> Input Iklan : </label></br>
+                                    <input type="file" class="form-control-file border mt-2" id="bannerProfile">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Ajukan</button>
                             </form>
@@ -635,11 +721,55 @@
                         <!-- / konten pasang iklan-->
                     </div>
                     <!-- /konten -->
-                    <!-- /main -->
 
-                    </br>
-                    </br>
-                    <center><p id="footer">Kisah Kreatif | Copyright 2020 © All Rights Reserved</p></center>
+
+                    <!-- konten pasang iklan-->
+                    <div id="iklan" class="container tab-pane fade"><br>
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Iklan Terdaftar</h3>
+                                <hr/>
+                                <div class="row">
+                                    @forelse($ukm->request as $request)
+
+                                        <div class="col-3">
+                                            <div class="container">
+                                                <div
+                                                    class="p-2 card {{ empty($request->acc)? 'bg-warning' : 'bg-success' }}">
+                                                    <img src="{{ asset(Storage::url($request->image)) }}" alt=""
+                                                         height="100" width="100%" style="object-fit: cover">
+                                                    <br>
+                                                    <p class="text-center">{{ empty($request->acc)? 'Belum di acc' : 'sudah di acc' }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @empty
+                                        <p>tidak ada iklan terdaftar</p>
+                                    @endforelse
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <form action="{{ route('ukm.requestads') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group">
+                                <label>input Iklan : </label></br>
+                                <input type="file" class="form-control-file border mr-2" id="fotoProfile"
+                                       name="image">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Ajukan</button>
+                        </form>
+
+                    </div>
+                    <!-- / konten pasang iklan-->
+                </div>
+                <!-- /konten -->
+                <!-- /main -->
+
+                </br>
+                </br>
+                <center><p id="footer">Kisah Kreatif | Copyright 2020 © All Rights Reserved</p></center>
 
 
 </body>

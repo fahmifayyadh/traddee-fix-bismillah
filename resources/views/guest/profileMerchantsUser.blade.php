@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="col-9">
-                            <p class="txtProfileMerch1">TOKO {{$ukm->merchant_name}}</p>
+                            <p class="txtProfileMerch1">TOKO {{$ukm->merchant_name}} {{ !empty($ukm->user->email_ferified_at)? ' | Verified' : '' }}</p>
                             <p class="txtProfileMerch2">ID : {{ $ukm->id}}</p>
                         </div>
                     </div>

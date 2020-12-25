@@ -88,7 +88,7 @@
 
         </form>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -154,19 +154,19 @@
                 <div class="row">
                     <div class="col-4">
                         </br>
-                        </br>
+                        <p class="text-center">{{ $merch->count() }}</p>
                         </br>
                         <center>Jumlah Toko</center>
                     </div>
                     <div class="col-4">
                         </br>
-                        </br>
+                        <p class="text-center">{{ $reqAds->count() }}</p>
                         </br>
                         <center>Pengajuan Iklan Berbayar</center>
                     </div>
                     <div class="col-4">
                         </br>
-                        </br>
+                        <p class="text-center">{{ $ads->where('image', '<>', '')->count() }}</p>
                         </br>
                         <center>Iklan berbayar yang aktif</center>
                     </div>
@@ -274,7 +274,7 @@
         </br>
         <h1>List Toko</h1>
         <hr/>
-        
+
         <form class="form-inline" action="" method="get">
             {{--            @csrf--}}
             <p><input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Cari Toko">
@@ -304,7 +304,7 @@
                     <th>ID Referal</th>
                     <td>{{ $ukm->user->name }}</td>
                     <td>{!!  $ukm->active==1?'<span class="badge-success">Aktif</span>':'<span class="badge-danger">tidak aktif</span>' !!}</td>
-                    <td><a href="" class="btn btn-success"> Detail</a> |
+                    <td><a href="{{ url('/merchant/'.$ukm->slug) }}" class="btn btn-success"> Detail</a> |
 
                         @if($ukm->active==1)
                             <a href="{{ route('admin.merchant.inactive', $ukm->id) }}" class="btn btn-danger">Nonaktifkan</a>
@@ -646,14 +646,14 @@
         </div>
 
         </br>
-               
+
         <script type="text/javascript">
             $(document).ready(function() {
-            $(".add-more").click(function(){ 
+            $(".add-more").click(function(){
                 var html = $(".copy").html();
                 $(".after-add-more").after(html);
             });
-            $("body").on("click",".remove",function(){ 
+            $("body").on("click",".remove",function(){
                 $(this).parents(".control-group").remove();
             });
             });
@@ -703,14 +703,14 @@
         </div>
         </div>
         </br>
-               
+
         <script type="text/javascript">
             $(document).ready(function() {
-            $(".add-mores").click(function(){ 
+            $(".add-mores").click(function(){
                 var html = $(".copyk").html();
                 $(".after-add-mores").after(html);
             });
-            $("body").on("click",".removes",function(){ 
+            $("body").on("click",".removes",function(){
                 $(this).parents(".control-group").remove();
             });
             });

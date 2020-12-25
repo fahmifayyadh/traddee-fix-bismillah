@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ads;
+use App\Category;
 use App\Product;
 use App\RequestAds;
 use App\Ukm;
@@ -76,6 +77,7 @@ class HomeController extends Controller
     public function ukm(){
         $user = Auth::user();
         $product = Product::where('ukm_id', $user->ukm->id)->get();
+        $category = Category::all();
         $ukm = $user->ukm;
         if ($user->ukm->active != 1) {
             return redirect('home');
@@ -83,6 +85,7 @@ class HomeController extends Controller
 
         return view('ukm.index')
             ->with('product', $product)
-            ->with('ukm', $ukm);
+            ->with('ukm', $ukm)
+            ->with('category', $category);
     }
 }
