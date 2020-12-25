@@ -140,28 +140,21 @@
                                                         <!-- slideshow detail produk -->
                                                         <div id="demo" class="carousel slide" data-ride="carousel">
                                                             <ul class="carousel-indicators">
-                                                                <li data-target="#demo" data-slide-to="0"
-                                                                    class="active"></li>
-                                                                <li data-target="#demo" data-slide-to="1"></li>
-                                                                <li data-target="#demo" data-slide-to="2"></li>
+                                                                @foreach($prod->productImage as $index=>$length)
+                                                                    <li data-target="#demo" data-slide-to="{{ $index }}"
+                                                                        class="{{ $loop->first?'active':'' }}"></li>
+                                                                @endforeach
                                                             </ul>
 
                                                             <div class="carousel-inner">
-                                                                <div class="carousel-item active">
-                                                                    <img src='assets/images/iklan1.jpg'
-                                                                         class="img-thumbnail"
-                                                                         id="ImgPopUser">
-                                                                </div>
-                                                                <div class="carousel-item">
-                                                                    <img src='assets/images/iklan2.jpg'
-                                                                         class="img-thumbnail"
-                                                                         id="ImgPopUser">
-                                                                </div>
-                                                                <div class="carousel-item">
-                                                                    <img src='assets/images/iklan1.jpg'
-                                                                         class="img-thumbnail"
-                                                                         id="ImgPopUser">
-                                                                </div>
+                                                                @foreach($prod->productImage as $image)
+                                                                    <div
+                                                                        class="carousel-item {{ $loop->first? 'active':'' }}">
+                                                                        <img src='{{ asset(Storage::url($image->image)) }}'
+                                                                             class="img-thumbnail"
+                                                                             id="ImgPopUser">
+                                                                    </div>
+                                                                @endforeach
                                                             </div>
 
                                                             <a class="carousel-control-prev" href="#demo"

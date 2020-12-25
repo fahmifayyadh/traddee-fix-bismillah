@@ -90,12 +90,105 @@
                                 <div class="col-4">
                                     <center>
                                         <img
-                                            src="{{ empty($products->productImage->image->first()) ? 'assets/images/iklan1.jpg': $products->productImage->image->first() }}"
+                                            src="{{ empty($products->productImage->image) ? 'assets/images/iklan1.jpg': $products->productImage->image->first() }}"
                                             id="imgSKT"
                                             class="img-thumbnail btn btn-light"
-                                            data-toggle="modal" data-target="#myModalbarang"></br>
+                                            data-toggle="modal" data-target="#myModalbarang{{ $products->id }}"><br>
                                         <p class="txtSKT">{{ $products->name }}</p>
                                     </center>
+                                </div>
+
+
+                                <div class="modal fade" id="myModalbarang{{ $products->id }}">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    &times;
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="container-fluid">
+
+                                                    <!-- slideshow detail produk -->
+                                                    <div id="demo" class="carousel slide" data-ride="carousel">
+                                                        <ul class="carousel-indicators">
+                                                            @foreach($products->productImage as $index=>$length)
+                                                                <li data-target="#demo" data-slide-to="{{ $index }}"
+                                                                    class="{{ $loop->first?'active':'' }}"></li>
+                                                            @endforeach
+                                                        </ul>
+
+                                                        <div class="carousel-inner">
+                                                            @foreach($products->productImage as $image)
+                                                                <div
+                                                                    class="carousel-item {{ $loop->first? 'active':'' }}">
+                                                                    <img src='{{ asset(Storage::url($image->image)) }}'
+                                                                         class="img-thumbnail"
+                                                                         id="ImgPopUser">
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+
+                                                        <a class="carousel-control-prev" href="#demo"
+                                                           data-slide="prev">
+                                                            <span class="carousel-control-prev-icon"></span>
+                                                        </a>
+                                                        <a class="carousel-control-next" href="#demo"
+                                                           data-slide="next">
+                                                            <span class="carousel-control-next-icon"></span>
+                                                        </a>
+                                                    </div>
+                                                    <!-- /slideshow detail produk -->
+                                                    </br>
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h1 class="h1PopUser">{{ $products->name }}</h1>
+                                                            <hr/>
+                                                            <p class="PPopUser">Kategori
+                                                                : {{ $products->category->name }}
+                                                            </p>
+                                                            <p class="PPopUser">
+                                                                Sub Kategori
+                                                                :
+                                                                {{ $products->subCategory->name }}</p>
+                                                            <p class="PPopUser">
+                                                                Nama Toko :
+                                                                {{ $products->ukm->merchant_name }}</p>
+                                                            <p class="PPopUser">
+                                                                Alamat Toko
+                                                                :
+                                                                {{ $products->ukm->address .' - '.$products->ukm->district.' - '. $products->ukm->city.' - '.$products->ukm->province }}
+                                                            </p>
+                                                            <p class="PPopUser">
+                                                                Harga
+                                                                : {{ $products->price }}</p>
+                                                            <p class="PPopUser">
+                                                                Deskripsi
+                                                                Produk :
+                                                                {{ $products->description }}</p>
+                                                            <hr/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary">
+                                                    <a href="{{ url('/merchant/'.$products->ukm->slug)}}">
+                                                        <center>
+                                                            <font face="Tahoma" color="white">Pergi ke
+                                                                Toko</font>
+                                                        </center>
+                                                    </a>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
